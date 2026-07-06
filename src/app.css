@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+::selection {
+  background: #e8501e;
+  color: #f2f1ec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fine engineering-grid background for dark panels */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.grid-bg-light {
+  background-image:
+    linear-gradient(rgba(21, 23, 27, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 23, 27, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Mono kicker label */
+.kicker {
+  @apply font-mono text-xs uppercase tracking-widest2;
+}
