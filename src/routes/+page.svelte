@@ -142,11 +142,11 @@
         <svg viewBox="0 0 420 480" class="hidden lg:block w-full max-w-sm" fill="none">
           <rect x="90" y="30" width="200" height="420" stroke="#9BA0A8" stroke-width="1.5" />
           <rect x="102" y="42" width="176" height="408" stroke="#F2F1EC" stroke-width="1.5" />
-          <line x1="96" y1="36" x2="96" y2="450" stroke="#E8501E" stroke-width="2" />
+          <line x1="96" y1="36" x2="96" y2="450" stroke="#D7282E" stroke-width="2" />
           <rect x="160" y="90" width="60" height="130" stroke="#9BA0A8" stroke-width="1" />
-          <rect x="102" y="110" width="8" height="26" fill="#E8501E" />
-          <rect x="102" y="230" width="8" height="26" fill="#E8501E" />
-          <rect x="102" y="350" width="8" height="26" fill="#E8501E" />
+          <rect x="102" y="110" width="8" height="26" fill="#D7282E" />
+          <rect x="102" y="230" width="8" height="26" fill="#D7282E" />
+          <rect x="102" y="350" width="8" height="26" fill="#D7282E" />
         </svg>
       </div>
     {/if}
@@ -158,7 +158,7 @@
     >
       <div class="mx-auto w-full max-w-7xl px-6">
         <div class="max-w-2xl pointer-events-auto">
-          <p class="kicker text-signal mb-6">Passive Fire Protection — London &amp; South East</p>
+          <p class="kicker text-gold mb-6">Passive Fire Protection — London &amp; South East</p>
           <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
             The fire protection you never see has to be right.
           </h1>
@@ -180,7 +180,7 @@
               Our services
             </a>
           </div>
-          <p class="mt-14 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark animate-pulse">
+          <p class="mt-14 font-label text-[11px] uppercase tracking-widest2 text-muted-dark animate-pulse">
             Scroll to inspect the door ↓
           </p>
         </div>
@@ -197,7 +197,7 @@
           <div
             class="pointer-events-auto m-4 md:m-0 md:ml-[6vw] max-w-md border border-white/10 bg-ink/85 backdrop-blur-sm p-7 md:p-9"
           >
-            <p class="kicker text-signal mb-4">{cap.label}</p>
+            <p class="kicker text-gold mb-4">{cap.label}</p>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">{cap.title}</h2>
             <p class="mt-4 text-sm md:text-base text-muted-dark leading-relaxed">{cap.body}</p>
             {#if cap.cta}
@@ -225,14 +225,14 @@
     <div class="absolute right-5 md:right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-3 items-center">
       {#each Array(STAGES) as _, i}
         <span
-          class="font-mono text-[10px] transition-colors duration-300 {active === i
-            ? 'text-signal'
+          class="font-label text-[10px] transition-colors duration-300 {active === i
+            ? 'text-gold'
             : 'text-muted-dark/50'}"
         >
           {String(i).padStart(2, '0')}
         </span>
         {#if i < STAGES - 1}
-          <span class="w-px h-6 {active > i ? 'bg-signal' : 'bg-white/15'} transition-colors duration-300"></span>
+          <span class="w-px h-6 {active > i ? 'bg-gold' : 'bg-white/15'} transition-colors duration-300"></span>
         {/if}
       {/each}
     </div>
@@ -242,10 +242,10 @@
 <!-- stat strip -->
 <div class="bg-ink text-paper border-t border-white/10">
   <div
-    class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark"
+    class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-label text-[11px] uppercase tracking-widest2 text-muted-dark"
   >
-    <span><span class="text-signal">4×</span> third-party accreditations</span>
-    <span><span class="text-signal">6</span> core services</span>
+    <span><span class="text-gold">4×</span> third-party accreditations</span>
+    <span><span class="text-gold">6</span> core services</span>
     <span>Residential &amp; commercial</span>
     <span>Epsom / London / South East</span>
   </div>
@@ -255,12 +255,12 @@
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
   <div class="flex items-end justify-between mb-12">
     <div>
-      <p class="kicker text-signal mb-4">01 / What we do</p>
+      <p class="kicker text-gold mb-4">01 / What we do</p>
       <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Six services.<br />One standard.</h2>
     </div>
     <a
       href="/services"
-      class="hidden md:inline font-mono text-xs uppercase tracking-widest2 border-b border-ink pb-1 hover:text-signal hover:border-signal transition-colors"
+      class="hidden md:inline font-label text-xs uppercase tracking-widest2 border-b border-ink pb-1 hover:text-signal hover:border-signal transition-colors"
     >
       All services →
     </a>
@@ -272,12 +272,12 @@
         href="/services#{s.slug}"
         class="group border-b border-r border-ink/15 p-8 hover:bg-ink hover:text-paper transition-colors"
       >
-        <p class="font-mono text-xs text-signal mb-6">{s.index}</p>
+        <p class="font-label text-xs text-gold mb-6">{s.index}</p>
         <h3 class="text-xl font-bold tracking-tight">{s.title}</h3>
         <p class="mt-3 text-sm leading-relaxed text-muted-light group-hover:text-muted-dark">
           {s.summary}
         </p>
-        <p class="mt-6 font-mono text-[11px] uppercase tracking-widest2 text-signal opacity-0 group-hover:opacity-100 transition-opacity">
+        <p class="mt-6 font-label text-[11px] uppercase tracking-widest2 text-signal opacity-0 group-hover:opacity-100 transition-opacity">
           Detail →
         </p>
       </a>
@@ -288,14 +288,14 @@
 <!-- PROCESS -->
 <section class="bg-ink text-paper grid-bg">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-signal mb-4">02 / How we work</p>
+    <p class="kicker text-gold mb-4">02 / How we work</p>
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
       Surveyed, fixed, and proven — asset by asset.
     </h2>
     <div class="mt-16 grid gap-px sm:grid-cols-2 lg:grid-cols-4 bg-white/10 border border-white/10">
       {#each steps as step}
         <div class="bg-ink p-8">
-          <p class="font-mono text-xs text-signal">{step.n}</p>
+          <p class="font-label text-xs text-gold">{step.n}</p>
           <h3 class="mt-6 text-lg font-bold">{step.title}</h3>
           <p class="mt-3 text-sm text-muted-dark leading-relaxed">{step.body}</p>
         </div>
@@ -306,7 +306,7 @@
 
 <!-- ACCREDITATIONS -->
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-  <p class="kicker text-signal mb-4">03 / Accreditation</p>
+  <p class="kicker text-gold mb-4">03 / Accreditation</p>
   <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
     Don't take our word for it. That's the point.
   </h2>
@@ -318,9 +318,9 @@
   <ul class="mt-12 border-t border-ink/15">
     {#each accreditations as a, i}
       <li class="flex items-baseline gap-6 border-b border-ink/15 py-4">
-        <span class="font-mono text-xs text-signal w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+        <span class="font-label text-xs text-gold w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
         <span class="font-bold tracking-tight text-lg w-64 shrink-0">{a.name}</span>
-        <span class="font-mono text-xs uppercase tracking-widest2 text-muted-light hidden sm:inline">{a.role}</span>
+        <span class="font-label text-xs uppercase tracking-widest2 text-muted-light hidden sm:inline">{a.role}</span>
       </li>
     {/each}
   </ul>
@@ -344,7 +344,7 @@
       </a>
       <a
         href="tel:{contact.phone.replaceAll(' ', '')}"
-        class="border border-paper/40 px-7 py-3.5 text-sm font-mono hover:border-paper transition-colors"
+        class="border border-paper/40 px-7 py-3.5 text-sm font-label hover:border-paper transition-colors"
       >
         {contact.phone}
       </a>

@@ -12,16 +12,18 @@
  */
 import * as THREE from 'three';
 
+// Jewel PFP brand (Guidelines 2026): Passive Red, Passive Black, Jewel Gold
 const C = {
-  ink: 0x15171b,
-  ink2: 0x1c1f25,
-  ink3: 0x23262e,
+  ink: 0x0d0d0d, // Passive Black
+  ink2: 0x151517,
+  ink3: 0x1d1d21,
   paper: 0xf2f1ec,
   muted: 0x9ba0a8,
-  signal: 0xe8501e,
+  signal: 0xd7282e, // Passive Red
+  gold: 0xc09a51, // Jewel Gold — edge-line accent
   steel: 0x8b929c,
-  leaf: 0x2e333b,
-  frame: 0x252a32
+  leaf: 0x2b2b30,
+  frame: 0x222226
 };
 
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -64,7 +66,7 @@ export function createDoorScene(canvas) {
   const key = new THREE.DirectionalLight(0xffffff, 1.15);
   key.position.set(2.5, 3.5, 4);
   scene.add(key);
-  const rim = new THREE.DirectionalLight(C.signal, 0.3);
+  const rim = new THREE.DirectionalLight(C.gold, 0.35);
   rim.position.set(-3.5, 1, -2.5);
   scene.add(rim);
 
@@ -126,13 +128,14 @@ export function createDoorScene(canvas) {
 
   // ---- leaf ----
   const leaf = part('leaf', [0, 0, 0.42], [0.67, 0.77]);
-  leaf.add(box(0.93, 2.04, 0.054, C.leaf, { edge: C.paper }), 0, 0, 0);
+  leaf.add(box(0.93, 2.04, 0.054, C.leaf, { edge: C.gold }), 0, 0, 0);
+  // NOTE: leaf edges in Jewel Gold per enterprise accent
   // vision panel aperture (reads as a hole)
   leaf.add(box(0.32, 0.62, 0.058, C.ink), 0, 0.33, 0);
   // signage disc
   const sign = new THREE.Mesh(
     new THREE.CylinderGeometry(0.055, 0.055, 0.006, 32),
-    new THREE.MeshStandardMaterial({ color: C.paper, roughness: 0.6 })
+    new THREE.MeshStandardMaterial({ color: C.gold, roughness: 0.5, metalness: 0.4 })
   );
   sign.rotation.x = Math.PI / 2;
   sign.position.set(0, 0.82, 0.031);
@@ -171,7 +174,7 @@ export function createDoorScene(canvas) {
 
   // ---- overhead closer ----
   const closer = part('closer', [0, 0.55, 0.45], [0.1, 0.2]);
-  closer.add(box(0.34, 0.075, 0.062, C.ink3, { edge: C.paper }), 0, 0.9, 0.06);
+  closer.add(box(0.34, 0.075, 0.062, C.ink3, { edge: C.gold }), 0, 0.9, 0.06);
   closer.add(box(0.26, 0.02, 0.016, C.steel, steelOpts), 0.12, 0.985, 0.07, -0.18); // arm
   closer.add(box(0.16, 0.018, 0.014, C.steel, steelOpts), 0.26, 1.03, 0.045, 0.35); // arm 2
 
@@ -182,7 +185,7 @@ export function createDoorScene(canvas) {
     0, 0.33, 0
   );
   // glazing beads
-  const bead = { edge: C.paper };
+  const bead = { edge: C.muted };
   glazing.add(box(0.32, 0.02, 0.018, C.leaf, bead), 0, 0.63, 0.02);
   glazing.add(box(0.32, 0.02, 0.018, C.leaf, bead), 0, 0.03, 0.02);
   glazing.add(box(0.02, 0.58, 0.018, C.leaf, bead), -0.15, 0.33, 0.02);

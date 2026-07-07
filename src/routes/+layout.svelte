@@ -15,9 +15,9 @@
   <header class="bg-ink text-paper border-b border-white/10 sticky top-0 z-50">
     <nav class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-baseline gap-2 shrink-0" aria-label="Jewel Passive Fire Protection — home">
-        <span class="font-extrabold tracking-tight text-lg">JEWEL</span>
-        <span class="font-mono text-signal text-sm">/PFP</span>
-        <span class="hidden lg:inline font-mono text-[11px] uppercase tracking-widest2 text-muted-dark ml-2">
+        <span class="font-extrabold tracking-tight text-lg text-gold">JEWEL</span>
+        <span class="font-label text-signal text-sm">/PFP</span>
+        <span class="hidden lg:inline font-label text-[11px] uppercase tracking-widest2 text-muted-dark ml-2">
           Passive Fire Protection
         </span>
       </a>
@@ -36,14 +36,14 @@
         </a>
         <a
           href="tel:{contact.phone.replaceAll(' ', '')}"
-          class="font-mono text-xs border border-white/20 px-4 py-2 hover:border-signal hover:text-signal transition-colors"
+          class="font-label text-xs border border-white/20 px-4 py-2 hover:border-signal hover:text-signal transition-colors"
         >
           {contact.phone}
         </a>
       </div>
 
       <button
-        class="md:hidden font-mono text-xs uppercase tracking-widest2 border border-white/20 px-3 py-2"
+        class="md:hidden font-label text-xs uppercase tracking-widest2 border border-white/20 px-3 py-2"
         onclick={() => (menuOpen = !menuOpen)}
         aria-expanded={menuOpen}
         aria-label="Toggle menu"
@@ -58,7 +58,7 @@
           <a href={item.href} class="text-sm" onclick={() => (menuOpen = false)}>{item.label}</a>
         {/each}
         <a href={contact.booking} target="_blank" rel="noopener" class="text-sm">Apartment Bookings ↗</a>
-        <a href="tel:{contact.phone.replaceAll(' ', '')}" class="font-mono text-xs text-signal">{contact.phone}</a>
+        <a href="tel:{contact.phone.replaceAll(' ', '')}" class="font-label text-xs text-signal">{contact.phone}</a>
       </div>
     {/if}
   </header>
@@ -71,17 +71,17 @@
     <div class="mx-auto max-w-7xl px-6 py-16 grid gap-12 md:grid-cols-3">
       <div>
         <p class="flex items-baseline gap-2">
-          <span class="font-extrabold tracking-tight text-lg">JEWEL</span>
-          <span class="font-mono text-signal text-sm">/PFP</span>
+          <span class="font-extrabold tracking-tight text-lg text-gold">JEWEL</span>
+          <span class="font-label text-signal text-sm">/PFP</span>
         </p>
         <p class="mt-3 text-sm text-muted-dark max-w-xs leading-relaxed">
           Jewel Passive Fire Protection Ltd. Fire door surveying, remediation, installation and
           firestopping across London and the South East.
         </p>
-        <p class="mt-4 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark">{contact.area}</p>
+        <p class="mt-4 font-label text-[11px] uppercase tracking-widest2 text-muted-dark">{contact.area}</p>
       </div>
 
-      <div class="font-mono text-sm">
+      <div class="font-label text-sm">
         <p class="kicker text-muted-dark mb-4">Contact</p>
         <ul class="space-y-2">
           <li><a href="mailto:{contact.email}" class="hover:text-signal">{contact.email}</a></li>
@@ -95,7 +95,7 @@
         </ul>
       </div>
 
-      <div class="font-mono text-sm">
+      <div class="font-label text-sm">
         <p class="kicker text-muted-dark mb-4">Elsewhere</p>
         <ul class="space-y-2">
           {#each contact.socials as s}
@@ -107,7 +107,7 @@
 
     <div class="border-t border-white/10">
       <div
-        class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row gap-2 justify-between font-mono text-[11px] uppercase tracking-widest2 text-muted-dark"
+        class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row gap-2 justify-between font-label text-[11px] uppercase tracking-widest2 text-muted-dark"
       >
         <span>© {new Date().getFullYear()} Jewel Passive Fire Protection Ltd</span>
         <span>Third-party accredited · Surveying / Remediation / Installation / Firestopping</span>

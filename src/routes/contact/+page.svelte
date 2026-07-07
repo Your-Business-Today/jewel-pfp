@@ -32,7 +32,7 @@
 <!-- HEADER -->
 <section class="bg-ink text-paper grid-bg border-b border-white/10">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-signal mb-6">Contact</p>
+    <p class="kicker text-gold mb-6">Contact</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-[1.05]">
       Tell us about the building.
     </h1>
@@ -45,7 +45,7 @@
 <section class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
   <!-- DETAILS -->
   <div>
-    <ul class="border-t border-ink/15 font-mono text-sm">
+    <ul class="border-t border-ink/15 font-label text-sm">
       <li class="border-b border-ink/15 py-5">
         <p class="kicker text-muted-light mb-2">Email</p>
         <a href="mailto:{contact.email}" class="text-lg hover:text-signal">{contact.email}</a>
@@ -65,7 +65,7 @@
     </ul>
 
     <div class="mt-10 border border-signal/40 bg-signal/5 p-6">
-      <p class="kicker text-signal mb-3">Residents</p>
+      <p class="kicker text-gold mb-3">Residents</p>
       <p class="text-sm leading-relaxed">
         If we're working on your building and you need to arrange access for your apartment door,
         book directly:
@@ -74,7 +74,7 @@
         href={contact.booking}
         target="_blank"
         rel="noopener"
-        class="mt-4 inline-block font-mono text-sm text-signal hover:underline"
+        class="mt-4 inline-block font-label text-sm text-signal hover:underline"
       >
         book.jewelpfp.co.uk ↗
       </a>
@@ -83,22 +83,22 @@
 
   <!-- FORM -->
   <form onsubmit={submit} class="border border-ink/15 p-8 md:p-10 bg-paper-2">
-    <p class="kicker text-signal mb-8">Enquiry form</p>
+    <p class="kicker text-gold mb-8">Enquiry form</p>
     <div class="grid gap-6 sm:grid-cols-2">
       <label class="block">
-        <span class="font-mono text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Name</span>
+        <span class="font-label text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Name</span>
         <input class={inputClass} bind:value={name} required placeholder="Your name" />
       </label>
       <label class="block">
-        <span class="font-mono text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Email</span>
+        <span class="font-label text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Email</span>
         <input class={inputClass} type="email" bind:value={email} required placeholder="you@company.co.uk" />
       </label>
       <label class="block">
-        <span class="font-mono text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Building / site</span>
+        <span class="font-label text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Building / site</span>
         <input class={inputClass} bind:value={building} placeholder="e.g. Residential block, Epsom" />
       </label>
       <label class="block">
-        <span class="font-mono text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Service</span>
+        <span class="font-label text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Service</span>
         <select class={inputClass} bind:value={service}>
           <option value="">Not sure yet</option>
           {#each services as s}
@@ -108,7 +108,7 @@
       </label>
     </div>
     <label class="block mt-6">
-      <span class="font-mono text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Message</span>
+      <span class="font-label text-[11px] uppercase tracking-widest2 text-muted-light block mb-2">Message</span>
       <textarea class={inputClass} rows="5" bind:value={message} placeholder="What do you need looked at?"></textarea>
     </label>
     <button
@@ -117,6 +117,6 @@
     >
       Send enquiry
     </button>
-    <p class="mt-4 font-mono text-[11px] text-muted-light">Opens in your email client, addressed to {contact.email}.</p>
+    <p class="mt-4 font-label text-[11px] text-muted-light">Opens in your email client, addressed to {contact.email}.</p>
   </form>
 </section>

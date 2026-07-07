@@ -7,12 +7,20 @@
 }
 
 ::selection {
-  background: #e8501e;
+  background: #d7282e;
   color: #f2f1ec;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Brand typographic hierarchy: headings in Switzer (display) */
+h1,
+h2,
+h3,
+h4 {
+  @apply font-display;
 }
 
 /* Fine engineering-grid background for dark panels */
@@ -32,5 +40,5 @@ html {
 
 /* Mono kicker label */
 .kicker {
-  @apply font-mono text-xs uppercase tracking-widest2;
+  @apply font-label text-xs uppercase tracking-widest2;
 }
