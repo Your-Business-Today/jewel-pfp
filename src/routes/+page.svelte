@@ -1,5 +1,103 @@
 <script>
+  import { onMount } from 'svelte';
   import { services, accreditations, contact } from '$lib/services.js';
+
+  // ---------- scroll-driven 3D door ----------
+  const STAGES = 7; // hero + 5 components + outro
+
+  const captions = [
+    null, // 0: hero (rendered separately)
+    {
+      label: '01 / Self-closer',
+      title: 'Closes itself. Every time.',
+      body: 'A fire door that stands open is just a door. We check closing force, speed and latching — and that the closer fitted matches the doorset’s certification.'
+    },
+    {
+      label: '02 / Intumescent + smoke seals',
+      title: 'The seal that saves the compartment.',
+      body: 'At around 200°C the intumescent strip expands to many times its size, sealing the gap between leaf and frame. Missing, painted-over or wrongly sized seals are the most common failure we survey.'
+    },
+    {
+      label: '03 / Ironmongery — CE hinges ×3',
+      title: 'Hung on the right hardware.',
+      body: 'Three CE-marked hinges minimum, fire-rated latches and levers — every item checked against the doorset’s data sheet, tightened, and logged.'
+    },
+    {
+      label: '04 / Fire-rated glazing',
+      title: 'Vision without the weakness.',
+      body: 'Vision panels only perform with the tested glass, beads and seals working as a system. We verify markings and beads — not just that there’s glass in the hole.'
+    },
+    {
+      label: '05 / Gaps — 2–4 mm, measured',
+      title: 'Millimetres decide it.',
+      body: 'Leaf-to-frame gaps outside tolerance let smoke and fire straight through. We measure every edge of every door and record it — “3 mm” is data; “looks fine” is not.'
+    },
+    {
+      label: '06 / Evidence',
+      title: 'Every component. Every door. Evidenced.',
+      body: 'Each doorset surveyed as an individual asset in Onetrace — photographs, measurements and remedial actions, ready for your building safety case.',
+      cta: true
+    }
+  ];
+
+  /** @type {HTMLElement | null} */
+  let wrap = $state(null);
+  /** @type {HTMLCanvasElement | null} */
+  let canvas = $state(null);
+  let progress = $state(0);
+  let webglFailed = $state(false);
+
+  const active = $derived(Math.min(STAGES - 1, Math.floor(progress * STAGES)));
+  const heroOpacity = $derived(Math.max(0, 1 - progress * STAGES * 1.4));
+
+  onMount(() => {
+    /** @type {any} */
+    let doorScene;
+    let destroyed = false;
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const onScroll = () => {
+      if (!wrap) return;
+      const rect = wrap.getBoundingClientRect();
+      const span = rect.height - window.innerHeight;
+      const p = span > 0 ? Math.min(1, Math.max(0, -rect.top / span)) : 0;
+      progress = p;
+      if (doorScene) {
+        doorScene.setProgress(p);
+        doorScene.setStage(Math.min(STAGES - 1, Math.floor(p * STAGES)));
+        if (reduced) doorScene.snap();
+      }
+    };
+
+    const onResize = () => {
+      doorScene?.resize();
+      onScroll();
+    };
+
+    (async () => {
+      try {
+        const { createDoorScene } = await import('$lib/door3d.js');
+        if (destroyed || !canvas) return;
+        doorScene = createDoorScene(canvas);
+        onScroll();
+      } catch (e) {
+        console.error('WebGL init failed', e);
+        webglFailed = true;
+      }
+    })();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+    onScroll();
+
+    return () => {
+      destroyed = true;
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+      doorScene?.destroy();
+    };
+  });
 
   const steps = [
     {
@@ -33,91 +131,125 @@
   />
 </svelte:head>
 
-<!-- HERO -->
-<section class="bg-ink text-paper grid-bg border-b border-white/10">
-  <div class="mx-auto max-w-7xl px-6 pt-20 pb-16 md:pt-28 md:pb-24 grid gap-16 lg:grid-cols-[1.2fr_1fr] items-center">
-    <div>
-      <p class="kicker text-signal mb-6">Passive Fire Protection — London &amp; South East</p>
-      <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05] max-w-2xl">
-        The fire protection you never see has to be right.
-      </h1>
-      <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
-        Jewel surveys, remediates, installs and certifies fire doors and firestopping in residential
-        and commercial buildings — third-party accredited at every stage, with digital evidence for
-        every asset.
-      </p>
-      <div class="mt-10 flex flex-wrap gap-4">
-        <a
-          href="/contact"
-          class="bg-signal text-paper px-7 py-3.5 text-sm font-semibold hover:bg-signal/90 transition-colors"
-        >
-          Book a survey
-        </a>
-        <a
-          href="/services"
-          class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
-        >
-          Our services
-        </a>
+<!-- SCROLL EXPERIENCE: anatomy of a fire door -->
+<section bind:this={wrap} class="relative bg-ink text-paper" style="height: {STAGES * 100}vh">
+  <div class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden grid-bg">
+    {#if !webglFailed}
+      <canvas bind:this={canvas} class="absolute inset-0 h-full w-full"></canvas>
+    {:else}
+      <!-- static fallback -->
+      <div class="absolute inset-0 flex items-center justify-end pr-[8vw]" aria-hidden="true">
+        <svg viewBox="0 0 420 480" class="hidden lg:block w-full max-w-sm" fill="none">
+          <rect x="90" y="30" width="200" height="420" stroke="#9BA0A8" stroke-width="1.5" />
+          <rect x="102" y="42" width="176" height="408" stroke="#F2F1EC" stroke-width="1.5" />
+          <line x1="96" y1="36" x2="96" y2="450" stroke="#E8501E" stroke-width="2" />
+          <rect x="160" y="90" width="60" height="130" stroke="#9BA0A8" stroke-width="1" />
+          <rect x="102" y="110" width="8" height="26" fill="#E8501E" />
+          <rect x="102" y="230" width="8" height="26" fill="#E8501E" />
+          <rect x="102" y="350" width="8" height="26" fill="#E8501E" />
+        </svg>
+      </div>
+    {/if}
+
+    <!-- HERO overlay -->
+    <div
+      class="absolute inset-0 flex items-center pointer-events-none"
+      style="opacity: {heroOpacity}; visibility: {heroOpacity <= 0.01 ? 'hidden' : 'visible'}"
+    >
+      <div class="mx-auto w-full max-w-7xl px-6">
+        <div class="max-w-2xl pointer-events-auto">
+          <p class="kicker text-signal mb-6">Passive Fire Protection — London &amp; South East</p>
+          <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
+            The fire protection you never see has to be right.
+          </h1>
+          <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
+            Jewel surveys, remediates, installs and certifies fire doors and firestopping —
+            third-party accredited at every stage, with digital evidence for every asset.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a
+              href="/contact"
+              class="bg-signal text-paper px-7 py-3.5 text-sm font-semibold hover:bg-signal/90 transition-colors"
+            >
+              Book a survey
+            </a>
+            <a
+              href="/services"
+              class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
+            >
+              Our services
+            </a>
+          </div>
+          <p class="mt-14 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark animate-pulse">
+            Scroll to inspect the door ↓
+          </p>
+        </div>
       </div>
     </div>
 
-    <!-- Fire door line diagram -->
-    <div class="hidden lg:block" aria-hidden="true">
-      <svg viewBox="0 0 420 480" class="w-full max-w-md ml-auto" fill="none">
-        <!-- frame -->
-        <rect x="90" y="30" width="200" height="420" stroke="#9BA0A8" stroke-width="1.5" />
-        <!-- leaf -->
-        <rect x="102" y="42" width="176" height="408" stroke="#F2F1EC" stroke-width="1.5" />
-        <!-- intumescent strip -->
-        <line x1="96" y1="36" x2="96" y2="450" stroke="#E8501E" stroke-width="2" />
-        <!-- vision panel -->
-        <rect x="160" y="90" width="60" height="130" stroke="#9BA0A8" stroke-width="1" />
-        <!-- hinges -->
-        <rect x="102" y="110" width="8" height="26" fill="#E8501E" />
-        <rect x="102" y="230" width="8" height="26" fill="#E8501E" />
-        <rect x="102" y="350" width="8" height="26" fill="#E8501E" />
-        <!-- handle -->
-        <circle cx="262" cy="256" r="5" stroke="#F2F1EC" stroke-width="1.5" />
-        <!-- closer -->
-        <rect x="150" y="52" width="80" height="14" stroke="#9BA0A8" stroke-width="1" />
+    <!-- STAGE CAPTIONS -->
+    {#each captions as cap, i}
+      {#if cap}
+        <div
+          class="absolute inset-x-0 bottom-0 md:inset-y-0 md:left-0 md:right-auto md:flex md:items-center pointer-events-none transition-all duration-500
+                 {active === i ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}"
+        >
+          <div
+            class="pointer-events-auto m-4 md:m-0 md:ml-[6vw] max-w-md border border-white/10 bg-ink/85 backdrop-blur-sm p-7 md:p-9"
+          >
+            <p class="kicker text-signal mb-4">{cap.label}</p>
+            <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">{cap.title}</h2>
+            <p class="mt-4 text-sm md:text-base text-muted-dark leading-relaxed">{cap.body}</p>
+            {#if cap.cta}
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="/contact"
+                  class="bg-signal text-paper px-6 py-3 text-sm font-semibold hover:bg-signal/90 transition-colors"
+                >
+                  Book a survey
+                </a>
+                <a
+                  href="/services"
+                  class="border border-white/25 px-6 py-3 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
+                >
+                  Our services
+                </a>
+              </div>
+            {/if}
+          </div>
+        </div>
+      {/if}
+    {/each}
 
-        <!-- callouts -->
-        <g font-family="IBM Plex Mono, monospace" font-size="10" fill="#9BA0A8">
-          <line x1="290" y1="59" x2="330" y2="59" stroke="#9BA0A8" stroke-dasharray="3 3" />
-          <text x="336" y="62">SELF-CLOSER</text>
-
-          <line x1="96" y1="200" x2="40" y2="200" stroke="#E8501E" stroke-dasharray="3 3" />
-          <text x="10" y="192" fill="#E8501E">INTUMESCENT</text>
-          <text x="10" y="204" fill="#E8501E">+ SMOKE SEAL</text>
-
-          <line x1="290" y1="155" x2="330" y2="155" stroke="#9BA0A8" stroke-dasharray="3 3" />
-          <text x="336" y="150">FIRE-RATED</text>
-          <text x="336" y="162">GLAZING</text>
-
-          <line x1="110" y1="363" x2="60" y2="363" stroke="#9BA0A8" stroke-dasharray="3 3" />
-          <text x="8" y="366">CE HINGES ×3</text>
-
-          <line x1="290" y1="440" x2="330" y2="440" stroke="#9BA0A8" stroke-dasharray="3 3" />
-          <text x="336" y="436">GAP 2–4 MM</text>
-          <text x="336" y="448">MEASURED</text>
-        </g>
-      </svg>
-    </div>
-  </div>
-
-  <!-- stat strip -->
-  <div class="border-t border-white/10">
-    <div
-      class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark"
-    >
-      <span><span class="text-signal">4×</span> third-party accreditations</span>
-      <span><span class="text-signal">6</span> core services</span>
-      <span>Residential &amp; commercial</span>
-      <span>Epsom / London / South East</span>
+    <!-- PROGRESS RAIL -->
+    <div class="absolute right-5 md:right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-3 items-center">
+      {#each Array(STAGES) as _, i}
+        <span
+          class="font-mono text-[10px] transition-colors duration-300 {active === i
+            ? 'text-signal'
+            : 'text-muted-dark/50'}"
+        >
+          {String(i).padStart(2, '0')}
+        </span>
+        {#if i < STAGES - 1}
+          <span class="w-px h-6 {active > i ? 'bg-signal' : 'bg-white/15'} transition-colors duration-300"></span>
+        {/if}
+      {/each}
     </div>
   </div>
 </section>
+
+<!-- stat strip -->
+<div class="bg-ink text-paper border-t border-white/10">
+  <div
+    class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-[11px] uppercase tracking-widest2 text-muted-dark"
+  >
+    <span><span class="text-signal">4×</span> third-party accreditations</span>
+    <span><span class="text-signal">6</span> core services</span>
+    <span>Residential &amp; commercial</span>
+    <span>Epsom / London / South East</span>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
