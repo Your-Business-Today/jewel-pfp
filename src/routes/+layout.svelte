@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
-  import { contact } from '$lib/services.js';
+  import { page } from '$app/state';
+  import { contact, site } from '$lib/services.js';
   let { children } = $props();
   let menuOpen = $state(false);
 
@@ -10,6 +11,14 @@
     { label: 'Contact', href: '/contact' }
   ];
 </script>
+
+<svelte:head>
+  <link rel="canonical" href="{site.url}{page.url.pathname}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:url" content="{site.url}{page.url.pathname}" />
+</svelte:head>
 
 <div class="min-h-screen flex flex-col bg-paper text-ink font-sans antialiased">
   <header class="bg-ink text-paper border-b border-white/10 sticky top-0 z-50">

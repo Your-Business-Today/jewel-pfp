@@ -97,15 +97,20 @@ export const services = [
 ];
 
 export const accreditations = [
-  { name: 'BM TRADA', role: 'Third-party certification — fire' },
-  { name: 'Bluesky Certification', role: 'Fire door maintenance & inspection certification' },
-  { name: 'BSI', role: 'Member' },
-  { name: 'Fire Protection Association', role: 'Member' },
-  { name: 'Fire Industry Association', role: 'Member' },
-  { name: 'SafeContractor', role: 'Approved — health & safety' },
-  { name: 'Onetrace', role: 'Digital compliance & traceability' },
-  { name: 'FireAware', role: 'Certified' }
+  { name: 'BM TRADA', role: 'Third-party certification — fire', href: 'https://www.bmtrada.com/certification-services/third-party-certification-fire' },
+  { name: 'Bluesky Certification', role: 'Fire door maintenance & inspection certification', href: 'https://www.blueskycert.com/' },
+  { name: 'BSI', role: 'Member', href: 'https://www.bsigroup.com/en-GB/products-and-services/standards-services/bsi-membership/' },
+  { name: 'Fire Protection Association', role: 'Member', href: 'https://www.thefpa.co.uk/' },
+  { name: 'Fire Industry Association', role: 'Member', href: 'https://www.fia.uk.com/' },
+  { name: 'SafeContractor', role: 'Approved — health & safety', href: 'https://www.safecontractor.com/' },
+  { name: 'Onetrace', role: 'Digital compliance & traceability', href: 'https://onetrace.cloud/' },
+  { name: 'FireAware', role: 'Certified', href: 'https://fireaware.org/' }
 ];
+
+export const site = {
+  url: 'https://www.jewelpfp.co.uk',
+  name: 'Jewel Passive Fire Protection'
+};
 
 export const contact = {
   email: 'info@jewelpfp.co.uk',
