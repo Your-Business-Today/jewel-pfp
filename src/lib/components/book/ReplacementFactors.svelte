@@ -1,18 +1,41 @@
 <script>
-  import { replacementFactors } from '$lib/booking/approvals.js';
+  import { replacementFactors, replacementVisitReasons } from '$lib/booking/approvals.js';
   import SectionHeading from './SectionHeading.svelte';
 </script>
 
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-  <div>
+  <div class="space-y-4 text-muted-light leading-relaxed">
     <SectionHeading kicker="Replacement doorsets" title="Thinking of replacing your door?" />
-    <p class="mt-6 text-muted-light leading-relaxed">
-      Replacement fire doorsets typically cost around £2,000–£3,000. Opt in to the measure up &amp;
-      invasive check when you book, or a return visit to measure is chargeable.
+    <p class="pt-2">
+      If you would like a replacement doorset, or an existing fire door survey report strongly indicates
+      that replacement is required, opt in to the measure up and invasive check. We can then get all the
+      information we need to provide an accurate quote for replacement in one visit.
+    </p>
+    <p>
+      Replacement fire doorsets typically cost around £2,000–£3,000. This is why it’s so important for us
+      to undertake a site visit to:
+    </p>
+    <ul class="list-disc pl-5 space-y-1">
+      {#each replacementVisitReasons as reason}
+        <li>{reason}</li>
+      {/each}
+    </ul>
+    <p>
+      The specification is usually determined by what’s required to meet fire door standards, rather than
+      a style you can pick off a shelf, which can also influence the price. Following the site visit, we
+      will issue a quotation for the confirmed scope of supply and installation.
+    </p>
+    <p>
+      If you don’t opt in to the invasive check and it transpires that replacement is required, we will
+      have to return – this additional visit is chargeable.
     </p>
   </div>
   <div>
-    <p class="kicker text-muted-light mb-4">What can affect a replacement quote</p>
+    <h3 class="text-2xl font-extrabold tracking-tight">What can affect a replacement quote</h3>
+    <p class="mt-3 mb-6 text-sm text-muted-light leading-relaxed">
+      The £99 site visit, if you opt in to an invasive check, also allows us to produce an accurate quote
+      for replacement, which can vary depending on:
+    </p>
     <ul class="border-t border-ink/15">
       {#each replacementFactors as factor, i}
         <li class="flex items-baseline gap-5 border-b border-ink/15 py-4">

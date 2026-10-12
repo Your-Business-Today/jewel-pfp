@@ -2,6 +2,7 @@
   import BookHero from '$lib/components/book/BookHero.svelte';
   import SurveyServices from '$lib/components/book/SurveyServices.svelte';
   import Approvals from '$lib/components/book/Approvals.svelte';
+  import HowItWorks from '$lib/components/book/HowItWorks.svelte';
   import ReplacementFactors from '$lib/components/book/ReplacementFactors.svelte';
   import FaqSection from '$lib/components/book/FaqSection.svelte';
   import BookingPanel from '$lib/components/book/BookingPanel.svelte';
@@ -18,6 +19,7 @@
 <BookHero />
 <SurveyServices />
 <Approvals />
+<HowItWorks />
 <ReplacementFactors />
 <FaqSection />
 <BookingPanel />

@@ -1,10 +1,13 @@
 export const survey = {
   price: '£99 + VAT',
   priceWithVat: '£118.80',
-  deductionWindowDays: 90,
   paymentLink: 'https://buy.stripe.com/cN22a02UQdJ29UIdQQ',
+  uploadForm: 'https://forms.monday.com/forms/dce09aaa0c61e06ad2ba40e54386032f?r=use1',
   termsPath: '/book/terms'
 };
+
+export const heroIntro =
+  'Taking the defects raised in your existing fire door survey and clarifying the real-world actions required to achieve compliance via our validation site survey — ensuring all identified remediation actions are accurate, actionable and necessary, including whether replacement is genuinely required. From there we provide an accurate bespoke quotation, removing any requirement for variation, abortive costs or uplift if we were to attend to work on your door based solely on your existing fire door survey’s few words and photos.';
 
 export const highlights = [
   '£99 deducted if you proceed',
@@ -30,35 +33,20 @@ export const steps = [
 export const surveyServices = [
   {
     title: 'Validation survey',
-    body: 'We check your door against the defects listed in the fire door report you already have, and confirm which are accurate, which are already fixed and which still need attention.'
+    body: 'We inspect the door and check it against the defects noted in the report you already have.'
   },
   {
     title: 'Standard non-invasive inspection',
-    body: 'An independent end-to-end inspection of the doorset, to catch defects an earlier report missed or that have developed since.'
+    body: 'For the same £99, we inspect the doorset ourselves end-to-end, to catch any compliance or safety defects that may have been missed or recently developed.'
   },
   {
     title: 'Measure up & invasive check',
-    body: 'For a replacement quote. We open up the existing installation and reinstate removed components to a temporary standard. Making good and decoration are excluded if the door is not replaced.'
+    body: 'If you want a replacement doorset, or a survey report strongly recommends one, we measure up and carry out an invasive check in the same visit, so we can give you the most accurate replacement quote. When you choose this option, we open up the existing installation of your doorset and replace any components we remove to a temporary standard. Making good and decoration resulting from this process are not included. This applies where the door is not then replaced.'
   }
 ];
 
-export const bookingIncludes = [
-  'Deducted in full from your works invoice if you proceed within 90 days of the survey.',
-  'In-person inspection of your flat entrance door',
-  'Photographic evidence',
-  'Written quotation for any works identified',
-  'VAT invoice via Xero'
-];
-
-export const bookingNotes = [
-  'Stripe handles the payment page — we never see or store your card details.',
-  'You’ll enter your name, email, billing address and the property address.',
-  'You tell us which service you want when you upload your documents.'
-];
-
-export const afterPayment = [
-  { title: 'Pay £118.80 (£99 + 20% VAT) on Stripe' },
-  { title: 'Receive your VAT invoice by email shortly after, issued by Xero' },
-  { title: 'Upload your documents via the secure link in your receipt email' },
-  { title: 'We get in touch to confirm a survey date within 2 working days' }
+export const serviceNotes = [
+  'Book and pay once, then tell us which service you want when you upload your documents.',
+  'Either way: photographic evidence, digital reporting, clear next-step guidance.',
+  'The £99 fee is deducted from the works invoice if you proceed.'
 ];
