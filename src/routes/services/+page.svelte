@@ -49,11 +49,9 @@
         {#if s.cta}
           <a
             href={s.cta.href}
-            target="_blank"
-            rel="noopener"
             class="mt-8 inline-block bg-signal text-paper px-6 py-3 text-sm font-semibold hover:bg-signal/90 transition-colors"
           >
-            {s.cta.label} ↗
+            {s.cta.label} →
           </a>
         {/if}
       </div>

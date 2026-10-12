@@ -67,16 +67,11 @@
     <div class="mt-10 border border-signal/40 bg-signal/5 p-6">
       <p class="kicker text-gold mb-3">Residents</p>
       <p class="text-sm leading-relaxed">
-        If we're working on your building and you need to arrange access for your apartment door,
-        book directly:
+        Have a fire door report on your flat entrance door? Book a £99 + VAT survey and we'll
+        validate it and quote the works:
       </p>
-      <a
-        href={contact.booking}
-        target="_blank"
-        rel="noopener"
-        class="mt-4 inline-block font-label text-sm text-signal hover:underline"
-      >
-        book.jewelpfp.co.uk ↗
+      <a href={contact.booking} class="mt-4 inline-block font-label text-sm text-signal hover:underline">
+        Book a survey →
       </a>
     </div>
   </div>

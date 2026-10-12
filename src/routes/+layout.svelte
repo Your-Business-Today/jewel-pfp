@@ -8,7 +8,8 @@
   const nav = [
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Contact', href: '/contact' },
+    { label: 'Apartment Bookings', href: contact.booking }
   ];
 </script>
 
@@ -36,14 +37,6 @@
           <a href={item.href} class="text-sm text-paper/80 hover:text-signal transition-colors">{item.label}</a>
         {/each}
         <a
-          href={contact.booking}
-          target="_blank"
-          rel="noopener"
-          class="text-sm text-paper/80 hover:text-signal transition-colors"
-        >
-          Apartment Bookings ↗
-        </a>
-        <a
           href="tel:{contact.phone.replaceAll(' ', '')}"
           class="font-label text-xs border border-white/20 px-4 py-2 hover:border-signal hover:text-signal transition-colors"
         >
@@ -66,7 +59,6 @@
         {#each nav as item}
           <a href={item.href} class="text-sm" onclick={() => (menuOpen = false)}>{item.label}</a>
         {/each}
-        <a href={contact.booking} target="_blank" rel="noopener" class="text-sm">Apartment Bookings ↗</a>
         <a href="tel:{contact.phone.replaceAll(' ', '')}" class="font-label text-xs text-signal">{contact.phone}</a>
       </div>
     {/if}
@@ -97,9 +89,7 @@
           <li><a href="tel:{contact.phone.replaceAll(' ', '')}" class="hover:text-signal">{contact.phone}</a></li>
           <li><a href="tel:{contact.mobile.replaceAll(' ', '')}" class="hover:text-signal">{contact.mobile}</a></li>
           <li class="pt-2">
-            <a href={contact.booking} target="_blank" rel="noopener" class="text-signal hover:underline">
-              book.jewelpfp.co.uk ↗
-            </a>
+            <a href={contact.booking} class="text-signal hover:underline">Book a £99 fire door survey</a>
           </li>
         </ul>
       </div>
