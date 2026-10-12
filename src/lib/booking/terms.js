@@ -4,66 +4,70 @@ export const termsSections = [
   {
     title: 'What you are paying for',
     paragraphs: [
-      'You choose one of three services when you upload your documents after booking. All three cost £99 + VAT.',
-      'Validation survey: we check your flat entrance fire door against the defects listed in a report you supply, and confirm which are accurate, which have already been fixed and which still need attention.',
-      'Standard non-invasive inspection: our engineer inspects the doorset without invasive work, to find any compliance or safety defects missed by, or developed since, an earlier report.',
-      'Measure up & invasive check: for when you want a replacement doorset, or a survey strongly recommends one. We measure and carry out an invasive check in one visit so a replacement quotation can be issued. Get consent from your managing agent, freeholder or responsible person before booking. If you do not choose this option and a replacement turns out to be needed, a further chargeable visit is required. The existing installation is opened up and removed components are reinstated to a temporary standard. Making good and decoration are excluded, including where the door is not replaced.',
-      'All three services include an in-person visit by a qualified engineer, a photographic record, a written summary of findings and a written quotation for any works identified.'
+      'The £99 + VAT covers one of three services — you tell us which when you upload your documents after booking:',
+      'Validation survey. We assess your flat entrance fire door against the defects noted in the report you supply to us. We confirm what is accurate, what has already been addressed, and what needs further attention.',
+      'Standard non-invasive inspection. Alternatively, for the same charge, we complete a standard non-invasive inspection of your doorset ourselves, to ensure no compliance or safety defects have been missed or recently developed since any earlier report.',
+      'Measure up & invasive check. If you would like a replacement doorset, or a survey report strongly recommends one, we measure up and carry out an invasive check of the doorset and opening in the same visit, so we can issue an accurate quotation for supply and installation of a replacement. You should obtain any consent needed from your managing agent, freeholder or responsible person before booking this service. If you do not choose this service and it transpires that replacement is required, a further visit will be needed and this additional visit is chargeable. When you choose this option, we open up the existing installation of your doorset and replace any components we remove to a temporary standard. Making good and decoration resulting from this process are not included. This applies where the door is not then replaced.',
+      'All three services include an in-person visit by a qualified Jewel Passive Fire Protection engineer, a photographic record of the door’s condition, a written summary of findings, and a written quotation for any works identified.'
     ]
   },
   {
     title: 'Deposit and deduction',
-    paragraphs: [
-      'The £99 + VAT is a deposit against future works.',
-      'If you commission the recommended works within 90 days of the survey date, the full £99 is deducted from the works invoice. If you do not proceed within 90 days, the £99 is kept as payment for the survey.',
-      'The deduction applies only to works ordered from Jewel Passive Fire Protection Ltd.'
+    paragraphs: ['The £99 + VAT is treated as a deposit against future works.'],
+    items: [
+      'If you proceed with our recommended works within 90 days of the survey date, the £99 is deducted in full from your works invoice.',
+      'If you do not proceed within 90 days, the £99 is retained as payment for the survey already delivered.',
+      'The deduction applies only to works commissioned from Jewel Passive Fire Protection Ltd.'
     ]
   },
   {
     title: 'Non-refundable once we attend site',
     paragraphs: [
-      'Once an engineer has attended to carry out the survey, the £99 is non-refundable. It covers engineer time, travel, photography and the report.',
-      'To reschedule, contact us at least 24 hours before your slot and we will accommodate the change where possible at no extra cost.'
+      'Once a Jewel PFP engineer has attended site to carry out the survey, the £99 fee is non-refundable. This covers the engineer’s time, travel, photographic work, and the written report you receive.',
+      'If you need to reschedule, please contact us at least 24 hours before your booked slot and we will accommodate where possible at no extra cost.'
     ]
   },
   {
     title: 'Higher-risk building acknowledgement',
     paragraphs: [
-      'Buildings 18 metres or taller, or with 7 or more storeys, may need additional Building Safety Regulator (BSR) approvals before any works start.',
-      'The survey is an inspection and advisory service. It does not authorise, approve or commission works. We will explain any BSR or third-party approvals once we have seen the door.'
+      'By booking, you acknowledge that if your building is 18 metres or taller, or has 7 or more storeys, additional Building Safety Regulator (BSR) approvals may be required before any works can commence.',
+      'The survey is an inspection and advisory service. It does not authorise, approve, or commission works. Where BSR or other third-party approvals are needed, we will explain what applies once we have seen the door.'
     ]
   },
   {
     title: 'Our responsibilities',
     paragraphs: [
-      'We attend on the agreed date and time with a qualified engineer, and deliver the service you selected, a photographic record, and a written summary and quotation within a reasonable time after the visit.',
-      'Any later works are subject to a separate agreement and invoice, because the services are advisory.'
+      'We will attend your property at the agreed date and time with a qualified engineer, carry out the service you selected at booking, provide a photographic record, and deliver a written summary and quotation within a reasonable period after the visit.',
+      'Our services are advisory. Any works we subsequently carry out will be the subject of a separate agreement and invoice.'
     ]
   },
   {
     title: 'Your responsibilities',
-    paragraphs: [
-      'You provide accurate property and contact details when booking, reasonable access to the flat entrance door at the agreed time, any fire door report or managing agent correspondence you hold, and anything else you know about the door’s condition, history or defects.'
+    paragraphs: ['You are responsible for providing:'],
+    items: [
+      'Accurate property and contact information at the point of booking',
+      'Reasonable access to the flat entrance door at the agreed time',
+      'Any fire door report or correspondence from your managing agent you have received',
+      'Any other information relevant to the door’s condition, history, or known defects'
     ]
   },
   {
     title: 'Data protection',
     paragraphs: [
-      'We process your personal data and uploaded documents to deliver the service, and store them in line with UK GDPR.',
-      'Our third-party processors are Stripe (payments), Xero (invoicing) and monday.com (document uploads and workflow). Each applies its own data protection terms.'
+      'Your personal data and uploaded documents are processed by Jewel Passive Fire Protection Ltd for the purposes of delivering this service. Data is stored in compliance with UK GDPR. Payment processing is handled by Stripe; invoicing by Xero; document uploads and workflow management by monday.com. Each of those processors applies its own UK/EU-compliant data protection terms.'
     ]
   },
   {
     title: 'Payment',
     paragraphs: [
-      'Payment is taken by Stripe at booking. We do not see or store card details.',
-      'A VAT invoice is issued automatically through Xero to your billing details. If you are paying for a company, enter the company name and VAT number (if applicable) at checkout so the invoice is correct from the start.'
+      'Payment is taken securely by Stripe at the point of booking. Card details are never shared with or stored by Jewel PFP. A VAT invoice is issued automatically via Xero to the billing details you provide.',
+      'If you are paying through a company, please enter the company name and VAT number (if applicable) in the Stripe checkout so the invoice is raised correctly from the outset.'
     ]
   },
   {
     title: 'Governing law',
     paragraphs: [
-      'These terms are governed by the laws of England and Wales, and the English courts have exclusive jurisdiction.'
+      'These terms are governed by the laws of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the English courts.'
     ]
   }
 ];

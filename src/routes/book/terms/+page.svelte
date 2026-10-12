@@ -13,8 +13,8 @@
     <p class="kicker text-gold mb-6">Fire door survey</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">Terms and conditions.</h1>
     <p class="mt-6 text-muted-dark max-w-xl leading-relaxed">
-      These terms cover the £99 + VAT fire door survey provided by {company.name}. Last updated
-      {termsUpdated}.
+      These terms apply to the £99 + VAT fire door survey booked via jewelpfp.co.uk/book, provided by
+      {company.name}. Last updated: {termsUpdated}.
     </p>
   </div>
 </section>
@@ -30,6 +30,13 @@
           {#each section.paragraphs as paragraph}
             <p>{paragraph}</p>
           {/each}
+          {#if section.items}
+            <ul class="list-disc pl-5 space-y-1">
+              {#each section.items as item}
+                <li>{item}</li>
+              {/each}
+            </ul>
+          {/if}
         </div>
       </li>
     {/each}
@@ -40,7 +47,7 @@
       <div class="mt-4 space-y-1 text-sm leading-relaxed text-muted-light">
         <p>{company.name}, {company.address}</p>
         <p><a href="mailto:{contact.email}" class="text-signal hover:underline">{contact.email}</a> · {contact.phone}</p>
-        <p>Company No. {company.companyNumber} · VAT No. {company.vatNumber}</p>
+        <p>Registered in England · Company No. {company.companyNumber} · VAT No. {company.vatNumber}</p>
       </div>
     </li>
   </ol>

@@ -6,7 +6,7 @@
 
 <section id="faq" class="scroll-mt-16 bg-paper-2 border-y border-ink/10">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <SectionHeading kicker="Questions" title="Frequently asked questions." />
+    <SectionHeading kicker="Questions" title="Answers before you even need to ask." />
     <div class="mt-12 grid gap-12 lg:grid-cols-2">
       {#each faqGroups as group}
         <div>

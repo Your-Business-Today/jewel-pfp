@@ -12,8 +12,8 @@
         isOnDark
       />
       <p class="mt-6 text-muted-dark leading-relaxed max-w-xl">
-        Your front door may form part of the building’s wider fire safety strategy, so the people
-        responsible for the building may need to agree the works first.
+        Your front door may form part of the building’s wider fire safety strategy, which means you
+        cannot always arrange works independently.
       </p>
       <ul class="mt-8 border-t border-white/15">
         {#each signOffs as signOff}
@@ -23,7 +23,7 @@
     </div>
 
     <div class="border border-white/15 bg-ink-2 p-8">
-      <h3 class="text-2xl font-extrabold tracking-tight">Practical works approval: relevant authorities</h3>
+      <h3 class="text-2xl font-extrabold tracking-tight">Practical works approval — relevant authorities</h3>
       <div class="mt-6 space-y-4 text-sm text-muted-dark leading-relaxed">
         {#each higherRiskBuildings as paragraph}
           <p>{paragraph}</p>
