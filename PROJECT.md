@@ -6,7 +6,7 @@ The project-process kit writes this file once and never touches it again, and `C
 
 ## The site
 
-The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. No backend. It replaces the Wix site, which has only Home, Services and Contact; content lives in `src/lib/services.js`, and the three routes are `src/routes/+page.svelte`, `services/` and `contact/`. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`). Until the domain moves, the live preview is https://jewel-pfp.vercel.app/.
+The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. No backend. It replaces the Wix site, which has only Home, Services and Contact; content lives in `src/lib/services.js`, and the routes are `src/routes/+page.svelte`, `services/`, `contact/` and `book/`. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`). Until the domain moves, the live preview is https://jewel-pfp.vercel.app/.
 
 In YBT this is the "Jewel PFP Website" project.
 
@@ -32,4 +32,4 @@ Jeremy at JPFP is cancelling Wix before it renews on 06/11/2026, so jewelpfp.co.
 - Waiting on Jeremy: approval of the site, where the domain's DNS is managed, and access to the survey booking site.
 - When writing the DNS records: point `www` and the apex at Vercel; keep the MX (email) records and the `book` subdomain record exactly as they are. `book.jewelpfp.co.uk` is Jeremy's survey booking site and must keep working.
 - If the DNS is hosted at Wix, move it to another provider before Wix is cancelled, or the domain and email go dark with it.
-- Bringing the booking site in with the new site is still to do, once access is given.
+- The booking page is on the site at `/book` (terms at `/book/terms`), reproduced from the live book.jewelpfp.co.uk with the same Stripe Payment Link; its data is in `src/lib/booking/` and its components in `src/lib/components/book/`. Still to do: check it against the source repository (Bookkeeping-Partner-Ltd/jewelpfp-booking) once shared, and redirect book.jewelpfp.co.uk to jewelpfp.co.uk/book after the domain moves.
