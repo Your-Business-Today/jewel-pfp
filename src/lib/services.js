@@ -62,7 +62,7 @@ export const services = [
       'Consistent certificated remediation across the block',
       'Per-door evidence for the building safety case'
     ],
-    cta: { label: 'Book an appointment', href: 'https://book.jewelpfp.co.uk/' }
+    cta: { label: 'Book a £99 survey', href: '/book' }
   },
   {
     slug: 'firestopping',
@@ -116,11 +116,18 @@ export const contact = {
   email: 'info@jewelpfp.co.uk',
   phone: '0208 109 1013',
   mobile: '07354 744517',
-  booking: 'https://book.jewelpfp.co.uk/',
+  booking: '/book',
   area: 'Epsom · London · South East',
   socials: [
     { name: 'Instagram', href: 'https://www.instagram.com/jewelpfpltd' },
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/jewel-passive-fire-protection' },
     { name: 'Facebook', href: 'https://www.facebook.com/Jewelpassivefireprotection/' }
   ]
+};
+
+export const company = {
+  name: 'Jewel Passive Fire Protection Ltd',
+  address: 'Argent House, 175 Hook Rise South, Surbiton KT6 7LD',
+  companyNumber: '12340720',
+  vatNumber: '350 9263 03'
 };
