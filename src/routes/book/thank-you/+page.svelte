@@ -2,11 +2,13 @@
   import { page } from '$app/state';
   import { survey } from '$lib/booking/survey.js';
   import { afterBooking } from '$lib/booking/process.js';
-  import { bookingReference } from '$lib/booking/reference.js';
+  import { bookingPageLink, bookingReference } from '$lib/booking/reference.js';
   import { contact } from '$lib/services.js';
   import StepList from '$lib/components/book/StepList.svelte';
 
-  const reference = $derived(bookingReference(page.url.searchParams.get('session_id')));
+  const sessionId = $derived(page.url.searchParams.get('session_id'));
+  const reference = $derived(bookingReference(sessionId));
+  const bookingLink = $derived(bookingPageLink(sessionId));
 </script>
 
 <svelte:head>
@@ -30,20 +32,25 @@
 
 <section class="mx-auto max-w-3xl px-6 py-16 md:py-20 space-y-14">
   <div class="border border-ink/15 bg-paper-2 p-8">
-    <h2 class="text-2xl font-extrabold tracking-tight">Upload your documents now</h2>
+    <h2 class="text-2xl font-extrabold tracking-tight">Complete your booking now</h2>
     <p class="mt-3 text-sm text-muted-light leading-relaxed">
-      Send us your fire door report, any supporting datasheets, and (if you can find it) a photo of the
-      certification plug or label on your door. Photos of the door are welcome but not required — tenants
-      may restrict access. No login needed.
+      Answer a few questions about your flat and your visit, and send us your fire door report, any supporting
+      datasheets, and (if you can find it) a photo of the certification plug or label on your door. Photos of
+      the door are welcome but not required — tenants may restrict access. No login needed.
     </p>
-    <a
-      href={survey.uploadForm}
-      target="_blank"
-      rel="noopener"
-      class="mt-6 inline-block bg-signal text-paper px-7 py-3.5 text-sm font-semibold hover:bg-signal/90 transition-colors"
-    >
-      Open upload form ↗
-    </a>
+    {#if bookingLink}
+      <a
+        href={bookingLink}
+        class="mt-6 inline-block bg-signal text-paper px-7 py-3.5 text-sm font-semibold hover:bg-signal/90 transition-colors"
+      >
+        Complete your booking →
+      </a>
+    {:else}
+      <p class="mt-6 text-sm text-muted-light leading-relaxed">
+        Open this page from Stripe after paying, or email
+        <a href="mailto:{contact.email}" class="text-signal hover:underline">{contact.email}</a> and we will send you the link.
+      </p>
+    {/if}
   </div>
 
   <div>

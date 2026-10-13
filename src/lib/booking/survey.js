@@ -2,7 +2,7 @@ export const survey = {
   price: '£99 + VAT',
   priceWithVat: '£118.80',
   paymentLink: 'https://buy.stripe.com/cN22a02UQdJ29UIdQQ',
-  uploadForm: 'https://forms.monday.com/forms/dce09aaa0c61e06ad2ba40e54386032f?r=use1',
+  bookingPage: 'https://portal.jewelpfp.co.uk/book',
   termsPath: '/book/terms'
 };
 
