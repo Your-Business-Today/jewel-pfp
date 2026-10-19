@@ -54,7 +54,7 @@ export const termsSections = [
   {
     title: 'Data protection',
     paragraphs: [
-      'Your personal data and uploaded documents are processed by Jewel Passive Fire Protection Ltd for the purposes of delivering this service. Data is stored in compliance with UK GDPR. Payment processing is handled by Stripe; invoicing by Xero; document uploads and workflow management by monday.com. Each of those processors applies its own UK/EU-compliant data protection terms.'
+      'Jewel Passive Fire Protection Ltd uses your personal data and uploaded documents to deliver this service, in line with UK GDPR. Our privacy notice at jewelpfp.co.uk/privacy explains what we collect, why, who we share it with, how long we keep it and your rights.'
     ]
   },
   {

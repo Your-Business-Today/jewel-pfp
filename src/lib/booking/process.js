@@ -20,7 +20,7 @@ export const processSteps = [
 export const assurances = [
   { title: 'VAT registered', body: 'Invoiced correctly, Xero audit trail.' },
   { title: 'Public liability insured', body: 'Full cover for survey and works visits.' },
-  { title: 'UK GDPR compliant', body: 'Your data is processed in the UK.' },
+  { title: 'UK GDPR compliant', body: 'Our privacy notice explains how we use your data.' },
   { title: 'Stripe secured payments', body: 'No card details ever reach us.' }
 ];
 

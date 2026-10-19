@@ -2,6 +2,7 @@
   import '../app.css';
   import { page } from '$app/state';
   import { contact, site } from '$lib/services.js';
+  import { privacyNotice } from '$lib/privacy/notice.js';
   let { children } = $props();
   let menuOpen = $state(false);
 
@@ -108,7 +109,10 @@
       <div
         class="mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row gap-2 justify-between font-label text-[11px] uppercase tracking-widest2 text-muted-dark"
       >
-        <span>© {new Date().getFullYear()} Jewel Passive Fire Protection Ltd</span>
+        <span>
+          © {new Date().getFullYear()} Jewel Passive Fire Protection Ltd ·
+          <a href={privacyNotice.path} class="hover:text-signal">Privacy notice</a>
+        </span>
         <span>Third-party accredited · Surveying / Remediation / Installation / Firestopping</span>
       </div>
     </div>
