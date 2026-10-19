@@ -1,7 +1,9 @@
 <script>
   import { termsSections, termsUpdated } from '$lib/booking/terms.js';
-  import { company, contact } from '$lib/services.js';
   import { privacyNotice } from '$lib/privacy/notice.js';
+
+  let { data } = $props();
+  const { company, contact } = $derived(data.site);
 </script>
 
 <svelte:head>

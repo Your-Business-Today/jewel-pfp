@@ -1,25 +1,25 @@
 <script>
-  import { services, contact } from '$lib/services.js';
+  import { pageText } from '$lib/content/pageText.js';
+
+  let { data } = $props();
+  const { services, contact, text: savedText } = $derived(data.site);
+  const text = $derived(pageText(savedText, 'services'));
 </script>
 
 <svelte:head>
-  <title>Services | Jewel Passive Fire Protection</title>
-  <meta
-    name="description"
-    content="Fire door surveying, remediation, installation, apartment door programmes, firestopping and consultancy — third-party accredited, across Epsom, London and the South East."
-  />
+  <title>{text.seoTitle}</title>
+  <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
 <!-- HEADER -->
 <section class="bg-ink text-paper grid-bg border-b border-white/10">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-gold mb-6">Services</p>
+    <p class="kicker text-gold mb-6">{text.kicker}</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-[1.05]">
-      Everything between a fire and the rest of the building.
+      {text.heading}
     </h1>
     <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
-      Six services covering the full passive fire protection cycle — from the first survey to the
-      evidence pack. Delivered by our own accredited teams, never subcontracted into the unknown.
+      {text.intro}
     </p>
   </div>
 
@@ -75,9 +75,9 @@
 <section class="bg-ink text-paper grid-bg">
   <div class="mx-auto max-w-7xl px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8">
     <div>
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Not sure where to start?</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">{text.ctaHeading}</h2>
       <p class="mt-3 max-w-md text-muted-dark leading-relaxed">
-        Most projects start with a survey. Tell us about the building and we'll scope it with you.
+        {text.ctaIntro}
       </p>
     </div>
     <div class="flex flex-wrap gap-4">

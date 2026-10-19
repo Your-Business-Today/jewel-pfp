@@ -1,17 +1,18 @@
 <script>
   import '../app.css';
   import { page } from '$app/state';
-  import { contact, site } from '$lib/services.js';
+  import { site } from '$lib/services.js';
   import { privacyNotice } from '$lib/privacy/notice.js';
-  let { children } = $props();
+  let { children, data } = $props();
+  const { contact } = $derived(data.site);
   let menuOpen = $state(false);
 
-  const nav = [
+  const nav = $derived([
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
     { label: 'Contact', href: '/contact' },
     { label: 'Apartment Bookings', href: contact.booking }
-  ];
+  ]);
 </script>
 
 <svelte:head>
@@ -76,10 +77,7 @@
           <span class="font-extrabold tracking-tight text-lg text-gold">JEWEL</span>
           <span class="font-label text-signal text-sm">/PFP</span>
         </p>
-        <p class="mt-3 text-sm text-muted-dark max-w-xs leading-relaxed">
-          Jewel Passive Fire Protection Ltd. Fire door surveying, remediation, installation and
-          firestopping across London and the South East.
-        </p>
+        <p class="mt-3 text-sm text-muted-dark max-w-xs leading-relaxed">{contact.footerBlurb}</p>
         <p class="mt-4 font-label text-[11px] uppercase tracking-widest2 text-muted-dark">{contact.area}</p>
       </div>
 

@@ -6,9 +6,25 @@ The project-process kit writes this file once and never touches it again, and `C
 
 ## The site
 
-The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. No backend. It replaces the Wix site, which has only Home, Services and Contact; content lives in `src/lib/services.js`, and the routes are `src/routes/+page.svelte`, `services/`, `contact/` and `book/`. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`). Until the domain moves, the live preview is https://jewel-pfp.vercel.app/.
+The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. It replaces the Wix site, which has only Home, Services and Contact; the routes are `src/routes/+page.svelte`, `services/`, `contact/`, `book/`, `privacy/` and `admin/`. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`). Until the domain moves, the live preview is https://jewel-pfp.vercel.app/.
 
 In YBT this is the "Jewel PFP Website" project.
+
+## Admin section and Supabase
+
+`/admin` is the website's admin section, built the way the Jewel Bespoke Build website (Your-Business-Today/jewelbb) does it. Staff sign in with one shared login and can edit the page text (home, services, contact, and the contact and company details), the services, the accreditations, and read the enquiries sent from the contact form.
+
+- **Content falls back to the code.** The built-in text, services and accreditations stay in `src/lib/services.js` and `src/lib/content/pages/`. `page_content` stores only the fields someone changed; the services and accreditations tables take over once someone presses "Copy the website's … in" in the admin. With Supabase unset or unreachable the site shows the built-in content.
+- **The contact form** saves each enquiry to `enquiries` (shown in the admin dashboard) and emails it through Resend, as jewelbb does. With neither set up it falls back to opening the visitor's email app, as before.
+- **The schema** is `supabase/migrations/20261019120000_admin_section.sql`. No workflow runs migrations on this repository yet, so it is run once by hand in the Supabase SQL editor (or install the kit's `--with-migration-run`).
+- **Every table** has row-level security on and no policies; the server uses the service-role key only.
+- **Limits** for every field are stated once in `src/lib/content/limits.js`, `src/lib/content/listFields.js` and `src/lib/enquiries/enquiryFields.js`; the server checks them and the forms mirror them.
+
+Environment variables on Vercel:
+
+- `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`: the Supabase project
+- `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and ideally `ADMIN_SESSION_SECRET`: the admin login (changing the secret signs everyone out)
+- `RESEND_API_KEY`, `CONTACT_FROM_EMAIL` (a sender on a domain verified in Resend), `CONTACT_TO_EMAIL`: the enquiry email
 
 ## Commands
 
