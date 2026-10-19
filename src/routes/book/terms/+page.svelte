@@ -1,6 +1,7 @@
 <script>
   import { termsSections, termsUpdated } from '$lib/booking/terms.js';
   import { company, contact } from '$lib/services.js';
+  import { privacyNotice } from '$lib/privacy/notice.js';
 </script>
 
 <svelte:head>
@@ -48,6 +49,7 @@
         <p>{company.name}, {company.address}</p>
         <p><a href="mailto:{contact.email}" class="text-signal hover:underline">{contact.email}</a> · {contact.phone}</p>
         <p>Registered in England · Company No. {company.companyNumber} · VAT No. {company.vatNumber}</p>
+        <p><a href={privacyNotice.path} class="text-signal hover:underline">Privacy notice</a></p>
       </div>
     </li>
   </ol>

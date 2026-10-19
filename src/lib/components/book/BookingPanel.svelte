@@ -1,5 +1,6 @@
 <script>
   import { survey } from '$lib/booking/survey.js';
+  import { privacyNotice } from '$lib/privacy/notice.js';
   import { bookingIncludes, afterPayment } from '$lib/booking/process.js';
   import SectionHeading from './SectionHeading.svelte';
   import StepList from './StepList.svelte';
@@ -54,7 +55,9 @@
         Secure payment by Stripe. You do not need a Stripe account. By continuing you accept the
         <a href={survey.termsPath} class="text-paper underline hover:text-signal">survey terms</a>,
         including that the {survey.price} is non-refundable once we attend site and is deducted from the
-        works invoice if you proceed within 90 days.
+        works invoice if you proceed within 90 days. Our
+        <a href={privacyNotice.path} class="text-paper underline hover:text-signal">privacy notice</a> explains how
+        we use your details.
       </p>
     </div>
   </div>
