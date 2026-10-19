@@ -1,0 +1,17 @@
+<script>
+  import { fieldKinds, limitFor } from '$lib/content/limits.js';
+
+  let { name, field, value } = $props();
+  const isParagraph = $derived(field.kind === fieldKinds.paragraph);
+  const limit = $derived(limitFor(field.kind));
+  const inputClass = 'w-full border border-ink/25 bg-paper px-3 py-2 text-sm focus:outline-none focus:border-signal';
+</script>
+
+<label class="block border-b border-ink/10 py-4">
+  <span class="kicker text-muted-light block mb-2">{field.label}</span>
+  {#if isParagraph}
+    <textarea class={inputClass} {name} rows="4" required={field.isRequired} maxlength={limit} value={value ?? ''}></textarea>
+  {:else}
+    <input class={inputClass} {name} required={field.isRequired} maxlength={limit} value={value ?? ''} />
+  {/if}
+</label>

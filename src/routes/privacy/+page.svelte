@@ -1,7 +1,9 @@
 <script>
   import { privacyNotice } from '$lib/privacy/notice.js';
-  import { company } from '$lib/services.js';
   import NoticeBlocks from '$lib/components/privacy/NoticeBlocks.svelte';
+
+  let { data } = $props();
+  const { company } = $derived(data.site);
 </script>
 
 <svelte:head>

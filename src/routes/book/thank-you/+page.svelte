@@ -3,8 +3,10 @@
   import { survey } from '$lib/booking/survey.js';
   import { afterBooking } from '$lib/booking/process.js';
   import { bookingPageLink, bookingReference } from '$lib/booking/reference.js';
-  import { contact } from '$lib/services.js';
   import StepList from '$lib/components/book/StepList.svelte';
+
+  let { data } = $props();
+  const { contact } = $derived(data.site);
 
   const sessionId = $derived(page.url.searchParams.get('session_id'));
   const reference = $derived(bookingReference(sessionId));

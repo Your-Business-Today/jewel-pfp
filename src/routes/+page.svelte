@@ -1,44 +1,16 @@
 <script>
   import { onMount } from 'svelte';
-  import { services, accreditations, contact } from '$lib/services.js';
+  import { pageText } from '$lib/content/pageText.js';
+  import { captionsFrom, stepsFrom } from '$lib/content/homeSections.js';
+
+  let { data } = $props();
+  const { services, accreditations, contact, text: savedText } = $derived(data.site);
+  const text = $derived(pageText(savedText, 'home'));
 
   // ---------- scroll-driven 3D door ----------
   const STAGES = 7; // hero + 5 components + outro
 
-  const captions = [
-    null, // 0: hero (rendered separately)
-    {
-      label: '01 / Self-closer',
-      title: 'Closes itself. Every time.',
-      body: 'A fire door that stands open is just a door. We check closing force, speed and latching — and that the closer fitted matches the doorset’s certification.'
-    },
-    {
-      label: '02 / Intumescent + smoke seals',
-      title: 'The seal that saves the compartment.',
-      body: 'At around 200°C the intumescent strip expands to many times its size, sealing the gap between leaf and frame. Missing, painted-over or wrongly sized seals are the most common failure we survey.'
-    },
-    {
-      label: '03 / Ironmongery — CE hinges ×3',
-      title: 'Hung on the right hardware.',
-      body: 'Three CE-marked hinges minimum, fire-rated latches and levers — every item checked against the doorset’s data sheet, tightened, and logged.'
-    },
-    {
-      label: '04 / Fire-rated glazing',
-      title: 'Vision without the weakness.',
-      body: 'Vision panels only perform with the tested glass, beads and seals working as a system. We verify markings and beads — not just that there’s glass in the hole.'
-    },
-    {
-      label: '05 / Gaps — 2–4 mm, measured',
-      title: 'Millimetres decide it.',
-      body: 'Leaf-to-frame gaps outside tolerance let smoke and fire straight through. We measure every edge of every door and record it — “3 mm” is data; “looks fine” is not.'
-    },
-    {
-      label: '06 / Evidence',
-      title: 'Every component. Every door. Evidenced.',
-      body: 'Each doorset surveyed as an individual asset in Onetrace — photographs, measurements and remedial actions, ready for your building safety case.',
-      cta: true
-    }
-  ];
+  const captions = $derived(captionsFrom(text));
 
   /** @type {HTMLElement | null} */
   let wrap = $state(null);
@@ -99,36 +71,12 @@
     };
   });
 
-  const steps = [
-    {
-      n: '01',
-      title: 'Survey',
-      body: 'Every fire door and penetration inspected, measured and logged as an individual asset — with photographs, not opinions.'
-    },
-    {
-      n: '02',
-      title: 'Report',
-      body: 'A prioritised, plain-English remedial schedule. You see exactly what fails, why, and what it takes to fix.'
-    },
-    {
-      n: '03',
-      title: 'Remediate',
-      body: 'Certificated repair or installation by our own accredited teams, using components approved for the doorset or system.'
-    },
-    {
-      n: '04',
-      title: 'Evidence',
-      body: 'Digital, traceable records for every asset via Onetrace — ready for your building safety case and your residents.'
-    }
-  ];
+  const steps = $derived(stepsFrom(text));
 </script>
 
 <svelte:head>
-  <title>Jewel Passive Fire Protection | Fire Doors & Firestopping, London & South East</title>
-  <meta
-    name="description"
-    content="Third-party accredited fire door surveying, remediation, installation and firestopping across Epsom, London and the South East. Evidence for every asset."
-  />
+  <title>{text.seoTitle}</title>
+  <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
 <!-- SCROLL EXPERIENCE: anatomy of a fire door -->
@@ -158,13 +106,12 @@
     >
       <div class="mx-auto w-full max-w-7xl px-6">
         <div class="max-w-2xl pointer-events-auto">
-          <p class="kicker text-gold mb-6">Passive Fire Protection — London &amp; South East</p>
+          <p class="kicker text-gold mb-6">{text.heroKicker}</p>
           <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
-            The fire protection you never see has to be right.
+            {text.heroHeading}
           </h1>
           <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
-            Jewel surveys, remediates, installs and certifies fire doors and firestopping —
-            third-party accredited at every stage, with digital evidence for every asset.
+            {text.heroIntro}
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
             <a
@@ -200,7 +147,7 @@
             <p class="kicker text-gold mb-4">{cap.label}</p>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">{cap.title}</h2>
             <p class="mt-4 text-sm md:text-base text-muted-dark leading-relaxed">{cap.body}</p>
-            {#if cap.cta}
+            {#if cap.hasCallToAction}
               <div class="mt-6 flex flex-wrap gap-3">
                 <a
                   href="/contact"
@@ -245,7 +192,7 @@
     class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-label text-[11px] uppercase tracking-widest2 text-muted-dark"
   >
     <span><span class="text-gold">4×</span> third-party accreditations</span>
-    <span><span class="text-gold">6</span> core services</span>
+    <span><span class="text-gold">{services.length}</span> core services</span>
     <span>Residential &amp; commercial</span>
     <span>Epsom / London / South East</span>
   </div>
@@ -255,8 +202,8 @@
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
   <div class="flex items-end justify-between mb-12">
     <div>
-      <p class="kicker text-gold mb-4">01 / What we do</p>
-      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight">Six services.<br />One standard.</h2>
+      <p class="kicker text-gold mb-4">{text.servicesKicker}</p>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight whitespace-pre-line">{text.servicesHeading}</h2>
     </div>
     <a
       href="/services"
@@ -288,9 +235,9 @@
 <!-- PROCESS -->
 <section class="bg-ink text-paper grid-bg">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-gold mb-4">02 / How we work</p>
+    <p class="kicker text-gold mb-4">{text.processKicker}</p>
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
-      Surveyed, fixed, and proven — asset by asset.
+      {text.processHeading}
     </h2>
     <div class="mt-16 grid gap-px sm:grid-cols-2 lg:grid-cols-4 bg-white/10 border border-white/10">
       {#each steps as step}
@@ -306,13 +253,12 @@
 
 <!-- ACCREDITATIONS -->
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-  <p class="kicker text-gold mb-4">03 / Accreditation</p>
+  <p class="kicker text-gold mb-4">{text.accreditationKicker}</p>
   <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
-    Don't take our word for it. That's the point.
+    {text.accreditationHeading}
   </h2>
   <p class="mt-6 text-muted-light max-w-xl leading-relaxed">
-    Passive fire protection lives or dies on verification. Our work is certificated by independent
-    third parties — in fire door surveying, remediation, installation and firestopping.
+    {text.accreditationIntro}
   </p>
 
   <ul class="mt-12 border-t border-ink/15">
@@ -337,9 +283,9 @@
 <section class="bg-signal text-paper">
   <div class="mx-auto max-w-7xl px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8">
     <div>
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Start with a survey.</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">{text.ctaHeading}</h2>
       <p class="mt-3 max-w-md leading-relaxed text-paper/90">
-        Tell us about the building and we'll tell you exactly where it stands.
+        {text.ctaIntro}
       </p>
     </div>
     <div class="flex flex-wrap gap-4">
