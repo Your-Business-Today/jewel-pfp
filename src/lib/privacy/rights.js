@@ -1,5 +1,3 @@
-import { pendingAnswers } from './pendingAnswers.js';
-
 export const rights = {
   heading: 'Your rights',
   blocks: [
@@ -22,7 +20,7 @@ export const cookies = {
   heading: 'Cookies',
   blocks: [
     {
-      text: `Our website and our booking page only use cookies needed for them to work, such as keeping your booking secure${pendingAnswers.cookieList}. Card payments happen on Stripe’s own secure page, which has its own cookies. We do not use advertising or tracking cookies.`
+      text: 'Our website and our booking page only use cookies needed for them to work, such as keeping your booking secure. Card payments happen on Stripe’s own secure page, which has its own cookies. We do not use advertising or tracking cookies.'
     }
   ]
 };
