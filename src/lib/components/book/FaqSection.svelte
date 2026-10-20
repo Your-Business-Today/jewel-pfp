@@ -1,7 +1,9 @@
 <script>
-  import { faqGroups } from '$lib/booking/faq.js';
   import SectionHeading from './SectionHeading.svelte';
   import FaqItem from './FaqItem.svelte';
+
+  /** @type {{ faqGroups: { title: string, questions: { question: string, answer: string }[] }[] }} */
+  let { faqGroups } = $props();
 </script>
 
 <section id="faq" class="scroll-mt-16 bg-paper-2 border-y border-ink/10">

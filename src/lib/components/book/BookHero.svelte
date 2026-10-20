@@ -1,6 +1,9 @@
 <script>
-  import { heroIntro, highlights, steps } from '$lib/booking/survey.js';
+  import { steps } from '$lib/booking/survey.js';
   import StepList from './StepList.svelte';
+
+  /** @type {{ intro: string, highlights: string[] }} */
+  let { intro, highlights } = $props();
 </script>
 
 <section id="top" class="bg-ink text-paper grid-bg border-b border-white/10">
@@ -10,7 +13,7 @@
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
         Apartment door remedial works process.
       </h1>
-      <p class="mt-6 text-muted-dark max-w-xl leading-relaxed">{heroIntro}</p>
+      <p class="mt-6 text-muted-dark max-w-xl leading-relaxed">{intro}</p>
       <ul class="mt-8 flex flex-wrap gap-2">
         {#each highlights as highlight}
           <li class="font-label text-[11px] uppercase tracking-widest2 border border-white/20 px-3 py-1.5">

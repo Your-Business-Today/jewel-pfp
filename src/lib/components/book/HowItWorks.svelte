@@ -1,6 +1,8 @@
 <script>
-  import { processSteps, assurances } from '$lib/booking/process.js';
   import SectionHeading from './SectionHeading.svelte';
+
+  /** @type {{ processSteps: { title: string, body: string }[], assurances: { title: string, body: string }[] }} */
+  let { processSteps, assurances } = $props();
 </script>
 
 <section id="how-it-works" class="scroll-mt-16 mx-auto max-w-7xl px-6 py-20 md:py-28">

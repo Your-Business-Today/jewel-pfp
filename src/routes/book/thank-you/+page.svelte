@@ -1,12 +1,12 @@
 <script>
   import { page } from '$app/state';
-  import { survey } from '$lib/booking/survey.js';
   import { afterBooking } from '$lib/booking/process.js';
   import { bookingPageLink, bookingReference } from '$lib/booking/reference.js';
   import StepList from '$lib/components/book/StepList.svelte';
 
   let { data } = $props();
   const { contact } = $derived(data.site);
+  const { booking } = $derived(data);
 
   const sessionId = $derived(page.url.searchParams.get('session_id'));
   const reference = $derived(bookingReference(sessionId));
@@ -23,7 +23,7 @@
     <p class="kicker text-gold mb-6">Booking confirmed</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">Thank you.</h1>
     <p class="mt-6 text-muted-dark leading-relaxed">
-      Your {survey.price} site survey is booked. A VAT invoice is on its way to your inbox via Xero.
+      Your {booking.price} site survey is booked. A VAT invoice is on its way to your inbox via Xero.
     </p>
     {#if reference}
       <p class="mt-6 kicker text-muted-dark">Your reference</p>

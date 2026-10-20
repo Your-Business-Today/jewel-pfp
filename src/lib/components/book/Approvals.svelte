@@ -1,6 +1,9 @@
 <script>
-  import { signOffs, higherRiskBuildings } from '$lib/booking/approvals.js';
+  import { higherRiskBuildings } from '$lib/booking/approvals.js';
   import SectionHeading from './SectionHeading.svelte';
+
+  /** @type {{ signOffs: string[] }} */
+  let { signOffs } = $props();
 </script>
 
 <section class="bg-ink text-paper grid-bg">

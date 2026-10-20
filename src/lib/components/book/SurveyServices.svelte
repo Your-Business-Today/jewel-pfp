@@ -1,6 +1,9 @@
 <script>
-  import { surveyServices, serviceNotes, survey } from '$lib/booking/survey.js';
+  import { surveyServices, serviceNotes } from '$lib/booking/survey.js';
   import SectionHeading from './SectionHeading.svelte';
+
+  /** @type {{ price: string }} */
+  let { price } = $props();
 </script>
 
 <section id="why-survey" class="scroll-mt-16 mx-auto max-w-7xl px-6 py-20 md:py-28">
@@ -14,7 +17,7 @@
         <p class="font-label text-sm text-signal">0{i + 1}</p>
         <h3 class="mt-4 text-xl font-extrabold tracking-tight">{surveyService.title}</h3>
         <p class="mt-3 text-sm text-muted-light leading-relaxed">{surveyService.body}</p>
-        <p class="mt-6 font-label text-xs uppercase tracking-widest2 text-gold">{survey.price}</p>
+        <p class="mt-6 font-label text-xs uppercase tracking-widest2 text-gold">{price}</p>
       </article>
     {/each}
   </div>
