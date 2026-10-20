@@ -1,6 +1,7 @@
 // @ts-nocheck — three.js ships no types for this project's checker
 import * as THREE from 'three';
 import { markerColours, palette } from './palette.js';
+import { everyDoorType } from './doorTypes.js';
 
 const easing = (/** @type {number} */ t) => t * t * (3 - 2 * t);
 const clampToUnit = (/** @type {number} */ t) => Math.min(1, Math.max(0, t));
@@ -8,16 +9,17 @@ const glowWhenChosen = 0.35;
 const easeRate = 0.15;
 
 /**
- * @typedef {{ key: string, group: THREE.Group, explode: THREE.Vector3, range: [number, number], meshes: THREE.Mesh[], add: (mesh: THREE.Mesh, x?: number, y?: number, z?: number) => THREE.Mesh }} DoorPart
+ * @typedef {{ key: string, doorTypes: number[], group: THREE.Group, explode: THREE.Vector3, range: [number, number], meshes: THREE.Mesh[], add: (mesh: THREE.Mesh, x?: number, y?: number, z?: number) => THREE.Mesh }} DoorPart
  */
 
 /**
  * @param {string} key
  * @param {[number, number, number]} explode
  * @param {[number, number]} range
+ * @param {number[]} [doorTypes]
  * @returns {DoorPart}
  */
-export function createPart(key, explode, range) {
+export function createPart(key, explode, range, doorTypes = everyDoorType) {
   const group = new THREE.Group();
   group.userData.partKey = key;
   /** @type {THREE.Mesh[]} */
@@ -29,7 +31,7 @@ export function createPart(key, explode, range) {
     meshes.push(mesh);
     return mesh;
   };
-  return { key, group, explode: new THREE.Vector3(...explode), range, meshes, add };
+  return { key, doorTypes, group, explode: new THREE.Vector3(...explode), range, meshes, add };
 }
 
 /**
@@ -43,6 +45,14 @@ export function explodeParts(parts, progress) {
     const share = isAnchor ? 0 : easing(clampToUnit((progress - start) / (end - start)));
     part.group.position.copy(part.explode).multiplyScalar(share);
   }
+}
+
+/**
+ * @param {DoorPart[]} parts
+ * @param {number} doorType
+ */
+export function showDoorType(parts, doorType) {
+  for (const part of parts) part.group.visible = part.doorTypes.includes(doorType);
 }
 
 /**

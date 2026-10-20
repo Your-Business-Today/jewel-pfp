@@ -7,7 +7,10 @@ export const palette = {
   gold: 0xc09a51,
   steel: 0xb4b9c0,
   frame: 0xe9e7e0,
-  oak: 0xb57f3f
+  oak: 0xb57f3f,
+  paint: 0xf4f3ef,
+  outsidePaint: 0x9e2a24,
+  groove: 0x8f8d86
 };
 
 export const markerColours = {

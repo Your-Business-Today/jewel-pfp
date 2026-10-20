@@ -4,13 +4,14 @@ import { block, metal, solid } from '../meshes.js';
 import { palette } from '../palette.js';
 import { createPart } from '../parts.js';
 import { depths, edges, frame } from '../measures.js';
+import { doorTypes } from '../doorTypes.js';
 
 const keeperHeight = 1.45;
 const linkCount = 7;
 const linkStep = 0.026;
 
 export function buildChain() {
-  const part = createPart('chain', [0.4, 0.05, 0.3], [0.35, 0.5]);
+  const part = createPart('chain', [0.4, 0.05, 0.3], [0.35, 0.5], [doorTypes.flush]);
   const keeperX = edges.lockJamb;
   const keeperZ = depths.frameFront + 0.006;
   part.add(block(0.02, 0.07, 0.012, palette.steel, metal), keeperX, keeperHeight, keeperZ);
