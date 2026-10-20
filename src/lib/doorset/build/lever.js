@@ -5,7 +5,7 @@ import { createPart } from '../parts.js';
 import { depths, edges, gaps } from '../measures.js';
 import { doorTypes } from '../doorTypes.js';
 
-const handleHeight = 1.05;
+export const handleHeight = 1.05;
 const plate = { width: 0.04, height: 0.2, depth: 0.008 };
 const leverLength = 0.13;
 const backsetFromEdge = 0.06;

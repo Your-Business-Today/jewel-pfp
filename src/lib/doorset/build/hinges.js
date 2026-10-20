@@ -3,16 +3,18 @@ import { block, cylinder, metal } from '../meshes.js';
 import { palette } from '../palette.js';
 import { createPart } from '../parts.js';
 import { depths, edges, gaps, heights } from '../measures.js';
-import { doorTypes } from '../doorTypes.js';
+import { doorTypes, everyDoorType } from '../doorTypes.js';
 
-const hingeHeight = 0.1;
 const knuckleRadius = 0.0065;
-const leafPlateWidth = 0.03;
+export const leafPlateWidth = 0.03;
 const topHinge = heights.leafTop - 0.2;
 const bottomHinge = heights.leafBottom + 0.25;
-const fourthOfTheRun = (topHinge - bottomHinge) / 3;
-const threeHingeCentres = [topHinge, heights.leafMiddle + 0.1, bottomHinge];
-const fourHingeCentres = [topHinge, topHinge - fourthOfTheRun, bottomHinge + fourthOfTheRun, bottomHinge];
+const thirdOfTheRun = (topHinge - bottomHinge) / 3;
+export const hingeHeight = 0.1;
+export const hingeCentres = {
+  [doorTypes.flush]: [topHinge, heights.leafMiddle + 0.1, bottomHinge],
+  [doorTypes.board]: [topHinge, topHinge - thirdOfTheRun, bottomHinge + thirdOfTheRun, bottomHinge]
+};
 
 /** @param {number[]} centres @param {number[]} shownOn */
 function buildHingeSet(centres, shownOn) {
@@ -26,5 +28,5 @@ function buildHingeSet(centres, shownOn) {
 }
 
 export function buildHinges() {
-  return [buildHingeSet(threeHingeCentres, [doorTypes.flush]), buildHingeSet(fourHingeCentres, [doorTypes.board])];
+  return everyDoorType.map((doorType) => buildHingeSet(hingeCentres[doorType], [doorType]));
 }
