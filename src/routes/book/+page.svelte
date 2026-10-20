@@ -6,6 +6,9 @@
   import ReplacementFactors from '$lib/components/book/ReplacementFactors.svelte';
   import FaqSection from '$lib/components/book/FaqSection.svelte';
   import BookingPanel from '$lib/components/book/BookingPanel.svelte';
+
+  let { data } = $props();
+  const { booking } = $derived(data);
 </script>
 
 <svelte:head>
@@ -16,10 +19,10 @@
   />
 </svelte:head>
 
-<BookHero />
-<SurveyServices />
-<Approvals />
-<HowItWorks />
-<ReplacementFactors />
-<FaqSection />
-<BookingPanel />
+<BookHero intro={booking.heroIntro} highlights={booking.highlights} />
+<SurveyServices price={booking.price} />
+<Approvals signOffs={booking.signOffs} />
+<HowItWorks processSteps={booking.processSteps} assurances={booking.assurances} />
+<ReplacementFactors replacementFactors={booking.replacementFactors} />
+<FaqSection faqGroups={booking.faqGroups} />
+<BookingPanel price={booking.price} priceWithVat={booking.priceWithVat} />

@@ -2,7 +2,12 @@ export const textLimits = {
   line: 200,
   paragraph: 2000,
   link: 500,
-  message: 5000
+  message: 5000,
+  section: 10000
+};
+
+export const listLimits = {
+  rows: 50
 };
 
 export const fieldKinds = {

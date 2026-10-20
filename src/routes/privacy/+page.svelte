@@ -1,9 +1,9 @@
 <script>
-  import { privacyNotice } from '$lib/privacy/notice.js';
   import NoticeBlocks from '$lib/components/privacy/NoticeBlocks.svelte';
 
   let { data } = $props();
   const { company } = $derived(data.site);
+  const { notice } = $derived(data);
 </script>
 
 <svelte:head>
@@ -16,14 +16,14 @@
     <p class="kicker text-gold mb-6">{company.name}</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">Privacy notice.</h1>
     <p class="mt-6 text-muted-dark max-w-xl leading-relaxed">
-      Last updated: {privacyNotice.lastUpdated}. Version {privacyNotice.version}.
+      Last updated: {notice.lastUpdated}. Version {notice.version}.
     </p>
   </div>
 </section>
 
 <section class="mx-auto max-w-3xl px-6 py-16 md:py-24 space-y-12">
-  <NoticeBlocks blocks={privacyNotice.introduction} />
-  {#each privacyNotice.sections as section}
+  <NoticeBlocks blocks={notice.introduction} />
+  {#each notice.sections as section}
     <div>
       <h2 class="text-2xl font-extrabold tracking-tight">{section.heading}</h2>
       <div class="mt-4">

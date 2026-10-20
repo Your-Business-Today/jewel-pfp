@@ -12,7 +12,8 @@
     { label: 'Enquiries', href: '/admin/enquiries', showsUnread: true },
     { label: 'Page text', href: '/admin/content' },
     { label: 'Services', href: '/admin/services' },
-    { label: 'Accreditations', href: '/admin/accreditations' }
+    { label: 'Accreditations', href: '/admin/accreditations' },
+    { label: 'Booking and privacy', href: '/admin/documents' }
   ];
 </script>
 

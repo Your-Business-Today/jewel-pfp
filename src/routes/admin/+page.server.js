@@ -4,6 +4,7 @@ import { isDatabaseConfigured } from '$lib/server/database/connection.js';
 import { countRows } from '$lib/server/database/rows.js';
 import { recentEnquiries } from '$lib/server/enquiries/enquiryInbox.js';
 import { enquiriesTable } from '$lib/server/enquiries/submitEnquiry.js';
+import { siteDocumentsTable } from '$lib/server/content/documentStore.js';
 
 const recentCount = 4;
 
@@ -17,12 +18,13 @@ function countOrNothing(table, filter = '') {
 
 export async function load() {
   if (!isDatabaseConfigured()) return { counts: null, recent: [] };
-  const [enquiries, services, accreditations, pagesEdited, recent] = await Promise.all([
+  const [enquiries, services, accreditations, pagesEdited, documentsEdited, recent] = await Promise.all([
     countOrNothing(enquiriesTable, `status=neq.${enquiryStatus.archived}`),
     countOrNothing(servicesTable),
     countOrNothing(accreditationsTable),
     countOrNothing('page_content'),
+    countOrNothing(siteDocumentsTable),
     recentEnquiries(recentCount)
   ]);
-  return { counts: { enquiries, services, accreditations, pagesEdited }, recent };
+  return { counts: { enquiries, services, accreditations, pagesEdited, documentsEdited }, recent };
 }

@@ -1,6 +1,9 @@
 <script>
-  import { replacementFactors, replacementVisitReasons } from '$lib/booking/approvals.js';
+  import { replacementVisitReasons } from '$lib/booking/approvals.js';
   import SectionHeading from './SectionHeading.svelte';
+
+  /** @type {{ replacementFactors: string[] }} */
+  let { replacementFactors } = $props();
 </script>
 
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
