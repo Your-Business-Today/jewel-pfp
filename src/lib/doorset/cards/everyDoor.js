@@ -1,4 +1,7 @@
 import { markers } from '../markers.js';
+import { doorTypes } from '../doorTypes.js';
+
+const doorsWithViewers = [doorTypes.flush, doorTypes.board];
 
 export const everyDoorCards = [
   {
@@ -27,10 +30,20 @@ export const everyDoorCards = [
   },
   {
     key: 'viewer',
+    doorTypes: doorsWithViewers,
     title: 'Door viewer',
     marker: markers.seen,
-    does: 'A spy hole through the leaf.',
+    does: 'A spy hole through the leaf. It comes out of its hole as the set comes apart, leaving the intumescent wrap in the leaf.',
     lookFor: ['Viewer fitted through the full leaf', 'No gap around it'],
     toConfirm: ['Viewer type, from the door set’s certification']
+  },
+  {
+    key: 'viewerWrap',
+    doorTypes: doorsWithViewers,
+    title: 'Intumescent wrap around the viewer',
+    marker: markers.confirm,
+    does: 'Intumescent material wraps the viewer where it passes through the leaf.',
+    lookFor: ['Wrap present all round the viewer', 'No gap between the viewer and the leaf'],
+    toConfirm: ['Whether the viewer and its wrap are within the door set’s certification']
   }
 ];

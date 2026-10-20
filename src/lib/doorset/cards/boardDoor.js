@@ -25,7 +25,7 @@ export const boardDoorCards = [
     doorTypes: [doorTypes.board],
     title: 'Letterplate',
     marker: markers.seen,
-    does: 'A letter slot through the leaf, with a flap on the outer face and a cover on the closer side.',
+    does: 'A letter slot through the leaf, with a flap on the outer face and a cover on the closer side. The flap and the cover come off as the set comes apart.',
     lookFor: ['Flap and inside cover both fitted and closing', 'Letterplate firmly fixed', 'No gap around the slot'],
     toConfirm: ['Whether the letterplate is within the door set’s certification']
   },

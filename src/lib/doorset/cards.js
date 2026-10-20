@@ -5,13 +5,14 @@ import { boardDoorCards } from './cards/boardDoor.js';
 import { surroundCards } from './cards/surround.js';
 import { sealCards } from './cards/seals.js';
 import { hiddenCards } from './cards/hidden.js';
+import { glazedDoorCards } from './cards/glazedDoor.js';
 
 export { markers };
 
 /** @typedef {{ key: string, doorTypes?: number[], title: string, marker: string, does: string, lookFor: string[], toConfirm: string[] }} PartCard */
 
 /** @type {PartCard[]} */
-export const partCards = [...surroundCards, ...sealCards, ...everyDoorCards, ...flushDoorCards, ...boardDoorCards, ...hiddenCards];
+export const partCards = [...surroundCards, ...sealCards, ...everyDoorCards, ...flushDoorCards, ...boardDoorCards, ...glazedDoorCards, ...hiddenCards];
 
 /** @param {PartCard} card @param {number} doorType */
 const isOnDoorType = (card, doorType) => !card.doorTypes || card.doorTypes.includes(doorType);

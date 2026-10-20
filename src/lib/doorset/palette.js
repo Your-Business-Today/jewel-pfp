@@ -13,7 +13,8 @@ export const palette = {
   groove: 0x8f8d86,
   plaster: 0x6f6c66,
   packing: 0xc8a26a,
-  fireStopping: 0xd98c5f
+  fireStopping: 0xd98c5f,
+  glass: 0xbfd8e0
 };
 
 export const markerColours = {
