@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import GapLabels from './GapLabels.svelte';
 
-  /** @type {{ chosen: string, doorType: number, explode: number, isShowingGaps: boolean, onchoose: (key: string) => void }} */
-  let { chosen, doorType, explode, isShowingGaps, onchoose } = $props();
+  /** @type {{ chosen: string, doorType: number, sealConfiguration: string, explode: number, isShowingGaps: boolean, onchoose: (key: string) => void }} */
+  let { chosen, doorType, sealConfiguration, explode, isShowingGaps, onchoose } = $props();
 
   /** @type {HTMLCanvasElement | undefined} */
   let canvas = $state();
@@ -35,7 +35,7 @@
     };
   });
 
-  $effect(() => doorset?.setDoorType(doorType));
+  $effect(() => doorset?.setChoices({ doorType, sealConfiguration }));
   $effect(() => doorset?.choose(chosen));
   $effect(() => doorset?.setExplode(explode));
   $effect(() => doorset?.setGapsShown(isShowingGaps));

@@ -2,8 +2,9 @@
 import * as THREE from 'three';
 import { palette } from './palette.js';
 import { buildDoorset } from './assembly.js';
-import { explodeParts, highlightParts, showDoorType } from './parts.js';
+import { explodeParts, highlightParts, showChoices } from './parts.js';
 import { doorTypes } from './doorTypes.js';
+import { sealConfigurations } from './seals.js';
 import { depths } from './measures.js';
 import { addLighting, disposeOf } from './stage.js';
 import { buildGapMarkers, gapLabelsOnScreen } from './build/gapMarkers.js';
@@ -23,7 +24,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
   const camera = new THREE.PerspectiveCamera(38, 1, 0.05, 40);
   addLighting(scene);
   const parts = buildDoorset();
-  showDoorType(parts, doorTypes.flush);
+  showChoices(parts, { doorType: doorTypes.flush, sealConfiguration: sealConfigurations.twoIntumescent });
   const doorset = new THREE.Group();
   parts.forEach((part) => doorset.add(part.group));
   const gapMarkers = buildGapMarkers();
@@ -82,7 +83,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
     resize,
     partAt: picker.partAt,
     drag: orbit.drag,
-    setDoorType: (/** @type {number} */ doorType) => showDoorType(parts, doorType),
+    setChoices: (/** @type {{ doorType: number, sealConfiguration: string }} */ choices) => showChoices(parts, choices),
     setExplode: (/** @type {number} */ amount) => (state.explode = amount),
     setGapsShown: (/** @type {boolean} */ isShown) => {
       gapMarkers.visible = isShown;
