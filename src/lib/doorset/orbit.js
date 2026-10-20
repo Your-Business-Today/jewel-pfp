@@ -7,11 +7,12 @@ const tiltLimit = 1.2;
 const minimumRadius = 0.6;
 const focusDistance = 2.2;
 const spreadDistance = 2.2;
+const overviewRadius = 4.2;
 
 /** @param {THREE.PerspectiveCamera} camera */
 export function createOrbit(camera) {
   const target = new THREE.Vector3(0, 1.05, 0);
-  const aim = { target: target.clone(), radius: 3.4, turn: -0.5, tilt: 0.12 };
+  const aim = { target: target.clone(), radius: overviewRadius, turn: -0.5, tilt: 0.12 };
   const now = { target: target.clone(), radius: aim.radius, turn: aim.turn, tilt: aim.tilt };
   let spread = 0;
 
@@ -34,7 +35,7 @@ export function createOrbit(camera) {
 
   function overview() {
     aim.target.copy(target);
-    aim.radius = 3.4;
+    aim.radius = overviewRadius;
   }
 
   /** @param {number} across @param {number} down */

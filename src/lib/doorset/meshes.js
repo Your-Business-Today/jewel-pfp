@@ -11,16 +11,16 @@ const upright = new THREE.Vector3(0, 1, 0);
  * @param {{ metalness?: number, roughness?: number, opacity?: number, edge?: number }} finish
  */
 export function solid(geometry, colour, finish = {}) {
-  const isSeeThrough = finish.opacity !== undefined;
   const material = new THREE.MeshStandardMaterial({
     color: colour,
     roughness: finish.roughness ?? 0.8,
     metalness: finish.metalness ?? 0.05,
-    transparent: isSeeThrough,
+    transparent: true,
     opacity: finish.opacity ?? 1,
     emissive: palette.ink
   });
   const mesh = new THREE.Mesh(geometry, material);
+  mesh.userData.opacity = material.opacity;
   const edgeColour = finish.edge ?? palette.muted;
   const edgeMaterial = new THREE.LineBasicMaterial({ color: edgeColour, transparent: true, opacity: edgeOpacity });
   const outline = new THREE.LineSegments(new THREE.EdgesGeometry(geometry), edgeMaterial);

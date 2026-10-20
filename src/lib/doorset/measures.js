@@ -28,3 +28,22 @@ export const edges = {
   hingeJamb: -leaf.width / 2 - gaps.edge - frame.faceWidth / 2,
   lockJamb: leaf.width / 2 + gaps.edge + frame.faceWidth / 2
 };
+
+export const surround = {
+  frameOuterSide: leaf.width / 2 + gaps.edge + frame.faceWidth,
+  fireStoppingGap: 0.02,
+  fireStoppingFigure: '20 mm or less',
+  fixingCentres: 0.6,
+  fixingCentresFigure: 'nominally 600 mm centres',
+  firstFixing: 0.2,
+  topFixingClearance: 0.08,
+  packerHeight: 0.05,
+  wallReach: 0.6,
+  wallHeight: 2.5,
+  architraveWidth: 0.07,
+  architraveThickness: 0.018
+};
+
+const fixingCount = Math.floor((heights.frameTop - surround.topFixingClearance - surround.firstFixing) / surround.fixingCentres) + 1;
+
+export const fixingHeights = Array.from({ length: fixingCount }, (_, place) => surround.firstFixing + place * surround.fixingCentres);
