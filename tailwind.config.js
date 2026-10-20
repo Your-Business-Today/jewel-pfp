@@ -17,6 +17,11 @@ export default {
         },
         signal: '#D7282E', // Passive Red
         gold: '#C09A51', // Jewel Gold
+        status: {
+          red: '#FF0000',
+          yellow: '#FFFF00',
+          green: '#00B050'
+        },
         muted: {
           dark: '#9BA0A8',
           light: '#565B63'
