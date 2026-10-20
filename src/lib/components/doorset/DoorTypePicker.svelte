@@ -5,7 +5,7 @@
   let { doorType, onchoose } = $props();
 </script>
 
-<div class="grid grid-cols-2 gap-2" role="group" aria-label="Door type">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-2" role="group" aria-label="Door type">
   {#each doorTypeChoices as choice (choice.doorType)}
     <button
       type="button"

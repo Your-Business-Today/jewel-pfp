@@ -1,6 +1,8 @@
 import { buildFrame } from './build/frame.js';
 import { buildLeaf } from './build/leaf.js';
 import { buildBoardLeaf } from './build/boardLeaf.js';
+import { buildGlazedLeaf } from './build/glazedLeaf.js';
+import { buildGlazing } from './build/glazing.js';
 import { buildHinges } from './build/hinges.js';
 import { buildCloser } from './build/closer.js';
 import { buildLever } from './build/lever.js';
@@ -17,8 +19,8 @@ import { buildHingePads } from './build/hingePads.js';
 import { buildHiddenDetail } from './build/hiddenDetail.js';
 
 export function buildDoorset() {
-  const leaves = [buildLeaf(), buildBoardLeaf()];
-  const furniture = [buildCloser(), ...buildLever(), buildViewer(), buildChain(), buildLetterplate(), buildKnocker()];
+  const leaves = [buildLeaf(), buildBoardLeaf(), buildGlazedLeaf(), ...buildGlazing()];
+  const furniture = [buildCloser(), ...buildLever(), ...buildViewer(), buildChain(), ...buildLetterplate(), buildKnocker()];
   const surround = [buildWall(), ...buildArchitrave(), buildPacking(), buildFireStopping(), buildFixings(), ...buildSeals()];
   const hidden = [...buildHingePads(), ...buildHiddenDetail()];
   return [...surround, ...hidden, buildFrame(), ...leaves, ...buildHinges(), ...furniture];

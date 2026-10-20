@@ -13,7 +13,8 @@ const thirdOfTheRun = (topHinge - bottomHinge) / 3;
 export const hingeHeight = 0.1;
 export const hingeCentres = {
   [doorTypes.flush]: [topHinge, heights.leafMiddle + 0.1, bottomHinge],
-  [doorTypes.board]: [topHinge, topHinge - thirdOfTheRun, bottomHinge + thirdOfTheRun, bottomHinge]
+  [doorTypes.board]: [topHinge, topHinge - thirdOfTheRun, bottomHinge + thirdOfTheRun, bottomHinge],
+  [doorTypes.glazed]: [topHinge, heights.leafMiddle + 0.1, bottomHinge]
 };
 
 /** @param {number[]} centres @param {number[]} shownOn */

@@ -3,7 +3,7 @@ import { block, cylinder, metal } from '../meshes.js';
 import { palette } from '../palette.js';
 import { createPart } from '../parts.js';
 import { depths, edges, gaps } from '../measures.js';
-import { doorTypes } from '../doorTypes.js';
+import { doorTypes, everyDoorType } from '../doorTypes.js';
 
 export const handleHeight = 1.05;
 const plate = { width: 0.04, height: 0.2, depth: 0.008 };
@@ -43,5 +43,5 @@ function buildLeverFor(doorType) {
 }
 
 export function buildLever() {
-  return [buildLeverFor(doorTypes.flush), buildLeverFor(doorTypes.board)];
+  return everyDoorType.map(buildLeverFor);
 }
