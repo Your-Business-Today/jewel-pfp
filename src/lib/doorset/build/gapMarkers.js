@@ -26,6 +26,14 @@ export const gapAnchors = [
   { key: 'threshold', label: `Threshold: ${gaps.thresholdFigure}`, at: new THREE.Vector3(0, 0, depths.leafFront) }
 ];
 
+/** @param {THREE.Camera} camera @param {number} width @param {number} height */
+export function gapLabelsOnScreen(camera, width, height) {
+  return gapAnchors.map((anchor) => {
+    const point = anchor.at.clone().project(camera);
+    return { key: anchor.key, label: anchor.label, x: ((point.x + 1) / 2) * width, y: ((1 - point.y) / 2) * height };
+  });
+}
+
 export function buildGapMarkers() {
   const group = new THREE.Group();
   group.add(bar(leaf.width, drawnWidth, 0, heights.leafTop + drawnWidth / 2));
