@@ -10,7 +10,10 @@ export const palette = {
   oak: 0xb57f3f,
   paint: 0xf4f3ef,
   outsidePaint: 0x9e2a24,
-  groove: 0x8f8d86
+  groove: 0x8f8d86,
+  plaster: 0x6f6c66,
+  packing: 0xc8a26a,
+  fireStopping: 0xd98c5f
 };
 
 export const markerColours = {

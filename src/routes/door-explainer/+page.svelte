@@ -5,7 +5,7 @@
   import PartPicker from '$lib/components/doorset/PartPicker.svelte';
   import DoorTypePicker from '$lib/components/doorset/DoorTypePicker.svelte';
   import { cardFor } from '$lib/doorset/cards.js';
-  import { gaps } from '$lib/doorset/measures.js';
+  import { gaps, surround } from '$lib/doorset/measures.js';
   import { doorTypes } from '$lib/doorset/doorTypes.js';
 
   let chosen = $state('');
@@ -42,7 +42,7 @@
       <PartPicker {chosen} {doorType} onchoose={(key) => (chosen = key)} />
       {#if isShowingGaps}
         <p class="text-sm text-muted-dark">
-          Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}. The gaps are drawn larger than life so they can be seen.
+          Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
         </p>
       {/if}
       {#if card}
