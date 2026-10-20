@@ -4,15 +4,20 @@
   import PartCard from '$lib/components/doorset/PartCard.svelte';
   import PartPicker from '$lib/components/doorset/PartPicker.svelte';
   import DoorTypePicker from '$lib/components/doorset/DoorTypePicker.svelte';
+  import SealPicker from '$lib/components/doorset/SealPicker.svelte';
+  import SealSection from '$lib/components/doorset/SealSection.svelte';
   import { cardFor } from '$lib/doorset/cards.js';
   import { gaps, surround } from '$lib/doorset/measures.js';
   import { doorTypes } from '$lib/doorset/doorTypes.js';
+  import { sealConfigurations, sealPartKeys } from '$lib/doorset/seals.js';
 
   let chosen = $state('');
   let doorType = $state(doorTypes.flush);
+  let sealConfiguration = $state(sealConfigurations.twoIntumescent);
   let explode = $state(0);
   let isShowingGaps = $state(false);
   const card = $derived(cardFor(chosen, doorType));
+  const isLookingAtSeals = $derived(sealPartKeys.includes(chosen));
 
   /** @param {number} choice */
   function chooseDoorType(choice) {
@@ -32,7 +37,7 @@
   </div>
   <div class="mx-auto max-w-7xl px-6 py-10 grid gap-8 lg:grid-cols-[1.5fr_1fr]">
     <div class="h-[70vh] min-h-[28rem] border border-white/10 grid-bg">
-      <DoorsetCanvas {chosen} {doorType} {explode} {isShowingGaps} onchoose={(key) => (chosen = key)} />
+      <DoorsetCanvas {chosen} {doorType} {sealConfiguration} {explode} {isShowingGaps} onchoose={(key) => (chosen = key)} />
     </div>
     <div class="space-y-6">
       <p class="kicker text-gold">Apartment entrance door set</p>
@@ -44,6 +49,10 @@
         <p class="text-sm text-muted-dark">
           Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
         </p>
+      {/if}
+      {#if isLookingAtSeals}
+        <SealPicker bind:sealConfiguration />
+        <SealSection {sealConfiguration} />
       {/if}
       {#if card}
         <PartCard {card} />

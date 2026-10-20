@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { markerColours, palette } from './palette.js';
 import { everyDoorType } from './doorTypes.js';
+import { everySealConfiguration } from './seals.js';
 
 const easing = (/** @type {number} */ t) => t * t * (3 - 2 * t);
 const clampToUnit = (/** @type {number} */ t) => Math.min(1, Math.max(0, t));
@@ -10,7 +11,7 @@ const fadedOpacity = 0.15;
 const easeRate = 0.15;
 
 /**
- * @typedef {{ key: string, doorTypes: number[], isBuried: boolean, group: THREE.Group, explode: THREE.Vector3, range: [number, number], meshes: THREE.Mesh[], add: (mesh: THREE.Mesh, x?: number, y?: number, z?: number) => THREE.Mesh }} DoorPart
+ * @typedef {{ key: string, doorTypes: number[], sealConfigurations: string[], isBuried: boolean, group: THREE.Group, explode: THREE.Vector3, range: [number, number], meshes: THREE.Mesh[], add: (mesh: THREE.Mesh, x?: number, y?: number, z?: number) => THREE.Mesh }} DoorPart
  */
 
 /**
@@ -32,7 +33,7 @@ export function createPart(key, explode, range, doorTypes = everyDoorType) {
     meshes.push(mesh);
     return mesh;
   };
-  return { key, doorTypes, isBuried: false, group, explode: new THREE.Vector3(...explode), range, meshes, add };
+  return { key, doorTypes, sealConfigurations: everySealConfiguration, isBuried: false, group, explode: new THREE.Vector3(...explode), range, meshes, add };
 }
 
 /**
@@ -50,10 +51,12 @@ export function explodeParts(parts, progress) {
 
 /**
  * @param {DoorPart[]} parts
- * @param {number} doorType
+ * @param {{ doorType: number, sealConfiguration: string }} choices
  */
-export function showDoorType(parts, doorType) {
-  for (const part of parts) part.group.visible = part.doorTypes.includes(doorType);
+export function showChoices(parts, choices) {
+  for (const part of parts) {
+    part.group.visible = part.doorTypes.includes(choices.doorType) && part.sealConfigurations.includes(choices.sealConfiguration);
+  }
 }
 
 /**
