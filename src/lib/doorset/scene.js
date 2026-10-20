@@ -10,10 +10,12 @@ import { buildGapMarkers, gapLabelsOnScreen } from './build/gapMarkers.js';
 import { createOrbit } from './orbit.js';
 import { createPicker } from './picker.js';
 import { createFocus } from './focus.js';
+import { swingParts } from './swing.js';
+import { createClosingAction } from './closing.js';
 
 const explodeEase = 0.1;
 
-/** @param {HTMLCanvasElement} canvas @param {{ onLabels?: (labels: { key: string, label: string, x: number, y: number }[]) => void }} listeners */
+/** @param {HTMLCanvasElement} canvas @param {{ onLabels?: (labels: { key: string, label: string, x: number, y: number }[]) => void, onClosing?: (progress: { seconds: number, isClosed: boolean }) => void }} listeners */
 export function createDoorsetScene(canvas, listeners = {}) {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -31,6 +33,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
   const orbit = createOrbit(camera);
   const picker = createPicker(canvas, camera, doorset);
   const focus = createFocus(orbit, parts);
+  const closingAction = createClosingAction(listeners.onClosing);
   const state = { explode: 0, shownExplode: 0, chosen: '', frame: 0, isStopped: false };
 
   function labelsOnScreen() {
@@ -43,6 +46,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
     state.frame = requestAnimationFrame(render);
     state.shownExplode += (state.explode - state.shownExplode) * explodeEase;
     explodeParts(parts, state.shownExplode);
+    swingParts(parts, closingAction.angleNow(performance.now()));
     orbit.widen(state.shownExplode);
     highlightParts(parts, state.chosen);
     focus.follow();
@@ -72,6 +76,8 @@ export function createDoorsetScene(canvas, listeners = {}) {
     resize,
     partAt: picker.partAt,
     drag: orbit.drag,
+    startClosing: () => closingAction.start(performance.now()),
+    holdOpen: (/** @type {boolean} */ isOpen) => closingAction.hold(isOpen),
     setChoices: (/** @type {{ doorType: number, sealConfiguration: string }} */ choices) => showChoices(parts, choices),
     setExplode: (/** @type {number} */ amount) => (state.explode = amount),
     setGapsShown: (/** @type {boolean} */ isShown) => {

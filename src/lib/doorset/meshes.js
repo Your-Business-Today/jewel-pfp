@@ -59,11 +59,20 @@ export function cylinder(radius, length, colour, finish) {
  * @param {object} [finish]
  */
 export function rodBetween(from, to, radius, colour, finish) {
+  const rod = cylinder(radius, from.distanceTo(to), colour, finish);
+  alignRod(rod, from, to);
+  return rod;
+}
+
+/**
+ * @param {THREE.Mesh} rod
+ * @param {THREE.Vector3} from
+ * @param {THREE.Vector3} to
+ */
+export function alignRod(rod, from, to) {
   const direction = new THREE.Vector3().subVectors(to, from);
-  const rod = cylinder(radius, direction.length(), colour, finish);
   rod.quaternion.setFromUnitVectors(upright, direction.clone().normalize());
   rod.position.copy(from).addScaledVector(direction, 0.5);
-  return rod;
 }
 
 export const metal = { metalness: 0.7, roughness: 0.35 };

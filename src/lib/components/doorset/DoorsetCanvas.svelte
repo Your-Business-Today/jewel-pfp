@@ -2,8 +2,8 @@
   import { onMount } from 'svelte';
   import GapLabels from './GapLabels.svelte';
 
-  /** @type {{ chosen: string, doorType: number, sealConfiguration: string, explode: number, isShowingGaps: boolean, onchoose: (key: string) => void }} */
-  let { chosen, doorType, sealConfiguration, explode, isShowingGaps, onchoose } = $props();
+  /** @type {{ chosen: string, doorType: number, sealConfiguration: string, explode: number, isShowingGaps: boolean, closingRequest: number, isHeldOpen: boolean, onchoose: (key: string) => void, onclosing: (progress: { seconds: number, isClosed: boolean }) => void }} */
+  let { chosen, doorType, sealConfiguration, explode, isShowingGaps, closingRequest, isHeldOpen, onchoose, onclosing } = $props();
 
   /** @type {HTMLCanvasElement | undefined} */
   let canvas = $state();
@@ -20,7 +20,7 @@
     import('$lib/doorset/scene.js')
       .then(({ createDoorsetScene }) => {
         if (isGone || !canvas) return;
-        doorset = createDoorsetScene(canvas, { onLabels: (/** @type {typeof labels} */ shown) => (labels = shown) });
+        doorset = createDoorsetScene(canvas, { onLabels: (/** @type {typeof labels} */ shown) => (labels = shown), onClosing: onclosing });
       })
       .catch((error) => {
         console.error('The door set scene could not start', error);
@@ -39,6 +39,10 @@
   $effect(() => doorset?.choose(chosen));
   $effect(() => doorset?.setExplode(explode));
   $effect(() => doorset?.setGapsShown(isShowingGaps));
+  $effect(() => doorset?.holdOpen(isHeldOpen));
+  $effect(() => {
+    if (closingRequest) doorset?.startClosing();
+  });
 
   /** @param {PointerEvent} event */
   function press(event) {
