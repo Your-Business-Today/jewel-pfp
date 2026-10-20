@@ -15,13 +15,14 @@ export function buildCloser() {
   const bodyX = edges.hinge + body.fromHingeEdge + body.width / 2;
   const bodyY = heights.leafTop - body.height / 2 - 0.005;
   const bodyZ = depths.leafFront + body.depth / 2;
-  part.add(block(body.width, body.height, body.depth, palette.steel, metal), bodyX, bodyY, bodyZ);
+  const bodyMesh = part.add(block(body.width, body.height, body.depth, palette.steel, metal), bodyX, bodyY, bodyZ);
   const spindle = new THREE.Vector3(bodyX + body.width / 2 - 0.05, bodyY + body.height / 2 + armLift, bodyZ);
   const elbow = spindle.clone().add(new THREE.Vector3(0, 0, mainArmLength));
   const shoe = new THREE.Vector3(spindle.x + 0.14, heights.frameTop - frame.headHeight / 2, depths.frameFront + 0.012);
-  part.add(cylinder(0.012, armLift * 2, palette.steel, metal), spindle.x, spindle.y - armLift, spindle.z);
-  part.add(rodBetween(spindle, elbow, armRadius, palette.steel, metal));
-  part.add(rodBetween(elbow, shoe, armRadius * 0.8, palette.steel, metal));
+  const cap = part.add(cylinder(0.012, armLift * 2, palette.steel, metal), spindle.x, spindle.y - armLift, spindle.z);
+  const mainArm = part.add(rodBetween(spindle, elbow, armRadius, palette.steel, metal));
+  const forearm = part.add(rodBetween(elbow, shoe, armRadius * 0.8, palette.steel, metal));
   part.add(block(0.06, 0.02, 0.024, palette.steel, metal), shoe.x, shoe.y, shoe.z);
+  part.motion = { body: bodyMesh, cap, mainArm, forearm, spindle, elbow, shoe, bodyAt: bodyMesh.position.clone(), capAt: cap.position.clone() };
   return part;
 }

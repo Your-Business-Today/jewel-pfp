@@ -6,6 +6,7 @@
   import DoorTypePicker from '$lib/components/doorset/DoorTypePicker.svelte';
   import SealPicker from '$lib/components/doorset/SealPicker.svelte';
   import SealSection from '$lib/components/doorset/SealSection.svelte';
+  import ClosingAction from '$lib/components/doorset/ClosingAction.svelte';
   import { cardFor } from '$lib/doorset/cards.js';
   import { gaps, surround } from '$lib/doorset/measures.js';
   import { doorTypes } from '$lib/doorset/doorTypes.js';
@@ -14,10 +15,18 @@
   let chosen = $state('');
   let doorType = $state(doorTypes.flush);
   let sealConfiguration = $state(sealConfigurations.twoIntumescent);
+  let closingRequest = $state(0);
+  let isHeldOpen = $state(false);
+  let closingProgress = $state({ seconds: 0, isClosed: false });
   let explode = $state(0);
   let isShowingGaps = $state(false);
   const card = $derived(cardFor(chosen, doorType));
   const isLookingAtSeals = $derived(sealPartKeys.includes(chosen));
+
+  function watchItClose() {
+    explode = 0;
+    closingRequest += 1;
+  }
 
   /** @param {number} choice */
   function chooseDoorType(choice) {
@@ -37,13 +46,14 @@
   </div>
   <div class="mx-auto max-w-7xl px-6 py-10 grid gap-8 lg:grid-cols-[1.5fr_1fr]">
     <div class="h-[70vh] min-h-[28rem] border border-white/10 grid-bg">
-      <DoorsetCanvas {chosen} {doorType} {sealConfiguration} {explode} {isShowingGaps} onchoose={(key) => (chosen = key)} />
+      <DoorsetCanvas {chosen} {doorType} {sealConfiguration} {explode} {isShowingGaps} {closingRequest} {isHeldOpen} onchoose={(key) => (chosen = key)} onclosing={(progress) => (closingProgress = progress)} />
     </div>
     <div class="space-y-6">
       <p class="kicker text-gold">Apartment entrance door set</p>
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight leading-[1.1]">Take a fire door set apart.</h1>
       <DoorTypePicker {doorType} onchoose={chooseDoorType} />
       <ExplainerControls bind:explode bind:isShowingGaps />
+      <ClosingAction seconds={closingProgress.seconds} isClosed={closingProgress.isClosed} bind:isHeldOpen onwatch={watchItClose} />
       <PartPicker {chosen} {doorType} onchoose={(key) => (chosen = key)} />
       {#if isShowingGaps}
         <p class="text-sm text-muted-dark">
