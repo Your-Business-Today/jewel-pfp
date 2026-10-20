@@ -13,10 +13,13 @@ import { buildArchitrave } from './build/architrave.js';
 import { buildFireStopping, buildPacking } from './build/surroundGap.js';
 import { buildFixings } from './build/fixings.js';
 import { buildSeals } from './build/seals.js';
+import { buildHingePads } from './build/hingePads.js';
+import { buildHiddenDetail } from './build/hiddenDetail.js';
 
 export function buildDoorset() {
   const leaves = [buildLeaf(), buildBoardLeaf()];
   const furniture = [buildCloser(), ...buildLever(), buildViewer(), buildChain(), buildLetterplate(), buildKnocker()];
   const surround = [buildWall(), ...buildArchitrave(), buildPacking(), buildFireStopping(), buildFixings(), ...buildSeals()];
-  return [...surround, buildFrame(), ...leaves, ...buildHinges(), ...furniture];
+  const hidden = [...buildHingePads(), ...buildHiddenDetail()];
+  return [...surround, ...hidden, buildFrame(), ...leaves, ...buildHinges(), ...furniture];
 }

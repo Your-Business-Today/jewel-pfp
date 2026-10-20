@@ -5,15 +5,13 @@ import { buildDoorset } from './assembly.js';
 import { explodeParts, highlightParts, showChoices } from './parts.js';
 import { doorTypes } from './doorTypes.js';
 import { sealConfigurations } from './seals.js';
-import { depths } from './measures.js';
 import { addLighting, disposeOf } from './stage.js';
 import { buildGapMarkers, gapLabelsOnScreen } from './build/gapMarkers.js';
 import { createOrbit } from './orbit.js';
 import { createPicker } from './picker.js';
+import { createFocus } from './focus.js';
 
 const explodeEase = 0.1;
-const insideTurn = -0.5;
-const outsideTurn = Math.PI + 0.5;
 
 /** @param {HTMLCanvasElement} canvas @param {{ onLabels?: (labels: { key: string, label: string, x: number, y: number }[]) => void }} listeners */
 export function createDoorsetScene(canvas, listeners = {}) {
@@ -32,6 +30,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
   scene.add(doorset);
   const orbit = createOrbit(camera);
   const picker = createPicker(canvas, camera, doorset);
+  const focus = createFocus(orbit, parts);
   const state = { explode: 0, shownExplode: 0, chosen: '', frame: 0, isStopped: false };
 
   function labelsOnScreen() {
@@ -46,6 +45,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
     explodeParts(parts, state.shownExplode);
     orbit.widen(state.shownExplode);
     highlightParts(parts, state.chosen);
+    focus.follow();
     orbit.step();
     renderer.render(scene, camera);
     labelsOnScreen();
@@ -62,18 +62,7 @@ export function createDoorsetScene(canvas, listeners = {}) {
   /** @param {string} key */
   function choose(key) {
     state.chosen = key;
-    const part = parts.find((candidate) => candidate.key === key && candidate.group.visible);
-    if (!part) return orbit.overview();
-    const bounds = new THREE.Box3().setFromObject(part.group);
-    orbit.focusOn(bounds);
-    turnToFaceOf(bounds);
-  }
-
-  /** @param {THREE.Box3} bounds */
-  function turnToFaceOf(bounds) {
-    const centre = bounds.getCenter(new THREE.Vector3());
-    if (centre.z < depths.leafBack) orbit.lookFrom({ turn: outsideTurn });
-    if (centre.z > depths.leafFront) orbit.lookFrom({ turn: insideTurn });
+    focus.choose(key);
   }
 
   resize();
