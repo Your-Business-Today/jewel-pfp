@@ -3,7 +3,8 @@ export const survey = {
   priceWithVat: '£118.80',
   paymentLink: 'https://buy.stripe.com/cN22a02UQdJ29UIdQQ',
   bookingPage: 'https://portal.jewelpfp.co.uk/book',
-  termsPath: '/book/terms'
+  termsPath: '/book/terms',
+  termsPdf: 'https://portal.jewelpfp.co.uk/api/public/book/terms.pdf'
 };
 
 export const heroIntro =
