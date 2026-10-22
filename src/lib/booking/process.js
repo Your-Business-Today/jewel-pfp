@@ -13,7 +13,7 @@ export const processSteps = [
   },
   {
     title: 'Written quotation',
-    body: 'Clear scope, fixed price, realistic timescale. If you proceed within 90 days, the £99 is deducted from the works invoice.'
+    body: 'Clear scope, fixed price, realistic timescale. If you go ahead, the £99 is deducted from your final invoice.'
   }
 ];
 

@@ -1,12 +1,12 @@
 <script>
-  import NoticeParagraph from './NoticeParagraph.svelte';
+  import DocumentParagraph from './DocumentParagraph.svelte';
   let { entries } = $props();
 </script>
 
 <ul class="list-disc pl-5 space-y-2">
   {#each entries as entry}
     <li>
-      <NoticeParagraph lead={entry.lead} text={entry.text} />
+      <DocumentParagraph lead={entry.lead} text={entry.text} />
       {#if entry.items}
         <ul class="mt-2 list-[circle] pl-5 space-y-1">
           {#each entry.items as item}

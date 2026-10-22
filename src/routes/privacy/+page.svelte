@@ -1,5 +1,5 @@
 <script>
-  import NoticeBlocks from '$lib/components/privacy/NoticeBlocks.svelte';
+  import DocumentBlocks from '$lib/components/documents/DocumentBlocks.svelte';
 
   let { data } = $props();
   const { company } = $derived(data.site);
@@ -22,12 +22,12 @@
 </section>
 
 <section class="mx-auto max-w-3xl px-6 py-16 md:py-24 space-y-12">
-  <NoticeBlocks blocks={notice.introduction} />
+  <DocumentBlocks blocks={notice.introduction} />
   {#each notice.sections as section}
     <div>
       <h2 class="text-2xl font-extrabold tracking-tight">{section.heading}</h2>
       <div class="mt-4">
-        <NoticeBlocks blocks={section.blocks} />
+        <DocumentBlocks blocks={section.blocks} />
       </div>
     </div>
   {/each}

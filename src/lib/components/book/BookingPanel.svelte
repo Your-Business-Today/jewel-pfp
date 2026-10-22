@@ -22,7 +22,7 @@
         {price} <span class="text-lg font-label text-muted-dark">({priceWithVat})</span>
       </p>
       <p class="mt-2 text-sm text-muted-dark">
-        Deducted in full from your works invoice if you proceed within 90 days of the survey.
+        Deducted in full from your final invoice if you go ahead with the works.
       </p>
       <ul class="mt-6 space-y-2 text-sm">
         {#each bookingIncludes as included}
@@ -55,10 +55,10 @@
         Pay {price} via Stripe
       </a>
       <p class="mt-6 text-xs text-muted-dark leading-relaxed">
-        Secure payment by Stripe. You do not need a Stripe account. By continuing you accept the
-        <a href={survey.termsPath} class="text-paper underline hover:text-signal">survey terms</a>,
-        including that the {price} is non-refundable once we attend site and is deducted from the
-        works invoice if you proceed within 90 days. Our
+        Secure payment by Stripe. You do not need a Stripe account. By continuing you accept our
+        <a href={survey.termsPath} class="text-paper underline hover:text-signal">consumer terms</a>,
+        including your right to cancel within 14 days, and that the {price} is deducted in full from
+        your final invoice if you go ahead with the works. Our
         <a href={privacyNotice.path} class="text-paper underline hover:text-signal">privacy notice</a> explains how
         we use your details.
       </p>
