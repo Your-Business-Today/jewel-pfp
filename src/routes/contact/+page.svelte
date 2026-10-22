@@ -12,7 +12,6 @@
   <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
-<!-- HEADER -->
 <section class="bg-ink text-paper grid-bg border-b border-white/10">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
     <p class="kicker text-gold mb-6">{text.kicker}</p>
@@ -26,7 +25,6 @@
 </section>
 
 <section class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
-  <!-- DETAILS -->
   <div>
     <ul class="border-t border-ink/15 font-label text-sm">
       <li class="border-b border-ink/15 py-5">

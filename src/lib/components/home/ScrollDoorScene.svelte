@@ -8,8 +8,7 @@
   /** @type {{ text: Record<string, string>, captions: any[] }} */
   let { text, captions } = $props();
 
-  // ---------- scroll-driven 3D door ----------
-  const STAGES = 7; // hero + 5 components + outro
+  const stageCount = 7;
 
   /** @type {HTMLElement | null} */
   let wrap = $state(null);
@@ -18,8 +17,8 @@
   let progress = $state(0);
   let webglFailed = $state(false);
 
-  const active = $derived(Math.min(STAGES - 1, Math.floor(progress * STAGES)));
-  const heroOpacity = $derived(Math.max(0, 1 - progress * STAGES * 1.4));
+  const active = $derived(Math.min(stageCount - 1, Math.floor(progress * stageCount)));
+  const heroOpacity = $derived(Math.max(0, 1 - progress * stageCount * 1.4));
 
   onMount(() => {
     /** @type {any} */
@@ -36,7 +35,7 @@
       progress = p;
       if (doorScene) {
         doorScene.setProgress(p);
-        doorScene.setStage(Math.min(STAGES - 1, Math.floor(p * STAGES)));
+        doorScene.setStage(Math.min(stageCount - 1, Math.floor(p * stageCount)));
         if (reduced) doorScene.snap();
       }
     };
@@ -71,7 +70,7 @@
   });
 </script>
 
-<section bind:this={wrap} class="relative bg-ink text-paper" style="height: {STAGES * 100}vh">
+<section bind:this={wrap} class="relative bg-ink text-paper" style:height="{stageCount * 100}vh">
   <div class="sticky top-16 h-[calc(100vh-4rem)] overflow-hidden grid-bg">
     {#if !webglFailed}
       <canvas bind:this={canvas} class="absolute inset-0 h-full w-full"></canvas>
@@ -80,6 +79,6 @@
     {/if}
     <HomeHero {text} {heroOpacity} />
     <StageCaptions {captions} {active} />
-    <ProgressRail stageCount={STAGES} {active} />
+    <ProgressRail stageCount={stageCount} {active} />
   </div>
 </section>

@@ -11,7 +11,6 @@
   <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
-<!-- HEADER -->
 <section class="bg-ink text-paper grid-bg border-b border-white/10">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
     <p class="kicker text-gold mb-6">{text.kicker}</p>
@@ -23,7 +22,6 @@
     </p>
   </div>
 
-  <!-- index strip -->
   <div class="border-t border-white/10">
     <div class="mx-auto max-w-7xl px-6 py-4 flex flex-wrap gap-x-8 gap-y-2 font-label text-[11px] uppercase tracking-widest2">
       {#each services as s}
@@ -35,7 +33,6 @@
   </div>
 </section>
 
-<!-- SERVICE SECTIONS -->
 {#each services as s, i}
   <section
     id={s.slug}
@@ -71,7 +68,6 @@
   </section>
 {/each}
 
-<!-- CTA -->
 <section class="bg-ink text-paper grid-bg">
   <div class="mx-auto max-w-7xl px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8">
     <div>
