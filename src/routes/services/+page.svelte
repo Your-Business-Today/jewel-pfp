@@ -44,11 +44,12 @@
         <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">{s.title}</h2>
         <p class="mt-4 text-muted-light leading-relaxed">{s.summary}</p>
         {#if s.cta}
+          {@const callToAction = s.cta}
           <a
-            href={s.cta.href}
+            href={callToAction.href}
             class="mt-8 inline-block bg-signal text-paper px-6 py-3 text-sm font-semibold hover:bg-signal/90 transition-colors"
           >
-            {s.cta.label} →
+            {callToAction.label} →
           </a>
         {/if}
       </div>

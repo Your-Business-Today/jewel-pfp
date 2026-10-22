@@ -8,7 +8,9 @@
   const { contact } = $derived(data.site);
   const { booking } = $derived(data);
 
-  const sessionId = $derived(page.url.searchParams.get('session_id'));
+  const url = $derived(page.url);
+  const query = $derived(url.searchParams);
+  const sessionId = $derived(query.get('session_id'));
   const reference = $derived(bookingReference(sessionId));
   const bookingLink = $derived(bookingPageLink(sessionId));
 </script>
