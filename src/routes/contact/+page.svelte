@@ -1,5 +1,6 @@
 <script>
   import { pageText } from '$lib/content/pageText.js';
+  import PageHero from '$lib/components/page/PageHero.svelte';
   import EnquiryForm from '$lib/components/contact/EnquiryForm.svelte';
 
   let { data, form } = $props();
@@ -12,21 +13,9 @@
   <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
-<!-- HEADER -->
-<section class="bg-ink text-paper grid-bg border-b border-hairline">
-  <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-gold mb-6">{text.kicker}</p>
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-[1.05]">
-      {text.heading}
-    </h1>
-    <p class="mt-6 text-lg text-body max-w-xl leading-relaxed">
-      {text.intro}
-    </p>
-  </div>
-</section>
+<PageHero kicker={text.kicker} heading={text.heading} intro={text.intro} />
 
 <section class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
-  <!-- DETAILS -->
   <div>
     <ul class="border-t border-hairline text-sm">
       <li class="border-b border-hairline py-5">
