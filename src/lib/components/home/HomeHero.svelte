@@ -5,7 +5,8 @@
 
 <div
   class="absolute inset-0 flex items-center pointer-events-none"
-  style="opacity: {heroOpacity}; visibility: {heroOpacity <= 0.01 ? 'hidden' : 'visible'}"
+  style:opacity={heroOpacity}
+  style:visibility={heroOpacity <= 0.01 ? 'hidden' : 'visible'}
 >
   <div class="mx-auto w-full max-w-7xl px-6">
     <div class="max-w-2xl pointer-events-auto">
