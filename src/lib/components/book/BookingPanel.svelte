@@ -4,6 +4,7 @@
   import { bookingIncludes, afterPayment } from '$lib/booking/process.js';
   import SectionHeading from './SectionHeading.svelte';
   import StepList from './StepList.svelte';
+  import CheckoutTicks from './CheckoutTicks.svelte';
 
   /** @type {{ price: string, priceWithVat: string }} */
   let { price, priceWithVat } = $props();
@@ -47,13 +48,7 @@
       </p>
       <p class="kicker text-muted-dark mb-4">What happens next</p>
       <StepList steps={afterPayment} isOnDark />
-      <a
-        href={survey.paymentLink}
-        rel="noopener"
-        class="mt-10 inline-block bg-signal text-paper px-7 py-3.5 text-sm font-semibold hover:bg-signal/90 transition-colors"
-      >
-        Pay {price} via Stripe
-      </a>
+      <CheckoutTicks {price} />
       <p class="mt-6 text-xs text-muted-dark leading-relaxed">
         Secure payment by Stripe. You do not need a Stripe account. By continuing you accept our
         <a href={survey.termsPath} class="text-paper underline hover:text-signal">consumer terms</a>,
