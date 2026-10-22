@@ -7,14 +7,14 @@
   const isParagraph = $derived(field.kind === fieldKinds.paragraph);
   const isChanged = $derived(value.trim() !== field.default.trim());
   const limit = $derived(limitFor(field.kind));
-  const inputClass = 'w-full border border-ink/25 bg-paper px-3 py-2 text-sm focus:outline-none focus:border-signal';
+  const inputClass = 'w-full border border-gold bg-ink-3 px-3 py-2 text-sm focus:outline-none focus:border-signal';
 </script>
 
-<label class="block border-b border-ink/10 py-5">
+<label class="block border-b border-hairline py-5">
   <span class="flex items-baseline justify-between gap-4 mb-2">
-    <span class="kicker text-muted-light">{field.label}</span>
+    <span class="kicker text-gold">{field.label}</span>
     {#if isChanged}
-      <button type="button" class="font-label text-[11px] text-signal hover:underline" onclick={() => (value = field.default)}>
+      <button type="button" class="text-[11px] text-gold hover:underline" onclick={() => (value = field.default)}>
         Use the original
       </button>
     {/if}

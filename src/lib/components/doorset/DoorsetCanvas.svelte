@@ -70,7 +70,7 @@
 
 <div class="relative h-full w-full overflow-hidden">
   {#if hasFailed}
-    <p class="p-8 text-sm text-muted-dark">This browser cannot show the 3D door set. The parts and what to look for are listed alongside.</p>
+    <p class="p-8 text-sm text-note">This browser cannot show the 3D door set. The parts and what to look for are listed alongside.</p>
   {:else}
     <canvas
       bind:this={canvas}

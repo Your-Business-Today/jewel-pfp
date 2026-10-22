@@ -5,7 +5,7 @@
   let { blocks } = $props();
 </script>
 
-<div class="space-y-4 text-sm leading-relaxed text-muted-light">
+<div class="space-y-4 text-sm leading-relaxed text-body">
   {#each blocks as block}
     {#if block.list}
       <DocumentList entries={block.list} />

@@ -2,7 +2,7 @@
 /**
  * Procedural 3D fire door for the scroll-driven homepage.
  * Built with three.js — no model files. Technical-drawing look:
- * dark meshes + light edge lines, signal-orange highlights.
+ * dark meshes + light edge lines, gold highlights.
  *
  * Usage (client only):
  *   const scene = createDoorScene(canvas);
@@ -12,15 +12,15 @@
  */
 import * as THREE from 'three';
 
-// Jewel PFP brand (Guidelines 2026): Passive Red, Passive Black, Jewel Gold
+// JPFP Brand Guidelines, Issue 1.2: Passive Black, Gold, Passive Red
 const C = {
-  ink: 0x0d0d0d, // Passive Black
+  ink: 0x000000, // Passive Black
   ink2: 0x151517,
   ink3: 0x1d1d21,
-  paper: 0xf2f1ec,
+  paper: 0xffffff,
   muted: 0x9ba0a8,
   signal: 0xd7282e, // Passive Red
-  gold: 0xc09a51, // Jewel Gold — edge-line accent
+  gold: 0xc19b52, // Gold — edge-line accent and highlight
   steel: 0x8b929c,
   leaf: 0x2b2b30,
   frame: 0x222226
@@ -253,9 +253,9 @@ export function createDoorScene(canvas) {
         const base = part.key === 'seals' ? 0.45 : 0;
         const want = on ? (part.key === 'seals' ? 0.9 : 0.55) : base;
         mat.emissiveIntensity += (want - mat.emissiveIntensity) * 0.12;
-        if (on && mat.emissive.getHex() === 0x000000) mat.emissive.setHex(C.signal);
+        if (on && mat.emissive.getHex() === 0x000000) mat.emissive.setHex(C.gold);
         const edge = part.edges[i];
-        if (edge) edge.material.color.setHex(on ? C.signal : edge.userData.baseColor ?? C.muted);
+        if (edge) edge.material.color.setHex(on ? C.gold : edge.userData.baseColor ?? C.muted);
       }
     }
 

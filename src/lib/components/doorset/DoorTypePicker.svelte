@@ -9,11 +9,11 @@
   {#each doorTypeChoices as choice (choice.doorType)}
     <button
       type="button"
-      class="border px-4 py-3 text-left transition-colors {doorType === choice.doorType ? 'border-gold bg-ink-2' : 'border-white/15 hover:border-gold'}"
+      class="border px-4 py-3 text-left transition-colors {doorType === choice.doorType ? 'border-gold bg-ink-2' : 'border-hairline hover:border-gold'}"
       aria-pressed={doorType === choice.doorType}
       onclick={() => onchoose(choice.doorType)}
     >
-      <span class="block font-label text-xs font-bold tracking-widest2 text-gold">{choice.title.toUpperCase()}</span>
+      <span class="block text-xs font-bold tracking-widest2 text-gold">{choice.title.toUpperCase()}</span>
       <span class="block text-sm">{choice.summary}</span>
     </button>
   {/each}

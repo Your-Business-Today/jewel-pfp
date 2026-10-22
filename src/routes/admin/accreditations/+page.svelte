@@ -14,7 +14,7 @@
 </svelte:head>
 
 <h1 class="text-3xl font-extrabold tracking-tight">Accreditations</h1>
-<p class="mt-3 max-w-2xl text-sm text-muted-light">The accreditation list on the home page, in the order shown here.</p>
+<p class="mt-3 max-w-2xl text-sm text-body">The accreditation list on the home page, in the order shown here.</p>
 {#if problem}
   <p class="mt-6 text-sm text-signal">{problem}</p>
 {/if}
@@ -24,9 +24,9 @@
   <CopyBuiltIn listName="accreditations" />
 {/if}
 
-<ul class="mt-8 border-t border-ink/15">
+<ul class="mt-8 border-t border-hairline">
   {#each rows as accreditation, position (accreditation.id)}
-    <li class="border-b border-ink/15 py-5 space-y-3 {accreditation.visible ? '' : 'opacity-50'}">
+    <li class="border-b border-hairline py-5 space-y-3 {accreditation.visible ? '' : 'opacity-50'}">
       <AccreditationForm {accreditation} action="?/save" buttonLabel="Save" />
       <RowControls
         id={accreditation.id}

@@ -41,11 +41,11 @@
 </svelte:head>
 
 <section class="bg-ink text-paper">
-  <div class="bg-status-yellow text-black px-6 py-3 text-center font-label text-xs font-bold tracking-widest2">
+  <div class="bg-status-yellow text-black px-6 py-3 text-center text-xs font-bold tracking-widest2">
     DRAFT FOR STUART’S SIGN-OFF · WORDING TO BE EXPANDED ON · NOT YET ON THE HOME PAGE
   </div>
   <div class="mx-auto max-w-7xl px-6 py-10 grid gap-8 lg:grid-cols-[1.5fr_1fr]">
-    <div class="h-[70vh] min-h-[28rem] border border-white/10 grid-bg">
+    <div class="h-[70vh] min-h-[28rem] border border-hairline grid-bg">
       <DoorsetCanvas {chosen} {doorType} {sealConfiguration} {explode} {isShowingGaps} {closingRequest} {isHeldOpen} onchoose={(key) => (chosen = key)} onclosing={(progress) => (closingProgress = progress)} />
     </div>
     <div class="space-y-6">
@@ -56,7 +56,7 @@
       <ClosingAction seconds={closingProgress.seconds} isClosed={closingProgress.isClosed} bind:isHeldOpen onwatch={watchItClose} />
       <PartPicker {chosen} {doorType} onchoose={(key) => (chosen = key)} />
       {#if isShowingGaps}
-        <p class="text-sm text-muted-dark">
+        <p class="text-sm text-note">
           Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
         </p>
       {/if}
@@ -67,9 +67,9 @@
       {#if card}
         <PartCard {card} />
       {:else}
-        <p class="text-sm text-muted-dark">Select a part, on the door or above, to see what it does and what to look for. Drag the door to turn it and see the outer face.</p>
+        <p class="text-sm text-note">Select a part, on the door or above, to see what it does and what to look for. Drag the door to turn it and see the outer face.</p>
       {/if}
-      <p class="text-xs text-muted-dark">A drawing of how a door set looks. It does not show that any door is certified.</p>
+      <p class="text-xs text-note">A drawing of how a door set looks. It does not show that any door is certified.</p>
     </div>
   </div>
 </section>

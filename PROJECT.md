@@ -10,6 +10,10 @@ The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2
 
 In YBT this is the "Jewel PFP Website" project.
 
+## Brand
+
+The site follows the JPFP Brand Guidelines, Issue 1.2 (16/10/2026), owned by Stuart and held in the Jewel PFP Portal (skill `jpfp-brand-guidelines`). Night mode everywhere: the tokens in `tailwind.config.js` are the guideline's palette (`ink` #000000 ground, `ink-2` charcoal, `ink-3` input cells, `paper` #FFFFFF headings, `body` #EDEDED paragraphs, `note`, `footer`, `hairline`, `gold` #C19B52 for eyebrows, labels, bullets, links and input borders, `signal` Passive Red used once per area). Inter is the only typeface. The logo is Stuart's transparent PNG at `static/brand/jewel-pfp-logo.png`, used as supplied and never recreated. Hover and link colours are gold, which the guideline does not state. A later issue of the guidelines is applied the same way, by changing the tokens.
+
 ## Admin section and Supabase
 
 `/admin` is the website's admin section, built the way the Jewel Bespoke Build website (Your-Business-Today/jewelbb) does it. Staff sign in with one shared login and can edit the page text (home, services, contact, and the contact and company details), the services, the accreditations, the booking page, the booking terms and the privacy notice, and read the enquiries sent from the contact form.

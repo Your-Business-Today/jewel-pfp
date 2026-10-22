@@ -13,13 +13,13 @@
 </svelte:head>
 
 <!-- HEADER -->
-<section class="bg-ink text-paper grid-bg border-b border-white/10">
+<section class="bg-ink text-paper grid-bg border-b border-hairline">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
     <p class="kicker text-gold mb-6">{text.kicker}</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-[1.05]">
       {text.heading}
     </h1>
-    <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
+    <p class="mt-6 text-lg text-body max-w-xl leading-relaxed">
       {text.intro}
     </p>
   </div>
@@ -28,21 +28,21 @@
 <section class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid gap-16 lg:grid-cols-[1fr_1.4fr]">
   <!-- DETAILS -->
   <div>
-    <ul class="border-t border-ink/15 font-label text-sm">
-      <li class="border-b border-ink/15 py-5">
-        <p class="kicker text-muted-light mb-2">Email</p>
-        <a href="mailto:{contact.email}" class="text-lg hover:text-signal">{contact.email}</a>
+    <ul class="border-t border-hairline text-sm">
+      <li class="border-b border-hairline py-5">
+        <p class="kicker text-gold mb-2">Email</p>
+        <a href="mailto:{contact.email}" class="text-lg hover:text-gold">{contact.email}</a>
       </li>
-      <li class="border-b border-ink/15 py-5">
-        <p class="kicker text-muted-light mb-2">Phone</p>
-        <a href="tel:{contact.phone.replaceAll(' ', '')}" class="text-lg hover:text-signal">{contact.phone}</a>
+      <li class="border-b border-hairline py-5">
+        <p class="kicker text-gold mb-2">Phone</p>
+        <a href="tel:{contact.phone.replaceAll(' ', '')}" class="text-lg hover:text-gold">{contact.phone}</a>
       </li>
-      <li class="border-b border-ink/15 py-5">
-        <p class="kicker text-muted-light mb-2">Office</p>
-        <a href="tel:{contact.mobile.replaceAll(' ', '')}" class="text-lg hover:text-signal">{contact.mobile}</a>
+      <li class="border-b border-hairline py-5">
+        <p class="kicker text-gold mb-2">Office</p>
+        <a href="tel:{contact.mobile.replaceAll(' ', '')}" class="text-lg hover:text-gold">{contact.mobile}</a>
       </li>
-      <li class="border-b border-ink/15 py-5">
-        <p class="kicker text-muted-light mb-2">Coverage</p>
+      <li class="border-b border-hairline py-5">
+        <p class="kicker text-gold mb-2">Coverage</p>
         <span class="text-lg">{contact.area}</span>
       </li>
     </ul>
@@ -50,7 +50,7 @@
     <div class="mt-10 border border-signal/40 bg-signal/5 p-6">
       <p class="kicker text-gold mb-3">Residents</p>
       <p class="text-sm leading-relaxed">{text.residentsNote}</p>
-      <a href={contact.booking} class="mt-4 inline-block font-label text-sm text-signal hover:underline">
+      <a href={contact.booking} class="mt-4 inline-block text-sm text-gold hover:underline">
         Book a survey →
       </a>
     </div>

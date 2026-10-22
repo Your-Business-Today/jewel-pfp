@@ -89,7 +89,7 @@
       <div class="absolute inset-0 flex items-center justify-end pr-[8vw]" aria-hidden="true">
         <svg viewBox="0 0 420 480" class="hidden lg:block w-full max-w-sm" fill="none">
           <rect x="90" y="30" width="200" height="420" stroke="#9BA0A8" stroke-width="1.5" />
-          <rect x="102" y="42" width="176" height="408" stroke="#F2F1EC" stroke-width="1.5" />
+          <rect x="102" y="42" width="176" height="408" stroke="#FFFFFF" stroke-width="1.5" />
           <line x1="96" y1="36" x2="96" y2="450" stroke="#D7282E" stroke-width="2" />
           <rect x="160" y="90" width="60" height="130" stroke="#9BA0A8" stroke-width="1" />
           <rect x="102" y="110" width="8" height="26" fill="#D7282E" />
@@ -110,7 +110,7 @@
           <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
             {text.heroHeading}
           </h1>
-          <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
+          <p class="mt-6 text-lg text-body max-w-xl leading-relaxed">
             {text.heroIntro}
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
@@ -122,12 +122,12 @@
             </a>
             <a
               href="/services"
-              class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
+              class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-gold hover:text-gold transition-colors"
             >
               Our services
             </a>
           </div>
-          <p class="mt-14 font-label text-[11px] uppercase tracking-widest2 text-muted-dark animate-pulse">
+          <p class="mt-14 text-[11px] uppercase tracking-widest2 text-note animate-pulse">
             Scroll to inspect the door ↓
           </p>
         </div>
@@ -142,11 +142,11 @@
                  {active === i ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}"
         >
           <div
-            class="pointer-events-auto m-4 md:m-0 md:ml-[6vw] max-w-md border border-white/10 bg-ink/85 backdrop-blur-sm p-7 md:p-9"
+            class="pointer-events-auto m-4 md:m-0 md:ml-[6vw] max-w-md border border-hairline bg-ink/85 backdrop-blur-sm p-7 md:p-9"
           >
             <p class="kicker text-gold mb-4">{cap.label}</p>
             <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">{cap.title}</h2>
-            <p class="mt-4 text-sm md:text-base text-muted-dark leading-relaxed">{cap.body}</p>
+            <p class="mt-4 text-sm md:text-base text-body leading-relaxed">{cap.body}</p>
             {#if cap.hasCallToAction}
               <div class="mt-6 flex flex-wrap gap-3">
                 <a
@@ -157,7 +157,7 @@
                 </a>
                 <a
                   href="/services"
-                  class="border border-white/25 px-6 py-3 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
+                  class="border border-white/25 px-6 py-3 text-sm font-semibold hover:border-gold hover:text-gold transition-colors"
                 >
                   Our services
                 </a>
@@ -172,9 +172,9 @@
     <div class="absolute right-5 md:right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-3 items-center">
       {#each Array(STAGES) as _, i}
         <span
-          class="font-label text-[10px] transition-colors duration-300 {active === i
+          class="text-[10px] transition-colors duration-300 {active === i
             ? 'text-gold'
-            : 'text-muted-dark/50'}"
+            : 'text-note/50'}"
         >
           {String(i).padStart(2, '0')}
         </span>
@@ -187,9 +187,9 @@
 </section>
 
 <!-- stat strip -->
-<div class="bg-ink text-paper border-t border-white/10">
+<div class="bg-ink text-paper border-t border-hairline">
   <div
-    class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 font-label text-[11px] uppercase tracking-widest2 text-muted-dark"
+    class="mx-auto max-w-7xl px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4 text-[11px] uppercase tracking-widest2 text-note"
   >
     <span><span class="text-gold">4×</span> third-party accreditations</span>
     <span><span class="text-gold">{services.length}</span> core services</span>
@@ -207,24 +207,24 @@
     </div>
     <a
       href="/services"
-      class="hidden md:inline font-label text-xs uppercase tracking-widest2 border-b border-ink pb-1 hover:text-signal hover:border-signal transition-colors"
+      class="hidden md:inline text-xs uppercase tracking-widest2 border-b border-hairline pb-1 hover:text-gold hover:border-gold transition-colors"
     >
       All services →
     </a>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink/15">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-hairline">
     {#each services as s}
       <a
         href="/services#{s.slug}"
-        class="group border-b border-r border-ink/15 p-8 hover:bg-ink hover:text-paper transition-colors"
+        class="group border-b border-r border-hairline p-8 hover:bg-ink-2 transition-colors"
       >
-        <p class="font-label text-xs text-gold mb-6">{s.index}</p>
+        <p class="text-xs text-gold mb-6">{s.index}</p>
         <h3 class="text-xl font-bold tracking-tight">{s.title}</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted-light group-hover:text-muted-dark">
+        <p class="mt-3 text-sm leading-relaxed text-body group-hover:text-body">
           {s.summary}
         </p>
-        <p class="mt-6 font-label text-[11px] uppercase tracking-widest2 text-signal opacity-0 group-hover:opacity-100 transition-opacity">
+        <p class="mt-6 text-[11px] uppercase tracking-widest2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
           Detail →
         </p>
       </a>
@@ -239,12 +239,12 @@
     <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
       {text.processHeading}
     </h2>
-    <div class="mt-16 grid gap-px sm:grid-cols-2 lg:grid-cols-4 bg-white/10 border border-white/10">
+    <div class="mt-16 grid gap-px sm:grid-cols-2 lg:grid-cols-4 bg-white/10 border border-hairline">
       {#each steps as step}
         <div class="bg-ink p-8">
-          <p class="font-label text-xs text-gold">{step.n}</p>
+          <p class="text-xs text-gold">{step.n}</p>
           <h3 class="mt-6 text-lg font-bold">{step.title}</h3>
-          <p class="mt-3 text-sm text-muted-dark leading-relaxed">{step.body}</p>
+          <p class="mt-3 text-sm text-body leading-relaxed">{step.body}</p>
         </div>
       {/each}
     </div>
@@ -257,23 +257,23 @@
   <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-2xl">
     {text.accreditationHeading}
   </h2>
-  <p class="mt-6 text-muted-light max-w-xl leading-relaxed">
+  <p class="mt-6 text-body max-w-xl leading-relaxed">
     {text.accreditationIntro}
   </p>
 
-  <ul class="mt-12 border-t border-ink/15">
+  <ul class="mt-12 border-t border-hairline">
     {#each accreditations as a, i}
-      <li class="flex items-baseline gap-6 border-b border-ink/15 py-4">
-        <span class="font-label text-xs text-gold w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+      <li class="flex items-baseline gap-6 border-b border-hairline py-4">
+        <span class="text-xs text-gold w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
         <a
           href={a.href}
           target="_blank"
           rel="noopener"
-          class="font-bold tracking-tight text-lg w-64 shrink-0 hover:text-signal transition-colors"
+          class="font-bold tracking-tight text-lg w-64 shrink-0 hover:text-gold transition-colors"
         >
           {a.name} ↗
         </a>
-        <span class="font-label text-xs uppercase tracking-widest2 text-muted-light hidden sm:inline">{a.role}</span>
+        <span class="text-xs uppercase tracking-widest2 text-body hidden sm:inline">{a.role}</span>
       </li>
     {/each}
   </ul>
@@ -297,7 +297,7 @@
       </a>
       <a
         href="tel:{contact.phone.replaceAll(' ', '')}"
-        class="border border-paper/40 px-7 py-3.5 text-sm font-label hover:border-paper transition-colors"
+        class="border border-paper/40 px-7 py-3.5 text-sm hover:border-paper transition-colors"
       >
         {contact.phone}
       </a>

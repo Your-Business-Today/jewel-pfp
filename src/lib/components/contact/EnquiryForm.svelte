@@ -25,16 +25,16 @@
   }
 
   const inputClass =
-    'w-full bg-transparent border border-ink/25 px-4 py-3 text-sm placeholder:text-muted-light/60 focus:outline-none focus:border-signal transition-colors';
+    'w-full bg-ink-3 border border-gold px-4 py-3 text-sm placeholder:text-body/60 focus:outline-none focus:border-signal transition-colors';
 </script>
 
 {#if result?.isSent}
-  <div class="border border-ink/15 p-8 md:p-10 bg-paper-2">
+  <div class="border border-hairline p-8 md:p-10 bg-ink-2">
     <p class="kicker text-gold mb-4">Enquiry sent</p>
     <p class="text-lg leading-relaxed">{sentMessage}</p>
   </div>
 {:else}
-  <form method="POST" use:enhance={send} class="border border-ink/15 p-8 md:p-10 bg-paper-2">
+  <form method="POST" use:enhance={send} class="border border-hairline p-8 md:p-10 bg-ink-2">
     <p class="kicker text-gold mb-8">Enquiry form</p>
     <div class="grid gap-6 sm:grid-cols-2">
       <EnquiryField label={name.label}>

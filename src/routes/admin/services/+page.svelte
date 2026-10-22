@@ -16,7 +16,7 @@
 </svelte:head>
 
 <h1 class="text-3xl font-extrabold tracking-tight">Services</h1>
-<p class="mt-3 max-w-2xl text-sm text-muted-light">
+<p class="mt-3 max-w-2xl text-sm text-body">
   The services on the home page, the services page and the contact form. Their order sets the 01, 02… numbering.
 </p>
 {#if problem}
@@ -28,13 +28,13 @@
   <CopyBuiltIn listName="services" />
 {/if}
 
-<ul class="mt-8 border-t border-ink/15 max-w-4xl">
+<ul class="mt-8 border-t border-hairline max-w-4xl">
   {#each rows as service, position (service.id)}
-    <li class="border-b border-ink/15 py-5 flex flex-wrap items-center justify-between gap-4 {service.visible ? '' : 'opacity-50'}">
-      <a href="/admin/services/{service.id}" class="hover:text-signal">
-        <span class="font-label text-xs text-gold mr-3">{numbered(position)}</span>
+    <li class="border-b border-hairline py-5 flex flex-wrap items-center justify-between gap-4 {service.visible ? '' : 'opacity-50'}">
+      <a href="/admin/services/{service.id}" class="hover:text-gold">
+        <span class="text-xs text-gold mr-3">{numbered(position)}</span>
         <span class="text-lg font-bold tracking-tight">{service.title}</span>
-        {#if !service.visible}<span class="ml-2 font-label text-[11px] text-muted-light">hidden</span>{/if}
+        {#if !service.visible}<span class="ml-2 text-[11px] text-body">hidden</span>{/if}
       </a>
       <RowControls id={service.id} name={service.title} isVisible={service.visible} isFirst={!position} isLast={position === lastPosition} />
     </li>
@@ -43,7 +43,7 @@
 
 {#if isConfigured && rows.length}
   <form method="POST" action="?/add" use:enhance class="mt-8 flex flex-wrap gap-3 max-w-4xl">
-    <input name="title" required maxlength={textLimits.line} placeholder="New service title" class="flex-1 border border-ink/25 bg-paper px-3 py-2 text-sm" />
+    <input name="title" required maxlength={textLimits.line} placeholder="New service title" class="flex-1 border border-gold bg-ink-3 px-3 py-2 text-sm" />
     <button class="bg-ink text-paper px-6 py-2 text-sm font-semibold hover:bg-signal transition-colors">Add a service</button>
   </form>
 {/if}

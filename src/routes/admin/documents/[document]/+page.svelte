@@ -21,10 +21,10 @@
   <title>{siteDocument.label} | Jewel PFP admin</title>
 </svelte:head>
 
-<a href="/admin/documents" class="font-label text-xs text-muted-light hover:text-signal">← Booking and privacy</a>
+<a href="/admin/documents" class="text-xs text-body hover:text-gold">← Booking and privacy</a>
 <h1 class="mt-4 text-3xl font-extrabold tracking-tight">{siteDocument.label}</h1>
-<p class="mt-3 max-w-2xl text-sm text-muted-light">{siteDocument.blurb}</p>
-<a href={siteDocument.path} target="_blank" rel="noopener" class="mt-3 inline-block font-label text-xs text-signal">View the page ↗</a>
+<p class="mt-3 max-w-2xl text-sm text-body">{siteDocument.blurb}</p>
+<a href={siteDocument.path} target="_blank" rel="noopener" class="mt-3 inline-block text-xs text-gold">View the page ↗</a>
 {#if problem}
   <p class="mt-6 text-sm text-signal">{problem}</p>
 {/if}
@@ -37,7 +37,7 @@
     {#each siteDocument.lists as documentList (documentList.key)}
       <DocumentRows {documentList} savedRows={values[documentList.key]} />
     {/each}
-    <div class="sticky bottom-0 bg-paper py-5 flex flex-wrap items-center gap-6">
+    <div class="sticky bottom-0 bg-ink py-5 flex flex-wrap items-center gap-6">
       <button class="bg-ink text-paper px-8 py-3 text-sm font-semibold hover:bg-signal transition-colors">Save</button>
       <SaveResult result={form} />
     </div>
@@ -45,7 +45,7 @@
 {/key}
 
 {#if hasSavedWording}
-  <form method="POST" action="?/restore" use:enhance={confirmRestore} class="mt-6 max-w-3xl border-t border-ink/15 pt-6">
-    <button class="font-label text-xs uppercase tracking-widest2 hover:text-signal">Use the built-in wording again</button>
+  <form method="POST" action="?/restore" use:enhance={confirmRestore} class="mt-6 max-w-3xl border-t border-hairline pt-6">
+    <button class="text-xs uppercase tracking-widest2 hover:text-gold">Use the built-in wording again</button>
   </form>
 {/if}

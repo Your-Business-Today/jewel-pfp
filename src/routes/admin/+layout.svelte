@@ -24,19 +24,19 @@
 {#if isLoginPage}
   {@render children()}
 {:else}
-  <div class="border-b border-ink/15 bg-paper-2">
+  <div class="border-b border-hairline bg-ink-2">
     <nav class="mx-auto max-w-7xl px-6 py-4 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
       <span class="kicker text-gold">Admin</span>
       {#each sections as section}
-        <a href={section.href} class="hover:text-signal">
+        <a href={section.href} class="hover:text-gold">
           {section.label}
           {#if section.showsUnread && data.unreadEnquiries}
-            <span class="ml-1 bg-signal text-paper px-2 py-0.5 font-label text-[11px]">{data.unreadEnquiries}</span>
+            <span class="ml-1 bg-signal text-paper px-2 py-0.5 text-[11px]">{data.unreadEnquiries}</span>
           {/if}
         </a>
       {/each}
       <form method="POST" action="/admin/logout" class="ml-auto">
-        <button class="font-label text-xs uppercase tracking-widest2 hover:text-signal">Sign out</button>
+        <button class="text-xs uppercase tracking-widest2 hover:text-gold">Sign out</button>
       </form>
     </nav>
   </div>

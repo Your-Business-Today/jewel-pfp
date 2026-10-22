@@ -11,11 +11,11 @@
   <meta name="description" content="How Jewel Passive Fire Protection Ltd collects, uses, shares and keeps personal information." />
 </svelte:head>
 
-<section class="bg-ink text-paper grid-bg border-b border-white/10">
+<section class="bg-ink text-paper grid-bg border-b border-hairline">
   <div class="mx-auto max-w-7xl px-6 py-20 md:py-24">
     <p class="kicker text-gold mb-6">{company.name}</p>
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">Privacy notice.</h1>
-    <p class="mt-6 text-muted-dark max-w-xl leading-relaxed">
+    <p class="mt-6 text-body max-w-xl leading-relaxed">
       Last updated: {notice.lastUpdated}. Version {notice.version}.
     </p>
   </div>
