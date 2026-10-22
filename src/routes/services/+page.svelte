@@ -1,5 +1,6 @@
 <script>
   import { pageText } from '$lib/content/pageText.js';
+  import PageHero from '$lib/components/page/PageHero.svelte';
 
   let { data } = $props();
   const { services, contact, text: savedText } = $derived(data.site);
@@ -11,19 +12,7 @@
   <meta name="description" content={text.seoDescription} />
 </svelte:head>
 
-<!-- HEADER -->
-<section class="bg-ink text-paper grid-bg border-b border-white/10">
-  <div class="mx-auto max-w-7xl px-6 py-20 md:py-28">
-    <p class="kicker text-gold mb-6">{text.kicker}</p>
-    <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight max-w-3xl leading-[1.05]">
-      {text.heading}
-    </h1>
-    <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
-      {text.intro}
-    </p>
-  </div>
-
-  <!-- index strip -->
+<PageHero kicker={text.kicker} heading={text.heading} intro={text.intro}>
   <div class="border-t border-white/10">
     <div class="mx-auto max-w-7xl px-6 py-4 flex flex-wrap gap-x-8 gap-y-2 font-label text-[11px] uppercase tracking-widest2">
       {#each services as s}
@@ -33,9 +22,8 @@
       {/each}
     </div>
   </div>
-</section>
+</PageHero>
 
-<!-- SERVICE SECTIONS -->
 {#each services as s, i}
   <section
     id={s.slug}
@@ -47,11 +35,12 @@
         <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">{s.title}</h2>
         <p class="mt-4 text-muted-light leading-relaxed">{s.summary}</p>
         {#if s.cta}
+          {@const callToAction = s.cta}
           <a
-            href={s.cta.href}
+            href={callToAction.href}
             class="mt-8 inline-block bg-signal text-paper px-6 py-3 text-sm font-semibold hover:bg-signal/90 transition-colors"
           >
-            {s.cta.label} →
+            {callToAction.label} →
           </a>
         {/if}
       </div>
@@ -71,7 +60,6 @@
   </section>
 {/each}
 
-<!-- CTA -->
 <section class="bg-ink text-paper grid-bg">
   <div class="mx-auto max-w-7xl px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8">
     <div>

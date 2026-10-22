@@ -1,0 +1,24 @@
+{
+  "score": 100.0,
+  "steps": [],
+  "targets": [],
+  "designPatterns": {
+    "name": "designPatterns",
+    "summary": {
+      "roleFamilies": 1,
+      "predictedFiles": 0,
+      "predictedFilesMissing": 0,
+      "entities": 0,
+      "entitiesOutOfRange": 0,
+      "measurementIsHeuristic": true
+    },
+    "offenders": {
+      "roleFamilies": {
+        "+page.svelte": 18
+      },
+      "patterns": [],
+      "missingPredictedFiles": [],
+      "entityFileCounts": []
+    }
+  }
+}
