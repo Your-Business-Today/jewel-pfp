@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-22T20:11:23+00:00",
-  "kitVersion": "1.26.0",
+  "generatedAt": "2026-10-11T16:13:59+00:00",
+  "kitVersion": "1.18.0",
   "score": {
-    "overall": 95.4,
+    "overall": 74.9,
     "groups": [
       {
         "group": "Standard baseline checks",
-        "score": 93.6,
+        "score": 65.2,
         "weight": 52
       },
       {
@@ -39,9 +39,9 @@
         "zeroAt": 0.5,
         "unit": "files",
         "isMeasured": true,
-        "offenders": 2,
-        "measuredAgainst": 60,
-        "score": 93.3
+        "offenders": 3,
+        "measuredAgainst": 4,
+        "score": 0.0
       },
       {
         "key": "worstFile",
@@ -51,9 +51,9 @@
         "zeroAt": 9,
         "unit": "",
         "isMeasured": true,
-        "offenders": 2.06,
+        "offenders": 2.6,
         "measuredAgainst": 1,
-        "score": 77.1
+        "score": 71.1
       },
       {
         "key": "functionsOverLimit",
@@ -64,7 +64,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 3,
         "score": 100.0
       },
       {
@@ -76,7 +76,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 10,
         "score": 100.0
       },
       {
@@ -98,9 +98,9 @@
         "zeroAt": 50,
         "unit": "thousand lines",
         "isMeasured": true,
-        "offenders": 17,
-        "measuredAgainst": 2.33,
-        "score": 85.4
+        "offenders": 18,
+        "measuredAgainst": 0.71,
+        "score": 49.2
       },
       {
         "key": "magicValues",
@@ -110,9 +110,9 @@
         "zeroAt": 20,
         "unit": "thousand lines",
         "isMeasured": true,
-        "offenders": 9,
-        "measuredAgainst": 2.33,
-        "score": 80.7
+        "offenders": 13,
+        "measuredAgainst": 0.71,
+        "score": 8.2
       },
       {
         "key": "orphans",
@@ -123,7 +123,7 @@
         "unit": "components and functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 56,
+        "measuredAgainst": 3,
         "score": 100.0
       },
       {
@@ -134,9 +134,9 @@
         "zeroAt": 30,
         "unit": "thousand lines",
         "isMeasured": true,
-        "offenders": 3,
-        "measuredAgainst": 2.33,
-        "score": 95.7
+        "offenders": 5,
+        "measuredAgainst": 0.71,
+        "score": 76.5
       },
       {
         "key": "deepIndentation",
@@ -147,7 +147,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.33,
+        "measuredAgainst": 0.71,
         "score": 100.0
       },
       {
@@ -159,7 +159,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 3,
         "score": 100.0
       },
       {
@@ -193,7 +193,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 10,
         "score": 100.0
       },
       {
@@ -205,7 +205,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 10,
         "score": 100.0
       },
       {
@@ -217,7 +217,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 3,
         "score": 100.0
       },
       {
@@ -247,18 +247,18 @@
   "summaries": {
     "fileLength": {
       "limit": 100,
-      "filesOverLimit": 2,
-      "totalFiles": 60,
-      "totalLines": 2329,
-      "worstFileLines": 306,
-      "worstFileTimesOverLimit": 2.06
+      "filesOverLimit": 3,
+      "totalFiles": 4,
+      "totalLines": 708,
+      "worstFileLines": 360,
+      "worstFileTimesOverLimit": 2.6
     },
     "functionShape": {
       "limit": 30,
       "functionsOverLimit": 0,
-      "totalFunctions": 16,
+      "totalFunctions": 3,
       "elseBlocks": 0,
-      "ifBlocks": 71,
+      "ifBlocks": 10,
       "measurementIsHeuristic": true
     },
     "functionNames": {
@@ -271,27 +271,26 @@
       "measurementIsHeuristic": true
     },
     "duplication": {
-      "skipped": "jscpd is not installed (npm install -g jscpd)",
-      "carriedFromBaseline": true
+      "skipped": "jscpd is not installed (npm install -g jscpd)"
     },
     "naming": {
       "bannedAbbreviationHits": 0,
       "unprefixedBooleans": 3
     },
     "comments": {
-      "explanatoryCommentLines": 17,
+      "explanatoryCommentLines": 18,
       "filesWithComments": 3,
       "taskMarkers": 0
     },
     "magicValues": {
       "inlineHexColours": 7,
       "inlineStyleAttributes": 2,
-      "repeatedStringLiterals": 0
+      "repeatedStringLiterals": 4
     },
     "prose": {
-      "longMemberChainLines": 3,
+      "longMemberChainLines": 5,
       "deeplyIndentedLines": 0,
-      "overlongLines": 10,
+      "overlongLines": 6,
       "measurementIsHeuristic": true
     },
     "conditions": {
@@ -301,10 +300,10 @@
     },
     "orphans": {
       "orphanFunctions": 0,
-      "functionsExamined": 16
+      "functionsExamined": 3
     },
     "designPatterns": {
-      "roleFamilies": 1,
+      "roleFamilies": 0,
       "predictedFiles": 0,
       "predictedFilesMissing": 0,
       "entities": 0,
@@ -312,32 +311,27 @@
       "measurementIsHeuristic": true
     },
     "inventory": {
-      "pages": 18,
-      "components": 40,
+      "pages": 3,
+      "components": 0,
       "orphanComponents": 0,
-      "averagePageLines": 60
+      "averagePageLines": 194
     },
     "siteDefinition": {
       "skipped": "no siteDefinition catalogue in rules.json"
     },
     "inputValidation": {
-      "schemaTables": 6,
+      "schemaTables": 0,
       "limitedColumns": 0,
       "writeDoors": 0,
       "unvalidatedDoors": 0,
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 406,
-      "tooling": 160,
-      "shared": 91,
-      "frontend": 65,
-      "backend": 40,
-      "tests": 20,
-      "docs": 16,
-      "infrastructure": 11,
-      "database": 2,
-      "api": 1
+      "totalFiles": 21,
+      "frontend": 9,
+      "infrastructure": 9,
+      "shared": 2,
+      "docs": 1
     }
   },
   "details": {
@@ -345,20 +339,24 @@
       "name": "fileLength",
       "summary": {
         "limit": 100,
-        "filesOverLimit": 2,
-        "totalFiles": 60,
-        "totalLines": 2329,
-        "worstFileLines": 306,
-        "worstFileTimesOverLimit": 2.06
+        "filesOverLimit": 3,
+        "totalFiles": 4,
+        "totalLines": 708,
+        "worstFileLines": 360,
+        "worstFileTimesOverLimit": 2.6
       },
       "offenders": [
         {
           "file": "src/routes/+page.svelte",
-          "lines": 306
+          "lines": 360
         },
         {
           "file": "src/routes/+layout.svelte",
-          "lines": 112
+          "lines": 126
+        },
+        {
+          "file": "src/routes/contact/+page.svelte",
+          "lines": 122
         }
       ]
     },
@@ -367,9 +365,9 @@
       "summary": {
         "limit": 30,
         "functionsOverLimit": 0,
-        "totalFunctions": 16,
+        "totalFunctions": 3,
         "elseBlocks": 0,
-        "ifBlocks": 71,
+        "ifBlocks": 10,
         "measurementIsHeuristic": true
       },
       "offenders": []
@@ -402,17 +400,17 @@
         "booleans": [
           {
             "file": "src/routes/+layout.svelte",
-            "line": 9,
+            "line": 6,
             "name": "menuOpen"
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 20,
+            "line": 48,
             "name": "webglFailed"
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 28,
+            "line": 56,
             "name": "destroyed"
           }
         ]
@@ -421,7 +419,7 @@
     "comments": {
       "name": "comments",
       "summary": {
-        "explanatoryCommentLines": 17,
+        "explanatoryCommentLines": 18,
         "filesWithComments": 3,
         "taskMarkers": 0
       },
@@ -432,65 +430,90 @@
       "summary": {
         "inlineHexColours": 7,
         "inlineStyleAttributes": 2,
-        "repeatedStringLiterals": 0
+        "repeatedStringLiterals": 4
       },
       "offenders": {
         "hexColours": [
           {
             "file": "src/routes/+page.svelte",
-            "line": 91
+            "line": 143
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 92
+            "line": 144
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 93
+            "line": 145
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 94
+            "line": 146
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 95
+            "line": 147
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 96
+            "line": 148
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 97
+            "line": 149
           }
         ],
         "inlineStyles": [
           {
             "file": "src/routes/+page.svelte",
-            "line": 83
+            "line": 135
           },
           {
             "file": "src/routes/+page.svelte",
-            "line": 105
+            "line": 157
           }
         ],
-        "repeatedLiterals": []
+        "repeatedLiterals": [
+          {
+            "literal": "noopener",
+            "occurrences": 7
+          },
+          {
+            "literal": "kicker text-gold mb-4",
+            "occurrences": 4
+          },
+          {
+            "literal": "border-b border-ink/15 py-5",
+            "occurrences": 4
+          },
+          {
+            "literal": "kicker text-muted-light mb-2",
+            "occurrences": 4
+          }
+        ]
       }
     },
     "prose": {
       "name": "prose",
       "summary": {
-        "longMemberChainLines": 3,
+        "longMemberChainLines": 5,
         "deeplyIndentedLines": 0,
-        "overlongLines": 10,
+        "overlongLines": 6,
         "measurementIsHeuristic": true
       },
       "offenders": {
         "memberChains": [
           {
-            "file": "src/routes/book/thank-you/+page.svelte",
-            "line": 11
+            "file": "src/routes/+layout.svelte",
+            "line": 101
+          },
+          {
+            "file": "src/routes/contact/+page.svelte",
+            "line": 17
+          },
+          {
+            "file": "src/routes/contact/+page.svelte",
+            "line": 79
           },
           {
             "file": "src/routes/services/+page.svelte",
@@ -498,50 +521,34 @@
           },
           {
             "file": "src/routes/services/+page.svelte",
-            "line": 54
+            "line": 56
           }
         ],
         "deepIndentation": [],
         "overlongLines": [
           {
-            "file": "src/lib/components/admin/AccreditationForm.svelte",
-            "line": 10
+            "file": "src/routes/+page.svelte",
+            "line": 13
           },
           {
-            "file": "src/lib/components/admin/DocumentRows.svelte",
-            "line": 41
-          },
-          {
-            "file": "src/lib/components/contact/EnquiryForm.svelte",
-            "line": 63
-          },
-          {
-            "file": "src/lib/components/doorset/ClosingAction.svelte",
-            "line": 35
-          },
-          {
-            "file": "src/lib/components/doorset/DoorsetCanvas.svelte",
-            "line": 5
-          },
-          {
-            "file": "src/routes/book/+page.svelte",
+            "file": "src/routes/+page.svelte",
             "line": 18
           },
           {
-            "file": "src/routes/book/terms/+page.svelte",
-            "line": 12
+            "file": "src/routes/+page.svelte",
+            "line": 28
           },
           {
-            "file": "src/routes/door-explainer/+page.svelte",
-            "line": 49
+            "file": "src/routes/+page.svelte",
+            "line": 33
           },
           {
-            "file": "src/routes/door-explainer/+page.svelte",
-            "line": 60
+            "file": "src/routes/+page.svelte",
+            "line": 130
           },
           {
-            "file": "src/routes/door-explainer/+page.svelte",
-            "line": 70
+            "file": "src/routes/services/+page.svelte",
+            "line": 9
           }
         ]
       }
@@ -562,14 +569,14 @@
       "name": "orphans",
       "summary": {
         "orphanFunctions": 0,
-        "functionsExamined": 16
+        "functionsExamined": 3
       },
       "offenders": []
     },
     "designPatterns": {
       "name": "designPatterns",
       "summary": {
-        "roleFamilies": 1,
+        "roleFamilies": 0,
         "predictedFiles": 0,
         "predictedFilesMissing": 0,
         "entities": 0,
@@ -577,9 +584,7 @@
         "measurementIsHeuristic": true
       },
       "offenders": {
-        "roleFamilies": {
-          "+page.svelte": 18
-        },
+        "roleFamilies": {},
         "patterns": [],
         "missingPredictedFiles": [],
         "entityFileCounts": []
@@ -588,298 +593,37 @@
     "inventory": {
       "name": "inventory",
       "summary": {
-        "pages": 18,
-        "components": 40,
+        "pages": 3,
+        "components": 0,
         "orphanComponents": 0,
-        "averagePageLines": 60
+        "averagePageLines": 194
       },
       "offenders": {
         "pages": [
           {
             "page": "src/routes/+page.svelte",
-            "lines": 306,
+            "lines": 360,
             "widgets": [
+              "list"
+            ]
+          },
+          {
+            "page": "src/routes/contact/+page.svelte",
+            "lines": 122,
+            "widgets": [
+              "form",
               "list"
             ]
           },
           {
             "page": "src/routes/services/+page.svelte",
-            "lines": 98,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/door-explainer/+page.svelte",
-            "lines": 75,
-            "widgets": []
-          },
-          {
-            "page": "src/routes/book/thank-you/+page.svelte",
-            "lines": 68,
-            "widgets": []
-          },
-          {
-            "page": "src/routes/contact/+page.svelte",
-            "lines": 60,
-            "widgets": []
-          },
-          {
-            "page": "src/routes/admin/documents/[document]/+page.svelte",
-            "lines": 51,
-            "widgets": [
-              "form",
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/services/+page.svelte",
-            "lines": 49,
-            "widgets": [
-              "form",
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/accreditations/+page.svelte",
-            "lines": 47,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/enquiries/+page.svelte",
-            "lines": 45,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/book/terms/+page.svelte",
-            "lines": 44,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/login/+page.svelte",
-            "lines": 43,
-            "widgets": [
-              "form"
-            ]
-          },
-          {
-            "page": "src/routes/admin/+page.svelte",
-            "lines": 40,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/content/[page]/+page.svelte",
-            "lines": 36,
-            "widgets": [
-              "form",
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/privacy/+page.svelte",
-            "lines": 34,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/services/[id]/+page.svelte",
-            "lines": 29,
-            "widgets": [
-              "form",
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/book/+page.svelte",
-            "lines": 28,
-            "widgets": []
-          },
-          {
-            "page": "src/routes/admin/content/+page.svelte",
-            "lines": 18,
-            "widgets": [
-              "list"
-            ]
-          },
-          {
-            "page": "src/routes/admin/documents/+page.svelte",
-            "lines": 18,
+            "lines": 100,
             "widgets": [
               "list"
             ]
           }
         ],
-        "componentReuse": [
-          {
-            "component": "src/lib/components/admin/SaveResult.svelte",
-            "reusedBy": 6
-          },
-          {
-            "component": "src/lib/components/book/SectionHeading.svelte",
-            "reusedBy": 6
-          },
-          {
-            "component": "src/lib/components/book/StepList.svelte",
-            "reusedBy": 3
-          },
-          {
-            "component": "src/lib/components/doorset/StatusMarker.svelte",
-            "reusedBy": 3
-          },
-          {
-            "component": "src/lib/components/admin/CopyBuiltIn.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/admin/DocumentInput.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/admin/DocumentRow.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/admin/EnquiryCard.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/admin/RowControls.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/documents/DocumentBlocks.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/documents/DocumentParagraph.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/admin/AccreditationForm.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/ContentField.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/DashboardTile.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/DocumentRows.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/EnquiryActions.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/ListField.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/admin/SetupNotice.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/Approvals.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/BookHero.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/BookingPanel.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/CheckoutTicks.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/FaqItem.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/FaqSection.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/HowItWorks.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/ReplacementFactors.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/book/SurveyServices.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/contact/EnquiryField.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/contact/EnquiryForm.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/documents/DocumentList.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/documents/DocumentTable.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/ClosingAction.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/DoorTypePicker.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/DoorsetCanvas.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/ExplainerControls.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/GapLabels.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/PartCard.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/PartPicker.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/SealPicker.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/SealSection.svelte",
-            "reusedBy": 1
-          }
-        ],
+        "componentReuse": [],
         "orphans": []
       }
     },
@@ -896,68 +640,33 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 406,
-        "tooling": 160,
-        "shared": 91,
-        "frontend": 65,
-        "backend": 40,
-        "tests": 20,
-        "docs": 16,
-        "infrastructure": 11,
-        "database": 2,
-        "api": 1
+        "totalFiles": 21,
+        "frontend": 9,
+        "infrastructure": 9,
+        "shared": 2,
+        "docs": 1
       },
       "offenders": [
         {
-          "area": "tooling",
-          "files": 160,
+          "area": "frontend",
+          "files": 9,
+          "sourceFiles": 4,
+          "sourceLines": 708
+        },
+        {
+          "area": "infrastructure",
+          "files": 9,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "shared",
-          "files": 91,
-          "sourceFiles": 0,
-          "sourceLines": 0
-        },
-        {
-          "area": "frontend",
-          "files": 65,
-          "sourceFiles": 60,
-          "sourceLines": 2329
-        },
-        {
-          "area": "backend",
-          "files": 40,
-          "sourceFiles": 0,
-          "sourceLines": 0
-        },
-        {
-          "area": "tests",
-          "files": 20,
-          "sourceFiles": 0,
-          "sourceLines": 0
-        },
-        {
-          "area": "docs",
-          "files": 16,
-          "sourceFiles": 0,
-          "sourceLines": 0
-        },
-        {
-          "area": "infrastructure",
-          "files": 11,
-          "sourceFiles": 0,
-          "sourceLines": 0
-        },
-        {
-          "area": "database",
           "files": 2,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
-          "area": "api",
+          "area": "docs",
           "files": 1,
           "sourceFiles": 0,
           "sourceLines": 0
@@ -967,7 +676,7 @@
     "inputValidation": {
       "name": "inputValidation",
       "summary": {
-        "schemaTables": 6,
+        "schemaTables": 0,
         "limitedColumns": 0,
         "writeDoors": 0,
         "unvalidatedDoors": 0,
@@ -981,8 +690,7 @@
     "duplication": {
       "name": "duplication",
       "summary": {
-        "skipped": "jscpd is not installed (npm install -g jscpd)",
-        "carriedFromBaseline": true
+        "skipped": "jscpd is not installed (npm install -g jscpd)"
       },
       "offenders": []
     }
