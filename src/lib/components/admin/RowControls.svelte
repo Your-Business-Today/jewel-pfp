@@ -2,7 +2,7 @@
   import { enhance } from '$app/forms';
 
   let { id, isVisible, isFirst, isLast, name } = $props();
-  const buttonClass = 'font-label text-[11px] uppercase tracking-widest2 border border-ink/20 px-2.5 py-1.5 hover:border-signal hover:text-signal disabled:opacity-30';
+  const buttonClass = 'text-[11px] uppercase tracking-widest2 border border-hairline px-2.5 py-1.5 hover:border-gold hover:text-gold disabled:opacity-30';
 
   /** @type {import('@sveltejs/kit').SubmitFunction} */
   function confirmRemoval({ cancel }) {

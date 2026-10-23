@@ -23,7 +23,7 @@
   <meta property="og:url" content="{site.url}{page.url.pathname}" />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col bg-paper text-ink font-sans antialiased">
+<div class="min-h-screen flex flex-col bg-ink text-body font-sans antialiased">
   <SiteHeader {nav} {contact} />
 
   <main class="flex-1">

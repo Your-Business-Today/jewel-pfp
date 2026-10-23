@@ -13,7 +13,7 @@
     };
   }
 
-  const inputClass = 'w-full border border-ink/25 bg-paper px-4 py-3 text-sm focus:outline-none focus:border-signal';
+  const inputClass = 'w-full border border-gold bg-ink-3 px-4 py-3 text-sm focus:outline-none focus:border-signal';
 </script>
 
 <svelte:head>
@@ -28,11 +28,11 @@
   {/if}
   <form method="POST" use:enhance={signIn} class="mt-8 space-y-5">
     <label class="block">
-      <span class="kicker text-muted-light block mb-2">Username</span>
+      <span class="kicker text-gold block mb-2">Username</span>
       <input class={inputClass} name="username" autocomplete="username" required />
     </label>
     <label class="block">
-      <span class="kicker text-muted-light block mb-2">Password</span>
+      <span class="kicker text-gold block mb-2">Password</span>
       <input class={inputClass} name="password" type="password" autocomplete="current-password" required />
     </label>
     {#if form?.problem}

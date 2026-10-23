@@ -13,10 +13,10 @@
 </svelte:head>
 
 <PageHero kicker={text.kicker} heading={text.heading} intro={text.intro}>
-  <div class="border-t border-white/10">
-    <div class="mx-auto max-w-7xl px-6 py-4 flex flex-wrap gap-x-8 gap-y-2 font-label text-[11px] uppercase tracking-widest2">
+  <div class="border-t border-hairline">
+    <div class="mx-auto max-w-7xl px-6 py-4 flex flex-wrap gap-x-8 gap-y-2 text-[11px] uppercase tracking-widest2">
       {#each services as s}
-        <a href="#{s.slug}" class="text-muted-dark hover:text-signal transition-colors">
+        <a href="#{s.slug}" class="text-note hover:text-gold transition-colors">
           <span class="text-gold">{s.index}</span> {s.title}
         </a>
       {/each}
@@ -27,13 +27,13 @@
 {#each services as s, i}
   <section
     id={s.slug}
-    class="scroll-mt-16 {i % 2 === 1 ? 'bg-paper-2' : ''} border-b border-ink/10"
+    class="scroll-mt-16 {i % 2 === 1 ? 'bg-ink-2' : ''} border-b border-hairline"
   >
     <div class="mx-auto max-w-7xl px-6 py-16 md:py-24 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
       <div>
-        <p class="font-label text-sm text-signal">{s.index}</p>
+        <p class="text-sm text-gold">{s.index}</p>
         <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">{s.title}</h2>
-        <p class="mt-4 text-muted-light leading-relaxed">{s.summary}</p>
+        <p class="mt-4 text-body leading-relaxed">{s.summary}</p>
         {#if s.cta}
           {@const callToAction = s.cta}
           <a
@@ -47,10 +47,10 @@
 
       <div>
         <p class="text-lg leading-relaxed max-w-2xl">{s.detail}</p>
-        <ul class="mt-8 border-t border-ink/15">
+        <ul class="mt-8 border-t border-hairline">
           {#each s.points as point, j}
-            <li class="flex items-baseline gap-5 border-b border-ink/15 py-4">
-              <span class="font-label text-xs text-gold shrink-0">{s.index}.{j + 1}</span>
+            <li class="flex items-baseline gap-5 border-b border-hairline py-4">
+              <span class="text-xs text-gold shrink-0">{s.index}.{j + 1}</span>
               <span class="text-sm leading-relaxed">{point}</span>
             </li>
           {/each}
@@ -64,7 +64,7 @@
   <div class="mx-auto max-w-7xl px-6 py-16 md:py-20 flex flex-col md:flex-row md:items-center justify-between gap-8">
     <div>
       <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">{text.ctaHeading}</h2>
-      <p class="mt-3 max-w-md text-muted-dark leading-relaxed">
+      <p class="mt-3 max-w-md text-body leading-relaxed">
         {text.ctaIntro}
       </p>
     </div>
@@ -77,7 +77,7 @@
       </a>
       <a
         href="mailto:{contact.email}"
-        class="border border-white/25 px-7 py-3.5 text-sm font-label hover:border-signal hover:text-signal transition-colors"
+        class="border border-white/25 px-7 py-3.5 text-sm hover:border-gold hover:text-gold transition-colors"
       >
         {contact.email}
       </a>

@@ -1,38 +1,32 @@
 /** @type {import('tailwindcss').Config} */
-// Palette per Jewel Enterprise Brand Guidelines 2026 — Jewel PFP division:
-// Passive Red #D7282E (primary) · Passive Black #0D0D0D · Jewel Gold #C09A51 (shared enterprise colour)
+// JPFP Brand Guidelines, Issue 1.2 (16/10/2026): night mode, Inter, Passive Red used once per area.
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   theme: {
     extend: {
       colors: {
         ink: {
-          DEFAULT: '#0D0D0D', // Passive Black
-          2: '#151517',
-          3: '#1D1D21'
+          DEFAULT: '#000000', // Passive Black: page ground
+          2: '#1A1A1A', // Charcoal: column headers and call-out bodies
+          3: '#141414' // input cells
         },
         paper: {
-          DEFAULT: '#F2F1EC',
-          2: '#E9E7E0'
+          DEFAULT: '#FFFFFF' // titles, headings, values
         },
+        body: '#EDEDED',
+        note: '#BFBFBF',
+        footer: '#9A9A9A',
+        hairline: '#3A3A3A',
         signal: '#D7282E', // Passive Red
-        gold: '#C09A51', // Jewel Gold
+        gold: '#C19B52',
         status: {
           red: '#FF0000',
           yellow: '#FFFF00',
           green: '#00B050'
-        },
-        muted: {
-          dark: '#9BA0A8',
-          light: '#565B63'
         }
       },
       fontFamily: {
-        // Switzer — display/headings (brand). Geom Graphic — body/captions (brand);
-        // Space Grotesk stands in until the licensed Geom Graphic files are added.
-        display: ['Switzer', 'system-ui', 'sans-serif'],
-        sans: ['"Geom Graphic"', '"Space Grotesk"', 'system-ui', 'sans-serif'],
-        label: ['"Geom Graphic"', '"Space Grotesk"', 'system-ui', 'sans-serif']
+        sans: ['Inter', 'system-ui', 'sans-serif']
       },
       letterSpacing: {
         widest2: '0.22em'

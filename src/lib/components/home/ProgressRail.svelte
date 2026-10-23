@@ -6,9 +6,9 @@
 <div class="absolute right-5 md:right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-3 items-center">
   {#each Array(stageCount) as _, i}
     <span
-      class="font-label text-[10px] transition-colors duration-300 {active === i
+      class="text-[10px] transition-colors duration-300 {active === i
         ? 'text-gold'
-        : 'text-muted-dark/50'}"
+        : 'text-note/50'}"
     >
       {String(i).padStart(2, '0')}
     </span>

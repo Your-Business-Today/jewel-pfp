@@ -11,12 +11,12 @@
 </script>
 
 <div class="mt-10 space-y-4">
-  <a href={survey.termsPdf} target="_blank" rel="noopener" class="inline-block text-sm text-paper underline hover:text-signal">
+  <a href={survey.termsPdf} target="_blank" rel="noopener" class="inline-block text-sm text-paper underline hover:text-gold">
     Download our terms (PDF)
   </a>
   {#each checkoutTicks as tick}
     <label class="flex gap-3 text-sm leading-relaxed">
-      <input type="checkbox" value={tick.word} bind:group={tickedWords} required class="mt-1 h-4 w-4 shrink-0 accent-signal" />
+      <input type="checkbox" value={tick.word} bind:group={tickedWords} required class="mt-1 h-4 w-4 shrink-0 accent-gold" />
       <span>{tick.label}</span>
     </label>
   {/each}
@@ -27,10 +27,10 @@
   aria-disabled={!isReadyToPay}
   class="mt-6 inline-block px-7 py-3.5 text-sm font-semibold transition-colors {isReadyToPay
     ? 'bg-signal text-paper hover:bg-signal/90'
-    : 'bg-white/15 text-muted-dark pointer-events-none'}"
+    : 'bg-white/15 text-note pointer-events-none'}"
 >
   Pay {price} via Stripe
 </a>
 {#if !isReadyToPay}
-  <p class="mt-2 text-xs text-muted-dark">Tick both boxes to continue to payment.</p>
+  <p class="mt-2 text-xs text-note">Tick both boxes to continue to payment.</p>
 {/if}

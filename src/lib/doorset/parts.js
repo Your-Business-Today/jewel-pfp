@@ -80,7 +80,7 @@ export function highlightParts(parts, chosenKey) {
 function paintMesh(mesh, isChosen, isFaded) {
   const material = /** @type {THREE.MeshStandardMaterial} */ (mesh.material);
   const glow = isChosen ? glowWhenChosen : 0;
-  material.emissive.setHex(isChosen ? palette.signal : palette.ink);
+  material.emissive.setHex(isChosen ? palette.gold : palette.ink);
   material.emissiveIntensity += (glow - material.emissiveIntensity) * easeRate;
   const opacity = isFaded ? fadedOpacity : mesh.userData.opacity;
   material.opacity += (opacity - material.opacity) * easeRate;

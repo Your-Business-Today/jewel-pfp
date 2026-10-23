@@ -15,7 +15,7 @@
 </svelte:head>
 
 <h1 class="text-3xl font-extrabold tracking-tight">Website admin</h1>
-<p class="mt-3 max-w-2xl text-sm text-muted-light">Everything saved here shows on the website straight away.</p>
+<p class="mt-3 max-w-2xl text-sm text-body">Everything saved here shows on the website straight away.</p>
 
 <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
   <DashboardTile href="/admin/enquiries" label="Enquiries" figure={counts?.enquiries} note="{unreadEnquiries} unread" />
@@ -28,13 +28,13 @@
 <section class="mt-12 max-w-4xl">
   <div class="flex items-baseline justify-between">
     <h2 class="text-xl font-bold tracking-tight">Latest enquiries</h2>
-    <a href="/admin/enquiries" class="font-label text-xs text-signal hover:underline">All enquiries →</a>
+    <a href="/admin/enquiries" class="text-xs text-gold hover:underline">All enquiries →</a>
   </div>
   <div class="mt-4 space-y-4">
     {#each recent as enquiry (enquiry.id)}
       <a href="/admin/enquiries" class="block hover:opacity-80"><EnquiryCard {enquiry} isCompact /></a>
     {:else}
-      <p class="text-sm text-muted-light">No enquiries yet.</p>
+      <p class="text-sm text-body">No enquiries yet.</p>
     {/each}
   </div>
 </section>

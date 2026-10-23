@@ -20,7 +20,7 @@
       </a>
       <a
         href="tel:{phone.replaceAll(' ', '')}"
-        class="border border-paper/40 px-7 py-3.5 text-sm font-label hover:border-paper transition-colors"
+        class="border border-paper/40 px-7 py-3.5 text-sm hover:border-paper transition-colors"
       >
         {phone}
       </a>

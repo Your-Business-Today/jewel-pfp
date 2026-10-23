@@ -5,7 +5,7 @@
   let { id, status, name } = $props();
   const isUnread = $derived(status === enquiryStatus.unread);
   const isArchived = $derived(status === enquiryStatus.archived);
-  const buttonClass = 'font-label text-[11px] uppercase tracking-widest2 border border-ink/20 px-2.5 py-1.5 hover:border-signal hover:text-signal';
+  const buttonClass = 'text-[11px] uppercase tracking-widest2 border border-hairline px-2.5 py-1.5 hover:border-gold hover:text-gold';
 
   /** @type {import('@sveltejs/kit').SubmitFunction} */
   function confirmRemoval({ cancel }) {

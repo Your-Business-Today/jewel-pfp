@@ -3,6 +3,6 @@
 </script>
 
 <p>
-  {#if lead}<strong class="text-ink">{lead}</strong>{/if}
+  {#if lead}<strong class="text-paper">{lead}</strong>{/if}
   {text}
 </p>

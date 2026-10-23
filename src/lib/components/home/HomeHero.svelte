@@ -14,7 +14,7 @@
       <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
         {text.heroHeading}
       </h1>
-      <p class="mt-6 text-lg text-muted-dark max-w-xl leading-relaxed">
+      <p class="mt-6 text-lg text-body max-w-xl leading-relaxed">
         {text.heroIntro}
       </p>
       <div class="mt-10 flex flex-wrap gap-4">
@@ -26,12 +26,12 @@
         </a>
         <a
           href="/services"
-          class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-signal hover:text-signal transition-colors"
+          class="border border-white/25 px-7 py-3.5 text-sm font-semibold hover:border-gold hover:text-gold transition-colors"
         >
           Our services
         </a>
       </div>
-      <p class="mt-14 font-label text-[11px] uppercase tracking-widest2 text-muted-dark animate-pulse">
+      <p class="mt-14 text-[11px] uppercase tracking-widest2 text-note animate-pulse">
         Scroll to inspect the door ↓
       </p>
     </div>

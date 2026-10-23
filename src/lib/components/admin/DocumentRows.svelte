@@ -38,7 +38,7 @@
   {#each rows as row, position (row)}
     <DocumentRow {documentList} {row} {position} isLast={position === rows.length - 1} onmove={move} onremove={remove} />
   {/each}
-  <button type="button" class="mt-4 font-label text-xs uppercase tracking-widest2 border border-ink/20 px-3 py-2 hover:border-signal hover:text-signal disabled:opacity-30" disabled={isFull} onclick={add}>
+  <button type="button" class="mt-4 text-xs uppercase tracking-widest2 border border-hairline px-3 py-2 hover:border-gold hover:text-gold disabled:opacity-30" disabled={isFull} onclick={add}>
     Add an entry
   </button>
 </fieldset>

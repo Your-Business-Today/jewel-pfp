@@ -7,7 +7,7 @@
 </script>
 
 <section class="mx-auto max-w-7xl px-6 py-20 md:py-28 grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-  <div class="space-y-4 text-muted-light leading-relaxed">
+  <div class="space-y-4 text-body leading-relaxed">
     <SectionHeading kicker="Replacement doorsets" title="Thinking of replacing your door?" />
     <p class="pt-2">
       If you would like a replacement doorset, or an existing fire door survey report strongly indicates
@@ -35,14 +35,14 @@
   </div>
   <div>
     <h3 class="text-2xl font-extrabold tracking-tight">What can affect a replacement quote</h3>
-    <p class="mt-3 mb-6 text-sm text-muted-light leading-relaxed">
+    <p class="mt-3 mb-6 text-sm text-body leading-relaxed">
       The £99 site visit, if you opt in to an invasive check, also allows us to produce an accurate quote
       for replacement, which can vary depending on:
     </p>
-    <ul class="border-t border-ink/15">
+    <ul class="border-t border-hairline">
       {#each replacementFactors as factor, i}
-        <li class="flex items-baseline gap-5 border-b border-ink/15 py-4">
-          <span class="font-label text-xs text-gold shrink-0">{i + 1}</span>
+        <li class="flex items-baseline gap-5 border-b border-hairline py-4">
+          <span class="text-xs text-gold shrink-0">{i + 1}</span>
           <span class="text-sm leading-relaxed">{factor}</span>
         </li>
       {/each}

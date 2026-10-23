@@ -11,24 +11,24 @@
     </div>
     <a
       href="/services"
-      class="hidden md:inline font-label text-xs uppercase tracking-widest2 border-b border-ink pb-1 hover:text-signal hover:border-signal transition-colors"
+      class="hidden md:inline text-xs uppercase tracking-widest2 border-b border-hairline pb-1 hover:text-gold hover:border-gold transition-colors"
     >
       All services →
     </a>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink/15">
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 border-t border-l border-hairline">
     {#each services as s}
       <a
         href="/services#{s.slug}"
-        class="group border-b border-r border-ink/15 p-8 hover:bg-ink hover:text-paper transition-colors"
+        class="group border-b border-r border-hairline p-8 hover:bg-ink-2 transition-colors"
       >
-        <p class="font-label text-xs text-gold mb-6">{s.index}</p>
+        <p class="text-xs text-gold mb-6">{s.index}</p>
         <h3 class="text-xl font-bold tracking-tight">{s.title}</h3>
-        <p class="mt-3 text-sm leading-relaxed text-muted-light group-hover:text-muted-dark">
+        <p class="mt-3 text-sm leading-relaxed text-body group-hover:text-body">
           {s.summary}
         </p>
-        <p class="mt-6 font-label text-[11px] uppercase tracking-widest2 text-signal opacity-0 group-hover:opacity-100 transition-opacity">
+        <p class="mt-6 text-[11px] uppercase tracking-widest2 text-gold opacity-0 group-hover:opacity-100 transition-opacity">
           Detail →
         </p>
       </a>

@@ -6,7 +6,7 @@
   <thead>
     <tr>
       {#each table.headings as heading}
-        <th class="py-2 pr-4 border-b border-ink/20 font-semibold text-ink">{heading}</th>
+        <th class="py-2 pr-4 border-b border-hairline font-semibold text-paper">{heading}</th>
       {/each}
     </tr>
   </thead>
@@ -14,7 +14,7 @@
     {#each table.rows as row}
       <tr>
         {#each row as cell}
-          <td class="py-2 pr-4 border-b border-ink/10 align-top">{cell}</td>
+          <td class="py-2 pr-4 border-b border-hairline align-top">{cell}</td>
         {/each}
       </tr>
     {/each}
