@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-22T20:19:50+00:00",
-  "kitVersion": "1.26.0",
+  "generatedAt": "2026-10-25T10:14:11+00:00",
+  "kitVersion": "1.35.0",
   "score": {
     "overall": 100.0,
     "groups": [
       {
         "group": "Standard baseline checks",
         "score": 100.0,
-        "weight": 60
+        "weight": 52
       },
       {
         "group": "Design pattern file count",
@@ -86,10 +86,9 @@
         "weight": 8,
         "zeroAt": 20,
         "unit": "",
-        "isMeasured": true,
-        "offenders": 0.0,
-        "measuredAgainst": 1,
-        "score": 100.0
+        "isMeasured": false,
+        "offenders": null,
+        "score": null
       },
       {
         "key": "comments",
@@ -100,7 +99,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.4,
+        "measuredAgainst": 2.39,
         "score": 100.0
       },
       {
@@ -112,7 +111,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.4,
+        "measuredAgainst": 2.39,
         "score": 100.0
       },
       {
@@ -136,7 +135,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.4,
+        "measuredAgainst": 2.39,
         "score": 100.0
       },
       {
@@ -148,7 +147,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.4,
+        "measuredAgainst": 2.39,
         "score": 100.0
       },
       {
@@ -250,7 +249,7 @@
       "limit": 100,
       "filesOverLimit": 0,
       "totalFiles": 73,
-      "totalLines": 2400,
+      "totalLines": 2390,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
@@ -272,10 +271,7 @@
       "measurementIsHeuristic": true
     },
     "duplication": {
-      "clones": 0,
-      "duplicatedLines": 0,
-      "totalLines": 2589,
-      "duplicatedPercentage": 0.0
+      "skipped": "jscpd is not installed (npm install -g jscpd)"
     },
     "naming": {
       "bannedAbbreviationHits": 0,
@@ -294,7 +290,7 @@
     "prose": {
       "longMemberChainLines": 0,
       "deeplyIndentedLines": 0,
-      "overlongLines": 13,
+      "overlongLines": 10,
       "measurementIsHeuristic": true
     },
     "conditions": {
@@ -331,13 +327,13 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 419,
-      "tooling": 160,
-      "shared": 91,
-      "frontend": 78,
+      "totalFiles": 423,
+      "tooling": 161,
+      "shared": 92,
+      "frontend": 79,
       "backend": 40,
       "tests": 20,
-      "docs": 16,
+      "docs": 17,
       "infrastructure": 11,
       "database": 2,
       "api": 1
@@ -350,7 +346,7 @@
         "limit": 100,
         "filesOverLimit": 0,
         "totalFiles": 73,
-        "totalLines": 2400,
+        "totalLines": 2390,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -406,7 +402,7 @@
           },
           {
             "file": "src/lib/components/layout/SiteHeader.svelte",
-            "line": 4,
+            "line": 6,
             "name": "menuOpen"
           }
         ]
@@ -439,7 +435,7 @@
       "summary": {
         "longMemberChainLines": 0,
         "deeplyIndentedLines": 0,
-        "overlongLines": 13,
+        "overlongLines": 10,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -451,16 +447,8 @@
             "line": 10
           },
           {
-            "file": "src/lib/components/admin/DocumentRow.svelte",
-            "line": 8
-          },
-          {
             "file": "src/lib/components/admin/DocumentRows.svelte",
             "line": 41
-          },
-          {
-            "file": "src/lib/components/admin/RowControls.svelte",
-            "line": 5
           },
           {
             "file": "src/lib/components/contact/EnquiryForm.svelte",
@@ -473,10 +461,6 @@
           {
             "file": "src/lib/components/doorset/DoorsetCanvas.svelte",
             "line": 5
-          },
-          {
-            "file": "src/lib/components/doorset/GapLabels.svelte",
-            "line": 8
           },
           {
             "file": "src/routes/book/+page.svelte",
@@ -901,13 +885,13 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 419,
-        "tooling": 160,
-        "shared": 91,
-        "frontend": 78,
+        "totalFiles": 423,
+        "tooling": 161,
+        "shared": 92,
+        "frontend": 79,
         "backend": 40,
         "tests": 20,
-        "docs": 16,
+        "docs": 17,
         "infrastructure": 11,
         "database": 2,
         "api": 1
@@ -915,21 +899,21 @@
       "offenders": [
         {
           "area": "tooling",
-          "files": 160,
+          "files": 161,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "shared",
-          "files": 91,
+          "files": 92,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "frontend",
-          "files": 78,
+          "files": 79,
           "sourceFiles": 73,
-          "sourceLines": 2400
+          "sourceLines": 2390
         },
         {
           "area": "backend",
@@ -945,7 +929,7 @@
         },
         {
           "area": "docs",
-          "files": 16,
+          "files": 17,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -986,10 +970,7 @@
     "duplication": {
       "name": "duplication",
       "summary": {
-        "clones": 0,
-        "duplicatedLines": 0,
-        "totalLines": 2589,
-        "duplicatedPercentage": 0.0
+        "skipped": "jscpd is not installed (npm install -g jscpd)"
       },
       "offenders": []
     }
