@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T19:19:56+00:00",
-  "kitVersion": "1.36.0",
+  "generatedAt": "2026-10-29T20:47:38+00:00",
+  "kitVersion": "1.37.0",
   "score": {
     "overall": 100.0,
     "groups": [
@@ -271,8 +271,7 @@
       "measurementIsHeuristic": true
     },
     "duplication": {
-      "skipped": "jscpd is not installed (npm install -g jscpd)",
-      "carriedFromBaseline": true
+      "skipped": "jscpd is not installed (npm install -g jscpd)"
     },
     "naming": {
       "bannedAbbreviationHits": 0,
@@ -971,8 +970,7 @@
     "duplication": {
       "name": "duplication",
       "summary": {
-        "skipped": "jscpd is not installed (npm install -g jscpd)",
-        "carriedFromBaseline": true
+        "skipped": "jscpd is not installed (npm install -g jscpd)"
       },
       "offenders": []
     }
