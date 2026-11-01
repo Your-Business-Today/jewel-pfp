@@ -20,7 +20,7 @@ export const cookies = {
   heading: 'Cookies',
   blocks: [
     {
-      text: 'Our website and our booking page only use cookies needed for them to work, such as keeping your booking secure. Card payments happen on Stripe’s own secure page, which has its own cookies. We do not use advertising or tracking cookies.'
+      text: 'Our website sets no cookies for visitors. Its only cookie keeps our own staff signed in while they edit the site. The portal page where you complete your booking only uses cookies needed for it to work, such as keeping your booking secure. Card payments happen on Stripe’s own secure page, which has its own cookies. We do not use advertising or tracking cookies.'
     }
   ]
 };
