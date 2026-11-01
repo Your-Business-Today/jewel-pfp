@@ -18,7 +18,7 @@
 </svelte:head>
 
 <h1 class="text-3xl font-extrabold tracking-tight">Enquiries</h1>
-<p class="mt-3 max-w-2xl text-sm text-body">Every message sent from the contact form. Each one is also emailed to the team.</p>
+<p class="mt-3 max-w-2xl text-sm text-body">Every message sent from the contact form. Each one is also emailed to the team, and deleted from here 12 months after it arrived, as the privacy notice says.</p>
 <nav class="mt-6 flex gap-6">
   <a href="/admin/enquiries" class="{tabClass} {isArchiveView ? 'border-transparent' : 'border-signal'}">Inbox</a>
   <a href="/admin/enquiries?view={archived}" class="{tabClass} {isArchiveView ? 'border-signal' : 'border-transparent'}">Archived</a>
