@@ -1,23 +1,23 @@
 # Installed by the project-process kit (re-run its bootstrap to refresh; do not edit by hand).
 # The deploy window. Every pull request merges into staging, which deploys nothing;
-# master moves only when this workflow promotes staging into it as one pull
+# main moves only when this workflow promotes staging into it as one pull
 # request that merges itself at green, and that merge is the one deploy. Your Business Today fires it
 # at the project's deploy time (workflow_dispatch); "Run workflow" in the Actions tab does the same.
 # It needs the repository secret PROMOTION_TOKEN: a pull request opened with the Actions token runs
 # no checks and its merge deploys nothing, so the token is a person's or an app's.
-# After the promotion merges, staging is brought level with master: nothing when
+# After the promotion merges, staging is brought level with main: nothing when
 # the two hold the same files (the promotion's merge commit is the only difference), a fast-forward
-# where staging's ruleset allows a push, else one pull request from master into
-# staging merging at green — so an urgent fix merged straight into master reaches
-# staging too. It runs after every merge into master, the promotion's and an urgent fix's alike.
+# where staging's ruleset allows a push, else one pull request from main into
+# staging merging at green — so an urgent fix merged straight into main reaches
+# staging too. It runs after every merge into main, the promotion's and an urgent fix's alike.
 name: promote staging
-run-name: ${{ github.event_name == 'workflow_dispatch' && 'Promote staging to master' || 'Bring staging level with master' }}
+run-name: ${{ github.event_name == 'workflow_dispatch' && 'Promote staging to main' || 'Bring staging level with main' }}
 
 on:
   workflow_dispatch:
   pull_request:
     types: [closed]
-    branches: [master]
+    branches: [main]
 
 permissions:
   contents: write
@@ -36,19 +36,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - run: bash scripts/promote-staging.sh promote staging master
+      - run: bash scripts/promote-staging.sh promote staging main
         env:
           GH_TOKEN: ${{ secrets.PROMOTION_TOKEN }}
 
   level:
     if: github.event_name == 'pull_request' && github.event.pull_request.merged
     runs-on: ubuntu-latest
-    name: Bring staging level with the promoted master
+    name: Bring staging level with the promoted main
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: master
+          ref: main
           fetch-depth: 0
-      - run: bash scripts/promote-staging.sh level staging master
+      - run: bash scripts/promote-staging.sh level staging main
         env:
           GH_TOKEN: ${{ secrets.PROMOTION_TOKEN }}
