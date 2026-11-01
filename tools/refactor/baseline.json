@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-29T20:47:38+00:00",
-  "kitVersion": "1.37.0",
+  "generatedAt": "2026-11-01T07:00:59+00:00",
+  "kitVersion": "1.38.0",
   "score": {
     "overall": 100.0,
     "groups": [
       {
         "group": "Standard baseline checks",
         "score": 100.0,
-        "weight": 52
+        "weight": 60
       },
       {
         "group": "Design pattern file count",
@@ -86,9 +86,10 @@
         "weight": 8,
         "zeroAt": 20,
         "unit": "",
-        "isMeasured": false,
-        "offenders": null,
-        "score": null
+        "isMeasured": true,
+        "offenders": 0.0,
+        "measuredAgainst": 1,
+        "score": 100.0
       },
       {
         "key": "comments",
@@ -271,7 +272,10 @@
       "measurementIsHeuristic": true
     },
     "duplication": {
-      "skipped": "jscpd is not installed (npm install -g jscpd)"
+      "clones": 0,
+      "duplicatedLines": 0,
+      "totalLines": 2582,
+      "duplicatedPercentage": 0.0
     },
     "naming": {
       "bannedAbbreviationHits": 0,
@@ -970,7 +974,10 @@
     "duplication": {
       "name": "duplication",
       "summary": {
-        "skipped": "jscpd is not installed (npm install -g jscpd)"
+        "clones": 0,
+        "duplicatedLines": 0,
+        "totalLines": 2582,
+        "duplicatedPercentage": 0.0
       },
       "offenders": []
     }
