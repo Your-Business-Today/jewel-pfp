@@ -4,6 +4,14 @@ const stripCentre = 52;
 const stripHeight = 10;
 const parallelSpacing = 22;
 
+export const sealDrawing = {
+  width: 250,
+  height: 112,
+  labelX: 122,
+  description: 'Close-up plan section through the lock side of the frame, showing the seals',
+  caption: 'Seal type, size and position. Close-up looking down on the lock side, drawn larger than life.'
+};
+
 const fittedShapes = [
   { key: 'frame', label: 'Frame', tone: 'frame', x: 0, y: 0, width: 35, height: 110, labelY: 100, pointX: 20, pointY: 98 },
   { key: 'stop', label: 'Stop on the frame', tone: 'frame', x: 35, y: 0, width: 12, height: 25, labelY: 6, pointX: 44, pointY: 6 },
