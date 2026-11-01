@@ -6,6 +6,7 @@
   import DoorTypePicker from '$lib/components/doorset/DoorTypePicker.svelte';
   import SealPicker from '$lib/components/doorset/SealPicker.svelte';
   import SealSection from '$lib/components/doorset/SealSection.svelte';
+  import SideSection from '$lib/components/doorset/SideSection.svelte';
   import ClosingAction from '$lib/components/doorset/ClosingAction.svelte';
   import { cardFor } from '$lib/doorset/cards.js';
   import { gaps, surround } from '$lib/doorset/measures.js';
@@ -59,6 +60,7 @@
         <p class="text-sm text-note">
           Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
         </p>
+        <SideSection />
       {/if}
       {#if isLookingAtSeals}
         <SealPicker bind:sealConfiguration />
