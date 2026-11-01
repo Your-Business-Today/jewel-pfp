@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-01T07:00:59+00:00",
-  "kitVersion": "1.38.0",
+  "generatedAt": "2026-11-01T08:08:03+00:00",
+  "kitVersion": "1.39.0",
   "score": {
     "overall": 100.0,
     "groups": [
@@ -40,7 +40,7 @@
         "unit": "files",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 73,
+        "measuredAgainst": 74,
         "score": 100.0
       },
       {
@@ -100,7 +100,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.42,
         "score": 100.0
       },
       {
@@ -112,7 +112,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.42,
         "score": 100.0
       },
       {
@@ -136,7 +136,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.42,
         "score": 100.0
       },
       {
@@ -148,7 +148,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.42,
         "score": 100.0
       },
       {
@@ -249,8 +249,8 @@
     "fileLength": {
       "limit": 100,
       "filesOverLimit": 0,
-      "totalFiles": 73,
-      "totalLines": 2390,
+      "totalFiles": 74,
+      "totalLines": 2424,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
@@ -274,7 +274,7 @@
     "duplication": {
       "clones": 0,
       "duplicatedLines": 0,
-      "totalLines": 2582,
+      "totalLines": 2614,
       "duplicatedPercentage": 0.0
     },
     "naming": {
@@ -294,7 +294,7 @@
     "prose": {
       "longMemberChainLines": 0,
       "deeplyIndentedLines": 0,
-      "overlongLines": 10,
+      "overlongLines": 11,
       "measurementIsHeuristic": true
     },
     "conditions": {
@@ -312,6 +312,7 @@
       "predictedFilesMissing": 0,
       "entities": 0,
       "entitiesOutOfRange": 0,
+      "entitiesAccepted": 0,
       "measurementIsHeuristic": true
     },
     "inventory": {
@@ -331,15 +332,15 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 448,
+      "totalFiles": 451,
       "tooling": 180,
-      "shared": 92,
-      "frontend": 79,
+      "shared": 93,
+      "frontend": 80,
       "backend": 40,
       "tests": 24,
       "docs": 17,
       "infrastructure": 13,
-      "database": 2,
+      "database": 3,
       "api": 1
     }
   },
@@ -349,8 +350,8 @@
       "summary": {
         "limit": 100,
         "filesOverLimit": 0,
-        "totalFiles": 73,
-        "totalLines": 2390,
+        "totalFiles": 74,
+        "totalLines": 2424,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -439,7 +440,7 @@
       "summary": {
         "longMemberChainLines": 0,
         "deeplyIndentedLines": 0,
-        "overlongLines": 10,
+        "overlongLines": 11,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -465,6 +466,10 @@
           {
             "file": "src/lib/components/doorset/DoorsetCanvas.svelte",
             "line": 5
+          },
+          {
+            "file": "src/routes/admin/enquiries/+page.svelte",
+            "line": 21
           },
           {
             "file": "src/routes/book/+page.svelte",
@@ -517,6 +522,7 @@
         "predictedFilesMissing": 0,
         "entities": 0,
         "entitiesOutOfRange": 0,
+        "entitiesAccepted": 0,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -677,6 +683,10 @@
             "reusedBy": 3
           },
           {
+            "component": "src/lib/components/page/PageHero.svelte",
+            "reusedBy": 3
+          },
+          {
             "component": "src/lib/components/admin/CopyBuiltIn.svelte",
             "reusedBy": 2
           },
@@ -702,10 +712,6 @@
           },
           {
             "component": "src/lib/components/documents/DocumentParagraph.svelte",
-            "reusedBy": 2
-          },
-          {
-            "component": "src/lib/components/page/PageHero.svelte",
             "reusedBy": 2
           },
           {
@@ -889,15 +895,15 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 448,
+        "totalFiles": 451,
         "tooling": 180,
-        "shared": 92,
-        "frontend": 79,
+        "shared": 93,
+        "frontend": 80,
         "backend": 40,
         "tests": 24,
         "docs": 17,
         "infrastructure": 13,
-        "database": 2,
+        "database": 3,
         "api": 1
       },
       "offenders": [
@@ -909,15 +915,15 @@
         },
         {
           "area": "shared",
-          "files": 92,
+          "files": 93,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "frontend",
-          "files": 79,
-          "sourceFiles": 73,
-          "sourceLines": 2390
+          "files": 80,
+          "sourceFiles": 74,
+          "sourceLines": 2424
         },
         {
           "area": "backend",
@@ -945,7 +951,7 @@
         },
         {
           "area": "database",
-          "files": 2,
+          "files": 3,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -976,7 +982,7 @@
       "summary": {
         "clones": 0,
         "duplicatedLines": 0,
-        "totalLines": 2582,
+        "totalLines": 2614,
         "duplicatedPercentage": 0.0
       },
       "offenders": []
