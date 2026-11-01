@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-01T08:08:03+00:00",
-  "kitVersion": "1.39.0",
+  "generatedAt": "2026-11-01T10:20:45+00:00",
+  "kitVersion": "1.40.0",
   "score": {
     "overall": 100.0,
     "groups": [
@@ -40,7 +40,7 @@
         "unit": "files",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 74,
+        "measuredAgainst": 76,
         "score": 100.0
       },
       {
@@ -100,7 +100,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.42,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -112,7 +112,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.42,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -124,7 +124,7 @@
         "unit": "components and functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 69,
+        "measuredAgainst": 71,
         "score": 100.0
       },
       {
@@ -136,7 +136,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.42,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -148,7 +148,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.42,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -249,8 +249,8 @@
     "fileLength": {
       "limit": 100,
       "filesOverLimit": 0,
-      "totalFiles": 74,
-      "totalLines": 2424,
+      "totalFiles": 76,
+      "totalLines": 2448,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
@@ -274,7 +274,7 @@
     "duplication": {
       "clones": 0,
       "duplicatedLines": 0,
-      "totalLines": 2614,
+      "totalLines": 2623,
       "duplicatedPercentage": 0.0
     },
     "naming": {
@@ -317,7 +317,7 @@
     },
     "inventory": {
       "pages": 18,
-      "components": 53,
+      "components": 55,
       "orphanComponents": 0,
       "averagePageLines": 44
     },
@@ -332,13 +332,13 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 451,
-      "tooling": 180,
-      "shared": 93,
-      "frontend": 80,
+      "totalFiles": 368,
+      "tooling": 103,
+      "shared": 94,
+      "frontend": 82,
       "backend": 40,
-      "tests": 24,
       "docs": 17,
+      "tests": 15,
       "infrastructure": 13,
       "database": 3,
       "api": 1
@@ -350,8 +350,8 @@
       "summary": {
         "limit": 100,
         "filesOverLimit": 0,
-        "totalFiles": 74,
-        "totalLines": 2424,
+        "totalFiles": 76,
+        "totalLines": 2448,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -481,15 +481,15 @@
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 49
+            "line": 50
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 60
+            "line": 61
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 70
+            "line": 72
           }
         ]
       }
@@ -538,7 +538,7 @@
       "name": "inventory",
       "summary": {
         "pages": 18,
-        "components": 53,
+        "components": 55,
         "orphanComponents": 0,
         "averagePageLines": 44
       },
@@ -553,7 +553,7 @@
           },
           {
             "page": "src/routes/door-explainer/+page.svelte",
-            "lines": 75,
+            "lines": 77,
             "widgets": []
           },
           {
@@ -715,6 +715,10 @@
             "reusedBy": 2
           },
           {
+            "component": "src/lib/components/doorset/SectionDrawing.svelte",
+            "reusedBy": 2
+          },
+          {
             "component": "src/lib/components/admin/AccreditationForm.svelte",
             "reusedBy": 1
           },
@@ -831,6 +835,10 @@
             "reusedBy": 1
           },
           {
+            "component": "src/lib/components/doorset/SideSection.svelte",
+            "reusedBy": 1
+          },
+          {
             "component": "src/lib/components/home/AccreditationList.svelte",
             "reusedBy": 1
           },
@@ -895,13 +903,13 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 451,
-        "tooling": 180,
-        "shared": 93,
-        "frontend": 80,
+        "totalFiles": 368,
+        "tooling": 103,
+        "shared": 94,
+        "frontend": 82,
         "backend": 40,
-        "tests": 24,
         "docs": 17,
+        "tests": 15,
         "infrastructure": 13,
         "database": 3,
         "api": 1
@@ -909,21 +917,21 @@
       "offenders": [
         {
           "area": "tooling",
-          "files": 180,
+          "files": 103,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "shared",
-          "files": 93,
+          "files": 94,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "frontend",
-          "files": 80,
-          "sourceFiles": 74,
-          "sourceLines": 2424
+          "files": 82,
+          "sourceFiles": 76,
+          "sourceLines": 2448
         },
         {
           "area": "backend",
@@ -932,14 +940,14 @@
           "sourceLines": 0
         },
         {
-          "area": "tests",
-          "files": 24,
+          "area": "docs",
+          "files": 17,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
-          "area": "docs",
-          "files": 17,
+          "area": "tests",
+          "files": 15,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -982,7 +990,7 @@
       "summary": {
         "clones": 0,
         "duplicatedLines": 0,
-        "totalLines": 2614,
+        "totalLines": 2623,
         "duplicatedPercentage": 0.0
       },
       "offenders": []

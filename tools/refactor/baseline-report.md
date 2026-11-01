@@ -1,26 +1,26 @@
 # Refactor audit
 
-Generated 2026-11-01 08:08 UTC.
+Generated 2026-11-01 10:20 UTC.
 
 ## Headline
 
-**Code quality score 100.0%.** **0 of 74 source files are over the 100-line limit (0.0%)**; the worst file is 0 lines.
+**Code quality score 100.0%.** **0 of 76 source files are over the 100-line limit (0.0%)**; the worst file is 0 lines.
 
 ## Code quality score
 
 | Element | Reading | Score | Weight | 0% at |
 | --- | --- | --- | --- | --- |
 | **Standard baseline checks** | | **100.0%** | **60** | |
-| Files over the line limit | 0 in 74 files | 100.0% | 10 | 50% of files |
+| Files over the line limit | 0 in 76 files | 100.0% | 10 | 50% of files |
 | Worst file, in limits over | 0 | 100.0% | 5 | 9 |
 | Functions over the line limit | 0 in 16 functions | 100.0% | 8 | 25% of functions |
 | Else blocks | 0 in 71 branches | 100.0% | 5 | 50% of branches |
 | Duplication % | 0 | 100.0% | 8 | 20 |
-| Explanatory comment lines | 0 in 2.42 thousand lines | 100.0% | 4 | 50 per thousand lines |
-| Inline magic values | 0 in 2.42 thousand lines | 100.0% | 4 | 20 per thousand lines |
-| Orphan components and functions | 0 in 69 components and functions | 100.0% | 4 | 10% of components and functions |
-| Long member chain lines | 0 in 2.42 thousand lines | 100.0% | 4 | 30 per thousand lines |
-| Deeply indented lines | 0 in 2.42 thousand lines | 100.0% | 4 | 30 per thousand lines |
+| Explanatory comment lines | 0 in 2.45 thousand lines | 100.0% | 4 | 50 per thousand lines |
+| Inline magic values | 0 in 2.45 thousand lines | 100.0% | 4 | 20 per thousand lines |
+| Orphan components and functions | 0 in 71 components and functions | 100.0% | 4 | 10% of components and functions |
+| Long member chain lines | 0 in 2.45 thousand lines | 100.0% | 4 | 30 per thousand lines |
+| Deeply indented lines | 0 in 2.45 thousand lines | 100.0% | 4 | 30 per thousand lines |
 | Overlong function names | 0 in 16 functions | 100.0% | 4 | 10% of functions |
 | **Design pattern file count** | | **not measured** | **0** | |
 | Files the patterns predict but are missing | not measured | not measured | — | 50% of predicted files |
@@ -40,26 +40,26 @@ Each element scores 100% with no offenders and falls in a straight line to 0% wh
 
 | Area | Files | Of which audited source | Source lines |
 | --- | --- | --- | --- |
-| tooling | 180 | 0 | 0 |
-| shared | 93 | 0 | 0 |
-| frontend | 80 | 74 | 2,424 |
+| tooling | 103 | 0 | 0 |
+| shared | 94 | 0 | 0 |
+| frontend | 82 | 76 | 2,448 |
 | backend | 40 | 0 | 0 |
-| tests | 24 | 0 | 0 |
 | docs | 17 | 0 | 0 |
+| tests | 15 | 0 | 0 |
 | infrastructure | 13 | 0 | 0 |
 | database | 3 | 0 | 0 |
 | api | 1 | 0 | 0 |
-| **whole repository** | **451** | **74** | **2,424** |
+| **whole repository** | **368** | **76** | **2,448** |
 
 ## Summary
 
 | Check | Key figures |
 | --- | --- |
-| fileLength | limit: 100, filesOverLimit: 0, totalFiles: 74, totalLines: 2424, worstFileLines: 0, worstFileTimesOverLimit: 0.0 |
+| fileLength | limit: 100, filesOverLimit: 0, totalFiles: 76, totalLines: 2448, worstFileLines: 0, worstFileTimesOverLimit: 0.0 |
 | functionShape | limit: 30, functionsOverLimit: 0, totalFunctions: 16, elseBlocks: 0, ifBlocks: 71, measurementIsHeuristic: True |
 | functionNames | overlongFunctionNames: 0, maxWords: 5, maxLength: 40 |
 | accessorNames | gluedAccessorNames: 0, measurementIsHeuristic: True |
-| duplication | clones: 0, duplicatedLines: 0, totalLines: 2614, duplicatedPercentage: 0.0 |
+| duplication | clones: 0, duplicatedLines: 0, totalLines: 2623, duplicatedPercentage: 0.0 |
 | naming | bannedAbbreviationHits: 0, unprefixedBooleans: 3 |
 | comments | explanatoryCommentLines: 0, filesWithComments: 0, taskMarkers: 0 |
 | magicValues | inlineHexColours: 0, inlineStyleAttributes: 0, repeatedStringLiterals: 0 |
@@ -67,10 +67,10 @@ Each element scores 100% with no offenders and falls in a straight line to 0% wh
 | conditions | tangledConditionLines: 0, literalComparisonLines: 0, measurementIsHeuristic: True |
 | orphans | orphanFunctions: 0, functionsExamined: 16 |
 | designPatterns | roleFamilies: 1, predictedFiles: 0, predictedFilesMissing: 0, entities: 0, entitiesOutOfRange: 0, entitiesAccepted: 0, measurementIsHeuristic: True |
-| inventory | pages: 18, components: 53, orphanComponents: 0, averagePageLines: 44 |
+| inventory | pages: 18, components: 55, orphanComponents: 0, averagePageLines: 44 |
 | siteDefinition | skipped: no siteDefinition catalogue in rules.json |
 | inputValidation | schemaTables: 6, limitedColumns: 0, writeDoors: 0, unvalidatedDoors: 0, looserLimits: 0 |
-| fileAreas | totalFiles: 451, tooling: 180, shared: 93, frontend: 80, backend: 40, tests: 24, docs: 17, infrastructure: 13, database: 3, api: 1 |
+| fileAreas | totalFiles: 368, tooling: 103, shared: 94, frontend: 82, backend: 40, docs: 17, tests: 15, infrastructure: 13, database: 3, api: 1 |
 
 ## Against the baseline
 
