@@ -1,19 +1,22 @@
 # Jewel PFP
 
-Display website for **Jewel PFP**, built with SvelteKit 2 + Svelte 5 + Tailwind CSS v3.
-Deployed on Vercel (`@sveltejs/adapter-vercel`). No backend yet — Supabase can be added later.
+The website for **Jewel Passive Fire Protection Ltd** at https://www.jewelpfp.co.uk, built with SvelteKit 2, Svelte 5 and Tailwind CSS v3 and deployed on Vercel (`@sveltejs/adapter-vercel`). It replaced the Wix site in October 2026.
+
+The repository's own conventions, the domain notes and the environment variables are in [`PROJECT.md`](PROJECT.md); how work is done here is in [`CLAUDE.md`](CLAUDE.md).
 
 ## Stack
 
 - **SvelteKit 2** / **Svelte 5** (runes)
-- **Tailwind CSS v3** (config in `tailwind.config.js`)
+- **Tailwind CSS v3**, with the JPFP brand tokens in `tailwind.config.js`
 - **Vercel adapter** for deployment
+- **Supabase** for the admin section: the page text, services, accreditations, documents and enquiries
+- **Resend** for the enquiry email
 - JavaScript with JSDoc type-checking (`jsconfig.json`)
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev          # http://localhost:5173
 ```
 
@@ -25,41 +28,43 @@ npm run preview      # preview the production build locally
 npm run check        # type / svelte checks
 ```
 
+Without the Supabase variables the site runs on the built-in content in `src/lib/`, and with neither Supabase nor Resend set up the contact form opens the visitor's email app instead.
+
 ## Project structure
 
 ```
 src/
-  app.html            # page shell
-  app.css             # Tailwind entry
+  app.html                 # page shell
+  app.css                  # Tailwind entry
+  hooks.server.js          # book.jewelpfp.co.uk redirect, admin guard
   routes/
-    +layout.svelte    # header / footer / nav
-    +page.svelte      # homepage
-    services/+page.svelte
-    contact/+page.svelte
-  lib/services.js       # service, accreditation + contact data
-static/               # static assets (favicon, images)
-tailwind.config.js    # theme: brand colors + Inter font
-svelte.config.js      # Vercel adapter
+    +layout.svelte         # header / footer / nav
+    +error.svelte          # not found and error page
+    +page.svelte           # home page
+    services/              # services
+    contact/               # contact details and the enquiry form
+    book/                  # £99 survey booking, terms, thank-you hand-off to the portal
+    privacy/               # privacy notice
+    door-explainer/        # draft door set explainer, noindex, awaiting Stuart's sign-off
+    admin/                 # staff sign-in, content editing, enquiries
+  lib/
+    services.js            # built-in services, accreditations and contact details
+    content/               # built-in page text and documents, field limits
+    booking/               # booking page data and the portal hand-off
+    privacy/               # built-in privacy notice
+    server/                # Supabase, admin session, content stores
+    components/            # page components, by area
+supabase/migrations/       # schema, run by GitHub on merge to main
+static/                    # logo, favicon, robots.txt, sitemap.xml
 ```
 
 ## Editing content
 
-- Site name + nav: `src/routes/+layout.svelte`
-- Homepage headline / tagline: `src/routes/+page.svelte`
-- Brand colors + font: `theme.extend` in `tailwind.config.js`
+Staff edit the page text, services, accreditations, contact details, the booking page, the booking terms and the privacy notice at `/admin`. What they have not changed falls back to the built-in content in `src/lib/`, which is where a developer changes the defaults.
 
-## Deploy to Vercel
+## Deploying
 
-1. Push this repo to GitHub (`jewel-pfp`).
-2. In Vercel: **Add New → Project → Import** this repo.
-3. Framework preset auto-detects as **SvelteKit**. No env vars needed yet.
-4. Deploy. You'll get a `*.vercel.app` test URL immediately.
-5. Point a custom domain later under **Project → Settings → Domains** (DNS can be configured then).
-
-## Adding Supabase later
-
-When these become dynamic, install `@supabase/ssr`, add the keys to `.env`
-(see `.env.example`), and create a client in `src/lib`. Not wired up yet.
+Vercel deploys a preview for every pull request and production from `main`. Pull requests go into `staging`, which is promoted to `main` at the project's deploy time. Migrations in `supabase/migrations/` run on the live database when they reach `main`.
 
 <!-- code-quality:start -->
 ## Code quality

@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-29T20:47:38+00:00",
-  "kitVersion": "1.37.0",
+  "generatedAt": "2026-11-01T10:20:45+00:00",
+  "kitVersion": "1.40.0",
   "score": {
     "overall": 100.0,
     "groups": [
       {
         "group": "Standard baseline checks",
         "score": 100.0,
-        "weight": 52
+        "weight": 60
       },
       {
         "group": "Design pattern file count",
@@ -40,7 +40,7 @@
         "unit": "files",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 73,
+        "measuredAgainst": 76,
         "score": 100.0
       },
       {
@@ -86,9 +86,10 @@
         "weight": 8,
         "zeroAt": 20,
         "unit": "",
-        "isMeasured": false,
-        "offenders": null,
-        "score": null
+        "isMeasured": true,
+        "offenders": 0.0,
+        "measuredAgainst": 1,
+        "score": 100.0
       },
       {
         "key": "comments",
@@ -99,7 +100,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -111,7 +112,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -123,7 +124,7 @@
         "unit": "components and functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 69,
+        "measuredAgainst": 71,
         "score": 100.0
       },
       {
@@ -135,7 +136,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -147,7 +148,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.39,
+        "measuredAgainst": 2.45,
         "score": 100.0
       },
       {
@@ -248,8 +249,8 @@
     "fileLength": {
       "limit": 100,
       "filesOverLimit": 0,
-      "totalFiles": 73,
-      "totalLines": 2390,
+      "totalFiles": 76,
+      "totalLines": 2448,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
@@ -271,7 +272,10 @@
       "measurementIsHeuristic": true
     },
     "duplication": {
-      "skipped": "jscpd is not installed (npm install -g jscpd)"
+      "clones": 0,
+      "duplicatedLines": 0,
+      "totalLines": 2623,
+      "duplicatedPercentage": 0.0
     },
     "naming": {
       "bannedAbbreviationHits": 0,
@@ -290,7 +294,7 @@
     "prose": {
       "longMemberChainLines": 0,
       "deeplyIndentedLines": 0,
-      "overlongLines": 10,
+      "overlongLines": 11,
       "measurementIsHeuristic": true
     },
     "conditions": {
@@ -308,11 +312,12 @@
       "predictedFilesMissing": 0,
       "entities": 0,
       "entitiesOutOfRange": 0,
+      "entitiesAccepted": 0,
       "measurementIsHeuristic": true
     },
     "inventory": {
       "pages": 18,
-      "components": 53,
+      "components": 55,
       "orphanComponents": 0,
       "averagePageLines": 44
     },
@@ -327,15 +332,15 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 448,
-      "tooling": 180,
-      "shared": 92,
-      "frontend": 79,
+      "totalFiles": 368,
+      "tooling": 103,
+      "shared": 94,
+      "frontend": 82,
       "backend": 40,
-      "tests": 24,
       "docs": 17,
+      "tests": 15,
       "infrastructure": 13,
-      "database": 2,
+      "database": 3,
       "api": 1
     }
   },
@@ -345,8 +350,8 @@
       "summary": {
         "limit": 100,
         "filesOverLimit": 0,
-        "totalFiles": 73,
-        "totalLines": 2390,
+        "totalFiles": 76,
+        "totalLines": 2448,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -435,7 +440,7 @@
       "summary": {
         "longMemberChainLines": 0,
         "deeplyIndentedLines": 0,
-        "overlongLines": 10,
+        "overlongLines": 11,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -463,6 +468,10 @@
             "line": 5
           },
           {
+            "file": "src/routes/admin/enquiries/+page.svelte",
+            "line": 21
+          },
+          {
             "file": "src/routes/book/+page.svelte",
             "line": 18
           },
@@ -472,15 +481,15 @@
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 49
+            "line": 50
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 60
+            "line": 61
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 70
+            "line": 72
           }
         ]
       }
@@ -513,6 +522,7 @@
         "predictedFilesMissing": 0,
         "entities": 0,
         "entitiesOutOfRange": 0,
+        "entitiesAccepted": 0,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -528,7 +538,7 @@
       "name": "inventory",
       "summary": {
         "pages": 18,
-        "components": 53,
+        "components": 55,
         "orphanComponents": 0,
         "averagePageLines": 44
       },
@@ -543,7 +553,7 @@
           },
           {
             "page": "src/routes/door-explainer/+page.svelte",
-            "lines": 75,
+            "lines": 77,
             "widgets": []
           },
           {
@@ -673,6 +683,10 @@
             "reusedBy": 3
           },
           {
+            "component": "src/lib/components/page/PageHero.svelte",
+            "reusedBy": 3
+          },
+          {
             "component": "src/lib/components/admin/CopyBuiltIn.svelte",
             "reusedBy": 2
           },
@@ -701,7 +715,7 @@
             "reusedBy": 2
           },
           {
-            "component": "src/lib/components/page/PageHero.svelte",
+            "component": "src/lib/components/doorset/SectionDrawing.svelte",
             "reusedBy": 2
           },
           {
@@ -821,6 +835,10 @@
             "reusedBy": 1
           },
           {
+            "component": "src/lib/components/doorset/SideSection.svelte",
+            "reusedBy": 1
+          },
+          {
             "component": "src/lib/components/home/AccreditationList.svelte",
             "reusedBy": 1
           },
@@ -885,35 +903,35 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 448,
-        "tooling": 180,
-        "shared": 92,
-        "frontend": 79,
+        "totalFiles": 368,
+        "tooling": 103,
+        "shared": 94,
+        "frontend": 82,
         "backend": 40,
-        "tests": 24,
         "docs": 17,
+        "tests": 15,
         "infrastructure": 13,
-        "database": 2,
+        "database": 3,
         "api": 1
       },
       "offenders": [
         {
           "area": "tooling",
-          "files": 180,
+          "files": 103,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "shared",
-          "files": 92,
+          "files": 94,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "frontend",
-          "files": 79,
-          "sourceFiles": 73,
-          "sourceLines": 2390
+          "files": 82,
+          "sourceFiles": 76,
+          "sourceLines": 2448
         },
         {
           "area": "backend",
@@ -922,14 +940,14 @@
           "sourceLines": 0
         },
         {
-          "area": "tests",
-          "files": 24,
+          "area": "docs",
+          "files": 17,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
-          "area": "docs",
-          "files": 17,
+          "area": "tests",
+          "files": 15,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -941,7 +959,7 @@
         },
         {
           "area": "database",
-          "files": 2,
+          "files": 3,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -970,7 +988,10 @@
     "duplication": {
       "name": "duplication",
       "summary": {
-        "skipped": "jscpd is not installed (npm install -g jscpd)"
+        "clones": 0,
+        "duplicatedLines": 0,
+        "totalLines": 2623,
+        "duplicatedPercentage": 0.0
       },
       "offenders": []
     }

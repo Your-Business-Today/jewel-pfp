@@ -6,7 +6,7 @@ The project-process kit writes this file once and never touches it again, and `C
 
 ## The site
 
-The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. It replaces the Wix site, which has only Home, Services and Contact; the routes are `src/routes/+page.svelte`, `services/`, `contact/`, `book/`, `privacy/` and `admin/`. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`). Until the domain moves, the live preview is https://jewel-pfp.vercel.app/.
+The new jewelpfp.co.uk for Jewel Passive Fire Protection Ltd (JPFP): SvelteKit 2, Svelte 5 (runes), Tailwind CSS v3, deployed on Vercel with `@sveltejs/adapter-vercel`. It replaced the Wix site in October 2026; the routes are `src/routes/+page.svelte`, `services/`, `contact/`, `book/`, `privacy/`, `door-explainer/` (draft) and `admin/`, with `+error.svelte` for a wrong address. The canonical host is `https://www.jewelpfp.co.uk` (canonical and Open Graph tags, `static/robots.txt`, `static/sitemap.xml`).
 
 In YBT this is the "Jewel PFP Website" project.
 
@@ -23,6 +23,7 @@ The site follows the JPFP Brand Guidelines, Issue 1.2 (16/10/2026), owned by Stu
 - **The contact form** saves each enquiry to `enquiries` (shown in the admin dashboard) and emails it through Resend, as jewelbb does. With neither set up it falls back to opening the visitor's email app, as before.
 - **The schema** starts with `supabase/migrations/20261019120000_admin_section.sql`, which was on the default branch before migrations ran themselves, so it is run once by hand in the Supabase SQL editor when the Supabase project is connected.
 - **Migrations run themselves on merge.** `.github/workflows/run-migrations.yml` runs `scripts/run-added-migrations.sh` on every push to `main`: each `supabase/migrations/*.sql` file the push added, in filename order, one transaction each, against the repository secret `SUPABASE_DB_URL`. A file already on `main` never runs again. A new migration is a new file, additive and safe to run twice; it never edits one already merged. Both files came from the kit's `--with-migration-run` and were changed for this repository (the `supabase/migrations/` folder), so a later bootstrap run with that option must keep that change.
+- **Enquiries are deleted after 12 months**, as the privacy notice says: `supabase/migrations/20261101120000_purge_enquiries_after_12_months.sql` schedules a nightly pg_cron job in the database (`purge-enquiries-after-12-months`, 03:15 UTC). Supabase's dashboard lists it under Integrations > Cron.
 - **Every table** has row-level security on and no policies; the server uses the service-role key only.
 - **Limits** for every field are stated once in `src/lib/content/limits.js`, `src/lib/content/listFields.js` and `src/lib/enquiries/enquiryFields.js`; the server checks them and the forms mirror them.
 
@@ -44,18 +45,21 @@ Environment variables on Vercel:
 - The default branch is `main` (renamed from `master` on 1 Nov 2026). The organisation's ruleset requires the `Run test suite` check on every pull request; `.github/workflows/ci.yml` reports it by running `npm ci`, `npm run check` and `npm run build`. Run `npm run check` and `npm run build` before pushing.
 - Vercel deploys a preview for every pull request and production from `main`.
 - Auto-merge is enabled on the repository, so a pull request opened with auto-merge merges itself once `Run test suite` is green.
+- Pull requests go into `staging`, never `main`. `.github/workflows/promote-staging.yml` promotes `staging` into `main` at the project's deploy time (set in Your Business Today), and that merge is the deploy.
 - The Claude GitHub app needs `jewel-pfp` in its repository access for cloud sessions to push and open pull requests; if a push or PR is refused, add the repository to the app's installation.
 
-## Wix to Vercel cutover (pending)
+## Domain and hosting
 
-Jeremy at JPFP is cancelling Wix before it renews on 06/11/2026, so jewelpfp.co.uk must point at Vercel before then.
+- The domain is registered at 123-reg, and its DNS is managed in Microsoft 365 by Jeremy. `www` and the apex have pointed at Vercel since 12 October 2026; the MX (email) records stay with Microsoft 365.
+- The Vercel project serves `www.jewelpfp.co.uk` (canonical), the apex (redirects to `www`), `book.jewelpfp.co.uk` and `jewel-pfp.vercel.app`. Preview deployments sit behind Vercel's sign-in, so people outside the team cannot open them.
+- Wix is cancelled and nothing points at it; its account closes on 25 November 2026. The old Netlify booking site was deleted on 22 October 2026.
 
-- The gaps against the Wix site were closed in PR #1 (accreditation links, favicon, robots, sitemap, canonical and Open Graph tags). The new site covers everything the Wix site has.
-- Waiting on Jeremy: approval of the site, where the domain's DNS is managed, and access to the survey booking site.
-- When writing the DNS records: point `www` and the apex at Vercel; keep the MX (email) records and the `book` subdomain record exactly as they are. `book.jewelpfp.co.uk` is Jeremy's survey booking site and must keep working.
-- If the DNS is hosted at Wix, move it to another provider before Wix is cancelled, or the domain and email go dark with it.
-- The booking page is on the site at `/book` (terms at `/book/terms`, Stripe's after-payment page at `/book/thank-you`), matched to the source of book.jewelpfp.co.uk (Bookkeeping-Partner-Ltd/jewelpfp-booking) with the same Stripe Payment Link and monday.com upload form. Its data is in `src/lib/booking/` and its components in `src/lib/components/book/`. `src/hooks.server.js` sends any request for book.jewelpfp.co.uk to the matching /book address, keeping the query string; it takes effect once that host is added to the Vercel project and its DNS record points at Vercel, which is a step of the domain move.
+## Booking
+
+- The £99 survey booking is at `/book`, with the terms at `/book/terms`. The client ticks the two required boxes (`src/lib/booking/checkoutTicks.js`), which travel to the Stripe Payment Link as its `client_reference_id`, and pays on Stripe.
+- Stripe returns the client to `/book/thank-you`, which shows their JPFP reference and hands them to the portal's booking page, https://portal.jewelpfp.co.uk/book, to answer the questions about their flat and upload their documents. Everything after payment belongs to the Jewel PFP Portal, not to this repository.
+- Its data is in `src/lib/booking/` and its components in `src/lib/components/book/`. `src/hooks.server.js` sends any request for `book.jewelpfp.co.uk`, the old booking site's address, to the matching `/book` address, keeping the query string.
 
 ## Door set explainer (draft)
 
-Stuart's compliant apartment entrance door set is being built at `/door-explainer` (noindex, not linked, not in the sitemap) so he can sign it off before anything changes on the home page; the home-page "scroll to inspect the door" scene (`src/lib/door3d.js`) stays as it is until then. The new door set is `src/lib/doorset/`: `measures.js` holds every dimension and Stuart's figures (gaps 2 to 4 mm, threshold nominally 8 mm), `build/` one file per part, `cards.js` the part-card wording (one file per door type under `cards/`), which is Stuart's draft and to be expanded on. `doorTypes.js` lists the door types; a part or card names the door types it belongs to, and the page's door type buttons show one door at a time. The rules are on the YBT story "As Stuart, I want the Jewel PFP website to show a compliant fire door set": flat status colours (`status-red`, `status-yellow`, `status-green` in Tailwind), always with a text marker; no rating, certification, standard or product named; gaps drawn larger than life say so; the reference photos never go on the site.
+Stuart's compliant apartment entrance door set is being built at `/door-explainer` (noindex, not linked, not in the sitemap) so he can sign it off before anything changes on the home page; the home-page "scroll to inspect the door" scene (`src/lib/door3d.js`) stays as it is until then. The new door set is `src/lib/doorset/`: `measures.js` holds every dimension and Stuart's figures (gaps 2 to 4 mm, threshold nominally 8 mm), `build/` one file per part, `cards.js` the part-card wording (one file per door type under `cards/`), which is Stuart's draft and to be expanded on. The side view (`sideSection.js`, drawn by `SideSection.svelte` when "Show the gaps" is ticked) is a section from the wall above the frame to the floor, drawn from Stuart's figures for him to correct. `doorTypes.js` lists the door types; a part or card names the door types it belongs to, and the page's door type buttons show one door at a time. The rules are on the YBT story "As Stuart, I want the Jewel PFP website to show a compliant fire door set": flat status colours (`status-red`, `status-yellow`, `status-green` in Tailwind), always with a text marker; no rating, certification, standard or product named; gaps drawn larger than life say so; the reference photos never go on the site.

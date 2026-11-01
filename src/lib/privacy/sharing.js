@@ -14,9 +14,11 @@ export const sharing = {
             'Stripe (card payments)',
             'Jewel PFP Portal, our booking and job system, hosted on Microsoft Azure',
             'Vercel (website hosting)',
+            'Supabase (the database behind our website’s contact form and its editing section)',
+            'Resend (sends the enquiries made on our website to our team by email)',
             'Microsoft 365 (email, files and Teams)',
             'Onetrace (survey records and photos)',
-            'Xero (invoices and accounts) and Dext (supplier invoices and receipts)',
+            'Xero (invoices and accounts)',
             'Twilio and Vapi (phone lines and the automated assistant)',
             'Anthropic (Claude AI tools)',
             'Your Business Today (our software developer’s project system, used only while we build our booking and job systems, then archived and deleted within a year)'
