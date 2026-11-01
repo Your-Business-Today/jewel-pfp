@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Runs, against the live Supabase database, every migration file a push to master
+# Runs, against the live Supabase database, every migration file a push to main
 # added under supabase/migrations/, in filename order. Called by the run-migrations
-# workflow; a file that was already on master is never run again, because every
+# workflow; a file that was already on main is never run again, because every
 # migration before this workflow existed was run by hand.
 #
 # Usage:
