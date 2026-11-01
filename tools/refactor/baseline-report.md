@@ -1,6 +1,6 @@
 # Refactor audit
 
-Generated 2026-10-29 20:47 UTC.
+Generated 2026-11-01 07:00 UTC.
 
 ## Headline
 
@@ -10,12 +10,12 @@ Generated 2026-10-29 20:47 UTC.
 
 | Element | Reading | Score | Weight | 0% at |
 | --- | --- | --- | --- | --- |
-| **Standard baseline checks** | | **100.0%** | **52** | |
+| **Standard baseline checks** | | **100.0%** | **60** | |
 | Files over the line limit | 0 in 73 files | 100.0% | 10 | 50% of files |
 | Worst file, in limits over | 0 | 100.0% | 5 | 9 |
 | Functions over the line limit | 0 in 16 functions | 100.0% | 8 | 25% of functions |
 | Else blocks | 0 in 71 branches | 100.0% | 5 | 50% of branches |
-| Duplication % | not measured | not measured | — | 20 |
+| Duplication % | 0 | 100.0% | 8 | 20 |
 | Explanatory comment lines | 0 in 2.39 thousand lines | 100.0% | 4 | 50 per thousand lines |
 | Inline magic values | 0 in 2.39 thousand lines | 100.0% | 4 | 20 per thousand lines |
 | Orphan components and functions | 0 in 69 components and functions | 100.0% | 4 | 10% of components and functions |
@@ -59,7 +59,7 @@ Each element scores 100% with no offenders and falls in a straight line to 0% wh
 | functionShape | limit: 30, functionsOverLimit: 0, totalFunctions: 16, elseBlocks: 0, ifBlocks: 71, measurementIsHeuristic: True |
 | functionNames | overlongFunctionNames: 0, maxWords: 5, maxLength: 40 |
 | accessorNames | gluedAccessorNames: 0, measurementIsHeuristic: True |
-| duplication | skipped: jscpd is not installed (npm install -g jscpd) |
+| duplication | clones: 0, duplicatedLines: 0, totalLines: 2582, duplicatedPercentage: 0.0 |
 | naming | bannedAbbreviationHits: 0, unprefixedBooleans: 3 |
 | comments | explanatoryCommentLines: 0, filesWithComments: 0, taskMarkers: 0 |
 | magicValues | inlineHexColours: 0, inlineStyleAttributes: 0, repeatedStringLiterals: 0 |
@@ -81,7 +81,7 @@ Each element scores 100% with no offenders and falls in a straight line to 0% wh
 | fileLength.worstFileLines | 0 | 0 | held |
 | functionShape.functionsOverLimit | 0 | 0 | held |
 | functionShape.elseBlocks | 0 | 0 | held |
-| duplication.duplicatedPercentage | None | None | — |
+| duplication.duplicatedPercentage | None | 0.0 | — |
 | comments.explanatoryCommentLines | 0 | 0 | held |
 | magicValues.inlineHexColours | 0 | 0 | held |
 | inventory.orphanComponents | 0 | 0 | held |
