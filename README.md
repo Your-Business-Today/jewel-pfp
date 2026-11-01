@@ -54,7 +54,7 @@ src/
     privacy/               # built-in privacy notice
     server/                # Supabase, admin session, content stores
     components/            # page components, by area
-supabase/migrations/       # schema, run by GitHub on merge to master
+supabase/migrations/       # schema, run by GitHub on merge to main
 static/                    # logo, favicon, robots.txt, sitemap.xml
 ```
 
@@ -64,7 +64,7 @@ Staff edit the page text, services, accreditations, contact details, the booking
 
 ## Deploying
 
-Vercel deploys a preview for every pull request and production from `master`. Pull requests go into `staging`, which is promoted to `master` at the project's deploy time. Migrations in `supabase/migrations/` run on the live database when they reach `master`.
+Vercel deploys a preview for every pull request and production from `main`. Pull requests go into `staging`, which is promoted to `main` at the project's deploy time. Migrations in `supabase/migrations/` run on the live database when they reach `main`.
 
 <!-- code-quality:start -->
 ## Code quality
