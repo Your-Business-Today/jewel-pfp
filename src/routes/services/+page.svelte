@@ -1,6 +1,7 @@
 <script>
   import { pageText } from '$lib/content/pageText.js';
   import PageHero from '$lib/components/page/PageHero.svelte';
+  import BeforeYouBuyBand from '$lib/components/beforeYouBuy/BeforeYouBuyBand.svelte';
 
   let { data } = $props();
   const { services, contact, text: savedText } = $derived(data.site);
@@ -23,6 +24,8 @@
     </div>
   </div>
 </PageHero>
+
+<BeforeYouBuyBand />
 
 {#each services as s, i}
   <section
