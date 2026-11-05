@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-01T10:20:45+00:00",
-  "kitVersion": "1.40.0",
+  "generatedAt": "2026-11-05T22:09:59+00:00",
+  "kitVersion": "1.41.0",
   "score": {
     "overall": 100.0,
     "groups": [
@@ -40,7 +40,7 @@
         "unit": "files",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 76,
+        "measuredAgainst": 80,
         "score": 100.0
       },
       {
@@ -100,7 +100,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.45,
+        "measuredAgainst": 2.53,
         "score": 100.0
       },
       {
@@ -112,7 +112,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.45,
+        "measuredAgainst": 2.53,
         "score": 100.0
       },
       {
@@ -124,7 +124,7 @@
         "unit": "components and functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 74,
         "score": 100.0
       },
       {
@@ -136,7 +136,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.45,
+        "measuredAgainst": 2.53,
         "score": 100.0
       },
       {
@@ -148,7 +148,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.45,
+        "measuredAgainst": 2.53,
         "score": 100.0
       },
       {
@@ -249,8 +249,8 @@
     "fileLength": {
       "limit": 100,
       "filesOverLimit": 0,
-      "totalFiles": 76,
-      "totalLines": 2448,
+      "totalFiles": 80,
+      "totalLines": 2533,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
@@ -274,7 +274,7 @@
     "duplication": {
       "clones": 0,
       "duplicatedLines": 0,
-      "totalLines": 2623,
+      "totalLines": 2690,
       "duplicatedPercentage": 0.0
     },
     "naming": {
@@ -307,7 +307,7 @@
       "functionsExamined": 16
     },
     "designPatterns": {
-      "roleFamilies": 1,
+      "roleFamilies": 2,
       "predictedFiles": 0,
       "predictedFilesMissing": 0,
       "entities": 0,
@@ -316,8 +316,8 @@
       "measurementIsHeuristic": true
     },
     "inventory": {
-      "pages": 18,
-      "components": 55,
+      "pages": 19,
+      "components": 58,
       "orphanComponents": 0,
       "averagePageLines": 44
     },
@@ -332,10 +332,10 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 368,
-      "tooling": 103,
-      "shared": 94,
-      "frontend": 82,
+      "totalFiles": 374,
+      "tooling": 104,
+      "shared": 95,
+      "frontend": 86,
       "backend": 40,
       "docs": 17,
       "tests": 15,
@@ -350,8 +350,8 @@
       "summary": {
         "limit": 100,
         "filesOverLimit": 0,
-        "totalFiles": 76,
-        "totalLines": 2448,
+        "totalFiles": 80,
+        "totalLines": 2533,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -517,7 +517,7 @@
     "designPatterns": {
       "name": "designPatterns",
       "summary": {
-        "roleFamilies": 1,
+        "roleFamilies": 2,
         "predictedFiles": 0,
         "predictedFilesMissing": 0,
         "entities": 0,
@@ -527,7 +527,8 @@
       },
       "offenders": {
         "roleFamilies": {
-          "+page.svelte": 18
+          "+page.svelte": 19,
+          "list": 4
         },
         "patterns": [],
         "missingPredictedFiles": [],
@@ -537,8 +538,8 @@
     "inventory": {
       "name": "inventory",
       "summary": {
-        "pages": 18,
-        "components": 55,
+        "pages": 19,
+        "components": 58,
         "orphanComponents": 0,
         "averagePageLines": 44
       },
@@ -546,7 +547,7 @@
         "pages": [
           {
             "page": "src/routes/services/+page.svelte",
-            "lines": 86,
+            "lines": 89,
             "widgets": [
               "list"
             ]
@@ -626,6 +627,11 @@
             ]
           },
           {
+            "page": "src/routes/before-you-buy/+page.svelte",
+            "lines": 36,
+            "widgets": []
+          },
+          {
             "page": "src/routes/privacy/+page.svelte",
             "lines": 34,
             "widgets": [
@@ -667,23 +673,23 @@
         ],
         "componentReuse": [
           {
+            "component": "src/lib/components/book/SectionHeading.svelte",
+            "reusedBy": 7
+          },
+          {
             "component": "src/lib/components/admin/SaveResult.svelte",
             "reusedBy": 6
           },
           {
-            "component": "src/lib/components/book/SectionHeading.svelte",
-            "reusedBy": 6
-          },
-          {
             "component": "src/lib/components/book/StepList.svelte",
-            "reusedBy": 3
-          },
-          {
-            "component": "src/lib/components/doorset/StatusMarker.svelte",
-            "reusedBy": 3
+            "reusedBy": 4
           },
           {
             "component": "src/lib/components/page/PageHero.svelte",
+            "reusedBy": 4
+          },
+          {
+            "component": "src/lib/components/doorset/StatusMarker.svelte",
             "reusedBy": 3
           },
           {
@@ -744,6 +750,18 @@
           },
           {
             "component": "src/lib/components/admin/SetupNotice.svelte",
+            "reusedBy": 1
+          },
+          {
+            "component": "src/lib/components/beforeYouBuy/AudienceList.svelte",
+            "reusedBy": 1
+          },
+          {
+            "component": "src/lib/components/beforeYouBuy/BeforeYouBuyBand.svelte",
+            "reusedBy": 1
+          },
+          {
+            "component": "src/lib/components/beforeYouBuy/BookTheCheck.svelte",
             "reusedBy": 1
           },
           {
@@ -903,10 +921,10 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 368,
-        "tooling": 103,
-        "shared": 94,
-        "frontend": 82,
+        "totalFiles": 374,
+        "tooling": 104,
+        "shared": 95,
+        "frontend": 86,
         "backend": 40,
         "docs": 17,
         "tests": 15,
@@ -917,21 +935,21 @@
       "offenders": [
         {
           "area": "tooling",
-          "files": 103,
+          "files": 104,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "shared",
-          "files": 94,
+          "files": 95,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
           "area": "frontend",
-          "files": 82,
-          "sourceFiles": 76,
-          "sourceLines": 2448
+          "files": 86,
+          "sourceFiles": 80,
+          "sourceLines": 2533
         },
         {
           "area": "backend",
@@ -990,7 +1008,7 @@
       "summary": {
         "clones": 0,
         "duplicatedLines": 0,
-        "totalLines": 2623,
+        "totalLines": 2690,
         "duplicatedPercentage": 0.0
       },
       "offenders": []
