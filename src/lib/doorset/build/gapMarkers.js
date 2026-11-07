@@ -25,7 +25,7 @@ export const gapAnchors = [
   { key: 'lock', label: `Lock side: ${gaps.edgeRange}`, at: new THREE.Vector3(edges.lock + 0.02, 1.6, depths.leafFront) },
   { key: 'threshold', label: `Threshold: ${gaps.thresholdFigure}`, at: new THREE.Vector3(0, 0, depths.leafFront) },
   { key: 'wall', label: `Frame to wall: ${surround.fireStoppingFigure}`, at: new THREE.Vector3(surround.frameOuterSide + surround.fireStoppingGap, 1.2, depths.frameFront) },
-  { key: 'fixings', label: `Fixings: ${surround.fixingCentresFigure}`, at: new THREE.Vector3(-surround.frameOuterSide, fixingHeights[1], depths.frameFront) }
+  { key: 'fixings', label: 'Frame fixed firmly into the wall', at: new THREE.Vector3(-surround.frameOuterSide, fixingHeights[1], depths.frameFront) }
 ];
 
 /** @param {THREE.Camera} camera @param {number} width @param {number} height */
