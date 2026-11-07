@@ -22,7 +22,7 @@ export const sideShapes = [
 
 export const sideCallouts = [
   { key: 'wallAbove', label: 'Wall above the frame', labelY: 8, pointX: 70, pointY: 12 },
-  { key: 'fireStopping', label: `Fire stopping, frame to wall: ${surround.fireStoppingFigure}`, labelY: 20, pointX: 70, pointY: 32 },
+  { key: 'fireStopping', label: `Frame to wall: ${surround.fireStoppingFigure}`, labelY: 20, pointX: 70, pointY: 32 },
   { key: 'architrave', label: 'Architrave, removed to show the fire stopping', labelY: 32, pointX: 113, pointY: 44 },
   { key: 'frameHead', label: 'Frame head', labelY: 44, pointX: 90, pointY: 42 },
   { key: 'stop', label: 'Stop on the frame', labelY: 56, pointX: 28, pointY: 52 },

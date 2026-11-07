@@ -1,4 +1,3 @@
-import { markers } from '../markers.js';
 import { doorTypes } from '../doorTypes.js';
 
 const doorsWithViewers = [doorTypes.flush, doorTypes.board];
@@ -7,43 +6,33 @@ export const everyDoorCards = [
   {
     key: 'frame',
     title: 'Frame',
-    marker: markers.seen,
-    does: 'Holds the leaf in its opening. The stop on the frame is what the leaf closes against.',
-    lookFor: ['Frame fixed firmly in the wall', 'Stop continuous along the head and both sides', 'No splits or damage to the frame'],
-    toConfirm: ['Frame type and fixing method, from the door set’s certification']
+    does: 'The fixed surround the door hangs in, and it must be just as strong as the door. The stop on the frame is what the leaf closes against, so the door closes neatly and flush.',
+    lookFor: ['Frame fixed firmly in the wall', 'Stop continuous along the head and both sides', 'No splits or damage to the frame']
   },
   {
     key: 'closer',
     title: 'Door closer',
-    marker: markers.seen,
-    does: 'An overhead closer with a regular arm. The body sits on the leaf, and the arm stands at a right angle to the leaf before running back to the frame.',
-    lookFor: ['Arm at a right angle to the leaf when the door is shut', 'Door closes and latches by itself from any open position', 'Closer and arm firmly fixed, with no oil leaking'],
-    toConfirm: ['Closer model and size, from the door set’s certification']
+    does: 'A fire door only works when it is shut. This overhead closer is fixed to the door with an arm to the frame: open the door and let go, and it should close fully on its own and click into its latch.',
+    lookFor: ['Arm at a right angle to the leaf when the door is shut', 'Door closes and latches by itself from any open position', 'Closer and arm firmly fixed, with no oil leaking']
   },
   {
     key: 'lever',
     title: 'Latch and lever handle',
-    marker: markers.seen,
-    does: 'The latch holds the door shut in its frame. A lever handle on each face works it. On door type 2 a lock cylinder sits below the handle.',
-    lookFor: ['Latch engages every time the door closes', 'Handles and backplates firmly fixed on both faces', 'Strike plate in place on the frame'],
-    toConfirm: ['Lock, latch and handle set, from the door set’s certification']
+    does: 'The latch holds the door firmly shut so fire pressure cannot push it open. A lever handle on each face works it and should spring back to level on its own. On door type 2 a lock cylinder sits below the handle.',
+    lookFor: ['Latch engages every time the door closes', 'Handles and backplates firmly fixed on both faces', 'Strike plate in place on the frame']
   },
   {
     key: 'viewer',
     doorTypes: doorsWithViewers,
     title: 'Door viewer',
-    marker: markers.seen,
-    does: 'A spy hole through the leaf. It comes out of its hole as the set comes apart, leaving the intumescent wrap in the leaf.',
-    lookFor: ['Viewer fitted through the full leaf', 'No gap around it'],
-    toConfirm: ['Viewer type, from the door set’s certification']
+    does: 'A spy hole through the leaf. Anything that goes through a fire door is a potential weak spot, so a viewer must be a fire-rated product made for the door, never cut on site.',
+    lookFor: ['Viewer fitted through the full leaf', 'No gap around it']
   },
   {
     key: 'viewerWrap',
     doorTypes: doorsWithViewers,
     title: 'Intumescent wrap around the viewer',
-    marker: markers.confirm,
     does: 'Intumescent material wraps the viewer where it passes through the leaf.',
-    lookFor: ['Wrap present all round the viewer', 'No gap between the viewer and the leaf'],
-    toConfirm: ['Whether the viewer and its wrap are within the door set’s certification']
+    lookFor: ['Wrap present all round the viewer', 'No gap between the viewer and the leaf']
   }
 ];

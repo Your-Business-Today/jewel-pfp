@@ -8,6 +8,7 @@
   import SealSection from '$lib/components/doorset/SealSection.svelte';
   import SideSection from '$lib/components/doorset/SideSection.svelte';
   import ClosingAction from '$lib/components/doorset/ClosingAction.svelte';
+  import AnatomySections from '$lib/components/doorset/AnatomySections.svelte';
   import { cardFor } from '$lib/doorset/cards.js';
   import { gaps, surround } from '$lib/doorset/measures.js';
   import { doorTypes } from '$lib/doorset/doorTypes.js';
@@ -37,14 +38,11 @@
 </script>
 
 <svelte:head>
-  <title>Door set explainer (draft) | Jewel Passive Fire Protection</title>
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Anatomy of a Fire Door | Jewel Passive Fire Protection</title>
+  <meta name="description" content="Take a fire door set apart and see what every part does: the leaf, frame, gaps, seals, hinges, closer, glazing and the fire stopping around the frame." />
 </svelte:head>
 
 <section class="bg-ink text-paper">
-  <div class="bg-status-yellow text-black px-6 py-3 text-center text-xs font-bold tracking-widest2">
-    DRAFT FOR STUART’S SIGN-OFF · WORDING TO BE EXPANDED ON · NOT YET ON THE HOME PAGE
-  </div>
   <div class="mx-auto max-w-7xl px-6 py-10 grid gap-8 lg:grid-cols-[1.5fr_1fr]">
     <div class="h-[70vh] min-h-[28rem] border border-hairline grid-bg">
       <DoorsetCanvas {chosen} {doorType} {sealConfiguration} {explode} {isShowingGaps} {closingRequest} {isHeldOpen} onchoose={(key) => (chosen = key)} onclosing={(progress) => (closingProgress = progress)} />
@@ -58,7 +56,7 @@
       <PartPicker {chosen} {doorType} onchoose={(key) => (chosen = key)} />
       {#if isShowingGaps}
         <p class="text-sm text-note">
-          Leaf to frame {gaps.edgeRange}; threshold {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
+          Top and sides {gaps.edgeRange}; bottom {gaps.thresholdFigure}; frame to wall {surround.fireStoppingFigure}, behind the architrave. The gaps are drawn larger than life so they can be seen.
         </p>
         <SideSection />
       {/if}
@@ -75,3 +73,5 @@
     </div>
   </div>
 </section>
+
+<AnatomySections />
