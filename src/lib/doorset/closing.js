@@ -3,7 +3,7 @@ const clampToUnit = (/** @type {number} */ t) => Math.min(1, Math.max(0, t));
 const millisecondsPerSecond = 1000;
 const notStarted = -1;
 
-export const closing = { openAngle: -Math.PI / 2, openSeconds: 1.2, closeSeconds: 6, limitSeconds: 25 };
+export const closing = { openAngle: -Math.PI / 2, openSeconds: 1.2, closeSeconds: 6 };
 
 /** @param {number} elapsed */
 function swingAt(elapsed) {

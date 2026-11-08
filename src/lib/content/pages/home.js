@@ -1,11 +1,5 @@
 import { line, paragraph, searchFields } from './fields.js';
-import { homeCaptions, homeSteps } from './homeDefaults.js';
-
-const captionFields = homeCaptions.flatMap((caption, i) => [
-  line(`caption${i + 1}Label`, `Door caption ${i + 1}: label`, caption.label),
-  line(`caption${i + 1}Title`, `Door caption ${i + 1}: heading`, caption.title),
-  paragraph(`caption${i + 1}Body`, `Door caption ${i + 1}: text`, caption.body)
-]);
+import { homeSteps } from './homeDefaults.js';
 
 const stepFields = homeSteps.flatMap((step, i) => [
   line(`step${i + 1}Title`, `How we work, step ${i + 1}: heading`, step.title),
@@ -17,7 +11,7 @@ export const homePage = {
   key: 'home',
   label: 'Home page',
   path: '/',
-  blurb: 'The opening headline, the door captions, how we work, accreditation and the closing call to action.',
+  blurb: 'The opening headline, how we work, accreditation and the closing call to action.',
   fields: [
     ...searchFields(
       'Jewel Passive Fire Protection | Fire Doors & Firestopping, London & South East',
@@ -30,7 +24,6 @@ export const homePage = {
       'Opening: text',
       'Jewel surveys, remediates, installs and certifies fire doors and firestopping — third-party accredited at every stage, with digital evidence for every asset.'
     ),
-    ...captionFields,
     line('servicesKicker', 'Services: small heading', '01 / What we do'),
     paragraph('servicesHeading', 'Services: heading', 'Six services.\nOne standard.'),
     line('processKicker', 'How we work: small heading', '02 / How we work'),

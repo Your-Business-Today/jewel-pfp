@@ -1,6 +1,6 @@
 export const leaf = { width: 0.926, height: 2.04, thickness: 0.054 };
 
-export const gaps = { edge: 0.003, threshold: 0.008, edgeRange: '2 to 4 mm', thresholdFigure: 'nominally 8 mm' };
+export const gaps = { edge: 0.003, threshold: 0.008, edgeRange: '2 to 4 mm', thresholdFigure: 'no more than 8 mm' };
 
 export const frame = { faceWidth: 0.035, depth: 0.11, headHeight: 0.035, stopWidth: 0.012, stopDepth: 0.025 };
 
@@ -32,9 +32,8 @@ export const edges = {
 export const surround = {
   frameOuterSide: leaf.width / 2 + gaps.edge + frame.faceWidth,
   fireStoppingGap: 0.02,
-  fireStoppingFigure: '20 mm or less',
+  fireStoppingFigure: 'sealed with tested fire stopping',
   fixingCentres: 0.6,
-  fixingCentresFigure: 'nominally 600 mm centres',
   firstFixing: 0.2,
   topFixingClearance: 0.08,
   packerHeight: 0.05,

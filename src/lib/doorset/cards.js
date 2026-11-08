@@ -1,4 +1,3 @@
-import { markers } from './markers.js';
 import { everyDoorCards } from './cards/everyDoor.js';
 import { flushDoorCards } from './cards/flushDoor.js';
 import { boardDoorCards } from './cards/boardDoor.js';
@@ -7,9 +6,7 @@ import { sealCards } from './cards/seals.js';
 import { hiddenCards } from './cards/hidden.js';
 import { glazedDoorCards } from './cards/glazedDoor.js';
 
-export { markers };
-
-/** @typedef {{ key: string, doorTypes?: number[], title: string, marker: string, does: string, lookFor: string[], toConfirm: string[] }} PartCard */
+/** @typedef {{ key: string, doorTypes?: number[], title: string, does: string, lookFor: string[] }} PartCard */
 
 /** @type {PartCard[]} */
 export const partCards = [...surroundCards, ...sealCards, ...everyDoorCards, ...flushDoorCards, ...boardDoorCards, ...glazedDoorCards, ...hiddenCards];

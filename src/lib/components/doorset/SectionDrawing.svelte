@@ -1,7 +1,4 @@
 <script>
-  import StatusMarker from './StatusMarker.svelte';
-  import { markers } from '$lib/doorset/cards.js';
-
   /** @typedef {{ key: string, tone: string, x: number, y: number, width: number, height: number }} Shape */
   /** @typedef {{ key: string, label: string, labelY: number, pointX: number, pointY: number }} Callout */
   /** @type {{ shapes: Shape[], callouts: Callout[], width: number, height: number, labelX: number, description: string, caption: string }} */
@@ -28,8 +25,5 @@
       <text x={labelX} y={callout.labelY + 1.5} font-size="4.5" class="fill-paper">{callout.label}</text>
     {/each}
   </svg>
-  <figcaption class="mt-3 flex flex-wrap items-center gap-3 text-xs text-note">
-    <StatusMarker marker={markers.confirm} />
-    <span>{caption}</span>
-  </figcaption>
+  <figcaption class="mt-3 text-xs text-note">{caption}</figcaption>
 </figure>

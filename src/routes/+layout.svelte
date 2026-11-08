@@ -10,6 +10,7 @@
   const nav = $derived([
     { label: 'Home', href: '/' },
     { label: 'Services', href: '/services' },
+    { label: 'Fire Doors', href: '/door-explainer' },
     { label: 'Contact', href: '/contact' },
     { label: 'Apartment Bookings', href: contact.booking }
   ]);
