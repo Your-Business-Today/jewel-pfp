@@ -8,8 +8,8 @@ import { rights, complaints, cookies, changes } from './rights.js';
 
 export const privacyNotice = {
   path: '/privacy',
-  version: '1.2',
-  lastUpdated: '1 November 2026',
+  version: '1.3',
+  lastUpdated: '13 November 2026',
   introduction,
   sections: [collection, lawfulBasis, sharing, transfers, retention, rights, complaints, cookies, changes]
 };
