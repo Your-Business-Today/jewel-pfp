@@ -12,7 +12,7 @@ export const sharing = {
           text: '',
           items: [
             'Stripe (card payments)',
-            'Jewel PFP Portal, our booking and job system, hosted on Microsoft Azure',
+            'Jewel PFP Portal, our booking and job system, hosted on Microsoft Azure in Ireland and the Netherlands',
             'Vercel (website hosting)',
             'Supabase (the database behind our website’s contact form and its editing section)',
             'Resend (sends the enquiries made on our website to our team by email)',
@@ -21,7 +21,7 @@ export const sharing = {
             'Xero (invoices and accounts)',
             'Twilio and Vapi (phone lines and the automated assistant)',
             'Anthropic (Claude AI tools)',
-            'Your Business Today (our software developer’s project system, used only while we build our booking and job systems, then archived and deleted within a year)'
+            'Your Business Today (our software developer’s project system, which keeps its data in Supabase, used only while we build our booking and job systems, then archived and deleted within a year)'
           ]
         },
         { lead: 'Authorities where the law requires it,', text: 'such as HMRC, the Building Safety Regulator and building control.' }
