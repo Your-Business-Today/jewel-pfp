@@ -9,7 +9,7 @@ export const collection = {
         { lead: 'Surveys and works:', text: 'photographs, measurements and notes about fire doors and fire stopping. Photos show doors, frames and the area around them and may show parts of your home. We try not to capture people or personal items.' },
         { lead: 'Phone calls:', text: 'our lines are answered by an automated assistant. Calls are recorded and transcribed, and a written summary is sent to our team so the right person can call you back.' },
         { lead: 'Business contacts:', text: 'names, job titles and contact details of managing agents, building owners, fire risk assessors, conveyancers, suppliers and subcontractors.' },
-        { lead: 'Website:', text: 'basic technical data such as your IP address, needed to run the site securely.' }
+        { lead: 'Website:', text: 'basic technical data such as your IP address, needed to run the site securely. Everything on the site, including its typeface, comes from our own host, Vercel, so visiting it sends nothing to other companies.' }
       ]
     },
     {
