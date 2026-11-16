@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-05T22:09:59+00:00",
-  "kitVersion": "1.41.0",
+  "generatedAt": "2026-11-16T12:18:51+00:00",
+  "kitVersion": "1.55.0",
   "score": {
     "overall": 100.0,
     "groups": [
@@ -40,7 +40,7 @@
         "unit": "files",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 80,
+        "measuredAgainst": 77,
         "score": 100.0
       },
       {
@@ -64,7 +64,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 15,
         "score": 100.0
       },
       {
@@ -76,7 +76,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 64,
         "score": 100.0
       },
       {
@@ -100,7 +100,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.53,
+        "measuredAgainst": 2.4,
         "score": 100.0
       },
       {
@@ -112,7 +112,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.53,
+        "measuredAgainst": 2.4,
         "score": 100.0
       },
       {
@@ -124,7 +124,7 @@
         "unit": "components and functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 74,
+        "measuredAgainst": 70,
         "score": 100.0
       },
       {
@@ -136,7 +136,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.53,
+        "measuredAgainst": 2.4,
         "score": 100.0
       },
       {
@@ -148,7 +148,7 @@
         "unit": "thousand lines",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 2.53,
+        "measuredAgainst": 2.4,
         "score": 100.0
       },
       {
@@ -160,7 +160,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 15,
         "score": 100.0
       },
       {
@@ -194,7 +194,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 64,
         "score": 100.0
       },
       {
@@ -206,7 +206,7 @@
         "unit": "branches",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 71,
+        "measuredAgainst": 64,
         "score": 100.0
       },
       {
@@ -218,7 +218,7 @@
         "unit": "functions",
         "isMeasured": true,
         "offenders": 0,
-        "measuredAgainst": 16,
+        "measuredAgainst": 15,
         "score": 100.0
       },
       {
@@ -249,17 +249,17 @@
     "fileLength": {
       "limit": 100,
       "filesOverLimit": 0,
-      "totalFiles": 80,
-      "totalLines": 2533,
+      "totalFiles": 77,
+      "totalLines": 2404,
       "worstFileLines": 0,
       "worstFileTimesOverLimit": 0.0
     },
     "functionShape": {
       "limit": 30,
       "functionsOverLimit": 0,
-      "totalFunctions": 16,
+      "totalFunctions": 15,
       "elseBlocks": 0,
-      "ifBlocks": 71,
+      "ifBlocks": 64,
       "measurementIsHeuristic": true
     },
     "functionNames": {
@@ -274,12 +274,12 @@
     "duplication": {
       "clones": 0,
       "duplicatedLines": 0,
-      "totalLines": 2690,
+      "totalLines": 2535,
       "duplicatedPercentage": 0.0
     },
     "naming": {
       "bannedAbbreviationHits": 0,
-      "unprefixedBooleans": 3
+      "unprefixedBooleans": 1
     },
     "comments": {
       "explanatoryCommentLines": 0,
@@ -294,7 +294,7 @@
     "prose": {
       "longMemberChainLines": 0,
       "deeplyIndentedLines": 0,
-      "overlongLines": 11,
+      "overlongLines": 12,
       "measurementIsHeuristic": true
     },
     "conditions": {
@@ -304,7 +304,7 @@
     },
     "orphans": {
       "orphanFunctions": 0,
-      "functionsExamined": 16
+      "functionsExamined": 15
     },
     "designPatterns": {
       "roleFamilies": 2,
@@ -317,7 +317,7 @@
     },
     "inventory": {
       "pages": 19,
-      "components": 58,
+      "components": 55,
       "orphanComponents": 0,
       "averagePageLines": 44
     },
@@ -332,13 +332,13 @@
       "looserLimits": 0
     },
     "fileAreas": {
-      "totalFiles": 374,
-      "tooling": 104,
+      "totalFiles": 398,
+      "tooling": 126,
       "shared": 95,
-      "frontend": 86,
+      "frontend": 83,
       "backend": 40,
-      "docs": 17,
-      "tests": 15,
+      "tests": 21,
+      "docs": 16,
       "infrastructure": 13,
       "database": 3,
       "api": 1
@@ -350,8 +350,8 @@
       "summary": {
         "limit": 100,
         "filesOverLimit": 0,
-        "totalFiles": 80,
-        "totalLines": 2533,
+        "totalFiles": 77,
+        "totalLines": 2404,
         "worstFileLines": 0,
         "worstFileTimesOverLimit": 0.0
       },
@@ -362,9 +362,9 @@
       "summary": {
         "limit": 30,
         "functionsOverLimit": 0,
-        "totalFunctions": 16,
+        "totalFunctions": 15,
         "elseBlocks": 0,
-        "ifBlocks": 71,
+        "ifBlocks": 64,
         "measurementIsHeuristic": true
       },
       "offenders": []
@@ -390,21 +390,11 @@
       "name": "naming",
       "summary": {
         "bannedAbbreviationHits": 0,
-        "unprefixedBooleans": 3
+        "unprefixedBooleans": 1
       },
       "offenders": {
         "abbreviations": [],
         "booleans": [
-          {
-            "file": "src/lib/components/home/ScrollDoorScene.svelte",
-            "line": 18,
-            "name": "webglFailed"
-          },
-          {
-            "file": "src/lib/components/home/ScrollDoorScene.svelte",
-            "line": 26,
-            "name": "destroyed"
-          },
           {
             "file": "src/lib/components/layout/SiteHeader.svelte",
             "line": 6,
@@ -440,7 +430,7 @@
       "summary": {
         "longMemberChainLines": 0,
         "deeplyIndentedLines": 0,
-        "overlongLines": 11,
+        "overlongLines": 12,
         "measurementIsHeuristic": true
       },
       "offenders": {
@@ -460,8 +450,8 @@
             "line": 63
           },
           {
-            "file": "src/lib/components/doorset/ClosingAction.svelte",
-            "line": 35
+            "file": "src/lib/components/doorset/AnatomySections.svelte",
+            "line": 23
           },
           {
             "file": "src/lib/components/doorset/DoorsetCanvas.svelte",
@@ -481,15 +471,19 @@
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 50
+            "line": 42
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 61
+            "line": 48
           },
           {
             "file": "src/routes/door-explainer/+page.svelte",
-            "line": 72
+            "line": 59
+          },
+          {
+            "file": "src/routes/door-explainer/+page.svelte",
+            "line": 70
           }
         ]
       }
@@ -510,7 +504,7 @@
       "name": "orphans",
       "summary": {
         "orphanFunctions": 0,
-        "functionsExamined": 16
+        "functionsExamined": 15
       },
       "offenders": []
     },
@@ -539,7 +533,7 @@
       "name": "inventory",
       "summary": {
         "pages": 19,
-        "components": 58,
+        "components": 55,
         "orphanComponents": 0,
         "averagePageLines": 44
       },
@@ -640,7 +634,7 @@
           },
           {
             "page": "src/routes/+page.svelte",
-            "lines": 30,
+            "lines": 29,
             "widgets": []
           },
           {
@@ -689,10 +683,6 @@
             "reusedBy": 4
           },
           {
-            "component": "src/lib/components/doorset/StatusMarker.svelte",
-            "reusedBy": 3
-          },
-          {
             "component": "src/lib/components/admin/CopyBuiltIn.svelte",
             "reusedBy": 2
           },
@@ -718,6 +708,10 @@
           },
           {
             "component": "src/lib/components/documents/DocumentParagraph.svelte",
+            "reusedBy": 2
+          },
+          {
+            "component": "src/lib/components/doorset/DoorsetCanvas.svelte",
             "reusedBy": 2
           },
           {
@@ -817,15 +811,15 @@
             "reusedBy": 1
           },
           {
+            "component": "src/lib/components/doorset/AnatomySections.svelte",
+            "reusedBy": 1
+          },
+          {
             "component": "src/lib/components/doorset/ClosingAction.svelte",
             "reusedBy": 1
           },
           {
             "component": "src/lib/components/doorset/DoorTypePicker.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/doorset/DoorsetCanvas.svelte",
             "reusedBy": 1
           },
           {
@@ -865,11 +859,11 @@
             "reusedBy": 1
           },
           {
-            "component": "src/lib/components/home/DoorFallback.svelte",
+            "component": "src/lib/components/home/HomeDoorset.svelte",
             "reusedBy": 1
           },
           {
-            "component": "src/lib/components/home/HomeHero.svelte",
+            "component": "src/lib/components/home/HomeIntro.svelte",
             "reusedBy": 1
           },
           {
@@ -877,19 +871,7 @@
             "reusedBy": 1
           },
           {
-            "component": "src/lib/components/home/ProgressRail.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/home/ScrollDoorScene.svelte",
-            "reusedBy": 1
-          },
-          {
             "component": "src/lib/components/home/ServicesGrid.svelte",
-            "reusedBy": 1
-          },
-          {
-            "component": "src/lib/components/home/StageCaptions.svelte",
             "reusedBy": 1
           },
           {
@@ -921,13 +903,13 @@
     "fileAreas": {
       "name": "fileAreas",
       "summary": {
-        "totalFiles": 374,
-        "tooling": 104,
+        "totalFiles": 398,
+        "tooling": 126,
         "shared": 95,
-        "frontend": 86,
+        "frontend": 83,
         "backend": 40,
-        "docs": 17,
-        "tests": 15,
+        "tests": 21,
+        "docs": 16,
         "infrastructure": 13,
         "database": 3,
         "api": 1
@@ -935,7 +917,7 @@
       "offenders": [
         {
           "area": "tooling",
-          "files": 104,
+          "files": 126,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -947,9 +929,9 @@
         },
         {
           "area": "frontend",
-          "files": 86,
-          "sourceFiles": 80,
-          "sourceLines": 2533
+          "files": 83,
+          "sourceFiles": 77,
+          "sourceLines": 2404
         },
         {
           "area": "backend",
@@ -958,14 +940,14 @@
           "sourceLines": 0
         },
         {
-          "area": "docs",
-          "files": 17,
+          "area": "tests",
+          "files": 21,
           "sourceFiles": 0,
           "sourceLines": 0
         },
         {
-          "area": "tests",
-          "files": 15,
+          "area": "docs",
+          "files": 16,
           "sourceFiles": 0,
           "sourceLines": 0
         },
@@ -1008,7 +990,7 @@
       "summary": {
         "clones": 0,
         "duplicatedLines": 0,
-        "totalLines": 2690,
+        "totalLines": 2535,
         "duplicatedPercentage": 0.0
       },
       "offenders": []
